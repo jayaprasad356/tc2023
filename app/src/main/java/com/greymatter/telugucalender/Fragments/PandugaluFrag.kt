@@ -5,18 +5,39 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.greymatter.telugucalender.Adapters.PandugaluAdapter
 import com.greymatter.telugucalender.Model.PandugaluModel
 import com.greymatter.telugucalender.databinding.FragmentPandugaluBinding
+import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
 
 class PandugaluFrag : Fragment() {
     private var binding : FragmentPandugaluBinding? = null;
     private lateinit var PandugaluAdapter : PandugaluAdapter
+    var month_year =""
+    var year =""
+    var montharray = arrayOf(
+        "జనవరి ",
+        "ఫిబ్రవరి ",
+        "మార్చి ",
+        "ఏప్రిల్ ",
+        "మే ",
+        "జూన్ ",
+        "జూలై ",
+        "ఆగస్టు ",
+        "సెప్టెంబర్ ",
+        "అక్టోబర్ ",
+        "నవంబర్ ",
+        "డిసెంబర్ "
+    )
+    var c = Calendar.getInstance()
+    var df = SimpleDateFormat("MMMM yyyy")
+    var monthcount = 0
+    var cal = Calendar.getInstance()
+
 
     @SuppressLint("SimpleDateFormat")
     override fun onCreateView(
@@ -26,20 +47,54 @@ class PandugaluFrag : Fragment() {
         binding = FragmentPandugaluBinding.inflate(layoutInflater,container,false)
         // Inflate the layout for this fragment
 
-        //TODO: fix date logic
-        //Date logic goes here
-        val date = Calendar.getInstance()
-        Toast.makeText(requireContext(),date.timeZone.toString(),Toast.LENGTH_LONG).show() 
-        val sdf  = SimpleDateFormat("MMMM")
-        binding!!.PresentMonthAndYear.text = sdf.format(date.get(Calendar.MONTH))
+
+
+
+
+//Date logic goes here
+        cal.add(Calendar.MONTH, monthcount)
+        val dateFormat = SimpleDateFormat("MMMM yyyy")
+        month_year = dateFormat.format(cal.getTime())
+        year = cal[Calendar.YEAR].toString()
+
+
+        binding!!.PresentMonthAndYear.setText(setTeluguMonth(month_year)+ year)
         binding!!.ArrowLeft.setOnClickListener {
-            val updated = date.get(Calendar.MONTH)-1
-            binding!!.PresentMonthAndYear.text = sdf.format(updated)
+            var dateFormat: Date? = null
+            try {
+                dateFormat = df.parse(month_year)
+            } catch (e: ParseException) {
+                e.printStackTrace()
+            }
+            c.setTime(dateFormat)
+            c.add(Calendar.MONTH, -1)
+
+
+            month_year = df.format(c.getTime())
+            year = c[Calendar.YEAR].toString()
+
+
+            binding!!.PresentMonthAndYear.setText(setTeluguMonth(month_year)+ year)
+//            festivalList(getMonthNum(), getYearNum())
         }
         binding!!.ArrowRight.setOnClickListener {
-            val updated = date.get(Calendar.MONTH)+1
-            binding!!.PresentMonthAndYear.text = sdf.format(updated)
+            var dateFormat: Date? = null
+            try {
+                dateFormat = df.parse(month_year)
+            } catch (e: ParseException) {
+                e.printStackTrace()
+            }
+            c.time = dateFormat
+            c.add(Calendar.MONTH, 1)
+
+
+            month_year = df.format(c.time)
+            year = c[Calendar.YEAR].toString()
+
+            binding!!.PresentMonthAndYear.setText(setTeluguMonth(month_year)+ year)
+//            festivalList(getMonthNum(), getYearNum())
         }
+
         //Recycler things goes here
         PandugaluAdapter = PandugaluAdapter(recyclerViewData())
         binding?.let {
@@ -47,6 +102,26 @@ class PandugaluFrag : Fragment() {
             it.PandugaluRecycler.adapter = PandugaluAdapter
         }
         return binding!!.root
+    }
+
+    private fun setTeluguMonth(month_year: String): String? {
+        val index = month_year.indexOf(' ')
+        val month = month_year.substring(0, index)
+        val p = Arrays.asList(
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+        ).indexOf(month)
+        return montharray[p]
     }
 
     private fun recyclerViewData() : ArrayList<PandugaluModel> {

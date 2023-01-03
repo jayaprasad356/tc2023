@@ -5,31 +5,31 @@
     <item
         android:id="@+id/Panchangam"
         android:enabled="true"
-        android:icon="@drawable/swastika_icon"
+        android:icon="@drawable/panchangam"
         android:iconTint="@color/white"
         android:title="పంచాంగము"/>
     <item
         android:id="@+id/Pandugalu"
         android:enabled="true"
-        android:icon="@drawable/swastika_icon"
+        android:icon="@drawable/pandugalu"
         android:iconTint="@color/white"
         android:title="పంచాంగము"/>
     <item
         android:id="@+id/Muhurthalu"
         android:enabled="true"
-        android:icon="@drawable/swastika_icon"
+        android:icon="@drawable/muhurtham"
         android:iconTint="@color/white"
         android:title="పంచాంగము"/>
     <item
         android:id="@+id/RashiPhalalu"
         android:enabled="true"
-        android:icon="@drawable/swastika_icon"
+        android:icon="@drawable/rasiphalalu"
         android:iconTint="@color/white"
         android:title="పంచాంగము"/>
     <item
         android:id="@+id/More"
         android:enabled="true"
-        android:icon="@drawable/swastika_icon"
+        android:icon="@drawable/marikonni"
         android:iconTint="@color/white"
         android:title="పంచాంగము"/>
 </menu>

@@ -25,10 +25,12 @@ class HomeActivity : AppCompatActivity() {
         setContentView(activityHomeBinding!!.root)
         fm = supportFragmentManager
         navbar = activityHomeBinding!!.BottomNavigation
+        fm!!.beginTransaction().replace(R.id.Container,com.greymatter.telugucalender.Fragments.panchangamFrag()).commit()
+
         activityHomeBinding!!.BottomNavigation.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.Panchangam -> {
-                    fm!!.beginTransaction().replace(R.id.Container,com.greymatter.telugucalender.Fragments.PandugaluFrag()).commit()
+                    fm!!.beginTransaction().replace(R.id.Container,com.greymatter.telugucalender.Fragments.panchangamFrag()).commit()
                     true
                 }
                 R.id.Pandugalu -> {

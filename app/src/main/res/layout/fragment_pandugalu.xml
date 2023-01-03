@@ -37,6 +37,7 @@
             android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
             android:src="@drawable/ic_baseline_arrow_right_24"/>
+
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
