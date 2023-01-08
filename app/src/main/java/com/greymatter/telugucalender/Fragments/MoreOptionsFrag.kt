@@ -32,7 +32,7 @@ class MoreOptionsFrag : Fragment() {
                 ?.addToBackStack("null")?.commit()
         }
         binding.CvPadhaDosa.setOnClickListener {
-            HomeActivity.fm?.beginTransaction()?.replace(R.id.Container,PadhaDoshaFarg())
+            HomeActivity.fm?.beginTransaction()?.replace(R.id.Container,SissuJanmaFragment())
                 ?.addToBackStack("null")?.commit()
         }
         binding.CvMoreApps.setOnClickListener {

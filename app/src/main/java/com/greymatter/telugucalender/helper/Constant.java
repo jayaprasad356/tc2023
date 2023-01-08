@@ -50,6 +50,8 @@ public class Constant {
     public static final String KARANAM = "karanam";
     public static final String SAKUNALU = "sakunalu";
     public static final String BALLI_SASTHRAM = "balli_sasthram";
+    public static final String SISSU_JANMA = "sissu_janma";
+    public static final String NAMAKARAM = "namakaram";
     public static final String KAKI_SASTHRAM = "kaki_sasthram";
     public static final String PILLI_SASTHRAM = "pilli_sasthram";
     public static final String KUKUTA_SASTHRAM = "kukuta_sasthram";
@@ -98,6 +100,8 @@ public class Constant {
     public static final String PANCHANGAM_TAB_LIST = "panchangam_tab_list";
     public static final String FESTIVALS_LIST = "festivals_list";
     public static final String BALLI_SASTHAM_LIST = "balli_sastham_list";
+    public static final String NAMAKARAM_LIST = "namakaram_list";
+    public static final String SISSU_JANMA_LIST = "sissu_janma_list";
     public static final String MUHURTHAM_LIST = "muhurtham_list";
     public static final String MUHURTHAM_TAB_LIST = "muhurtham_tab_list";
     public static final String POOJALU_LIST = "poojalu_list";
