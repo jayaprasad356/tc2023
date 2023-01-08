@@ -1,23 +1,39 @@
 package com.greymatter.telugucalender.Fragments
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.greymatter.telugucalender.Adapters.PandugaluAdapter
-import com.greymatter.telugucalender.Model.PandugaluModel
+import androidx.recyclerview.widget.RecyclerView
+import com.greymatter.telugucalender.Adapters.FestivalAdapter
+import com.greymatter.telugucalender.R
+import com.greymatter.telugucalender.databinding.FragmentMuhurthaluBinding
 import com.greymatter.telugucalender.databinding.FragmentPandugaluBinding
+import com.greymatter.telugucalender.helper.DatabaseHelper
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
 
 class PandugaluFrag : Fragment() {
     private var binding : FragmentPandugaluBinding? = null;
-    private lateinit var PandugaluAdapter : PandugaluAdapter
-    var month_year =""
+    var imgLeft: ImageView? = null
+    var imgRight: ImageView? = null
+    var tvMonthYear: TextView? = null
+    lateinit var month_year : String
+    var monthcount = 0
+    var cal = Calendar.getInstance()
+    var df = SimpleDateFormat("MMMM yyyy")
+    var c = Calendar.getInstance()
+    var databaseHelper: DatabaseHelper? = null
+    var activity: Activity? = null
+    var festivalAdapter: FestivalAdapter? = null
     var year =""
     var montharray = arrayOf(
         "జనవరి ",
@@ -33,17 +49,14 @@ class PandugaluFrag : Fragment() {
         "నవంబర్ ",
         "డిసెంబర్ "
     )
-    var c = Calendar.getInstance()
-    var df = SimpleDateFormat("MMMM yyyy")
-    var monthcount = 0
-    var cal = Calendar.getInstance()
 
 
-    @SuppressLint("SimpleDateFormat")
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+    @SuppressLint("SimpleDateFormat", "MissingInflatedId")
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
+
+
+        // Inflate the layout for this fragment
         binding = FragmentPandugaluBinding.inflate(layoutInflater,container,false)
         // Inflate the layout for this fragment
 
@@ -51,11 +64,24 @@ class PandugaluFrag : Fragment() {
 
 
 
-//Date logic goes here
+        activity = getActivity()
+
+        databaseHelper = DatabaseHelper(activity)
+        binding!!.recyclerView.setLayoutManager(
+            LinearLayoutManager(
+                activity,
+                LinearLayoutManager.VERTICAL,
+                false
+            )
+        )
+
+
         cal.add(Calendar.MONTH, monthcount)
         val dateFormat = SimpleDateFormat("MMMM yyyy")
-        month_year = dateFormat.format(cal.getTime())
+        month_year = dateFormat.format(cal.time)
         year = cal[Calendar.YEAR].toString()
+
+
 
 
         binding!!.PresentMonthAndYear.setText(setTeluguMonth(month_year)+ year)
@@ -73,9 +99,10 @@ class PandugaluFrag : Fragment() {
             month_year = df.format(c.getTime())
             year = c[Calendar.YEAR].toString()
 
-
             binding!!.PresentMonthAndYear.setText(setTeluguMonth(month_year)+ year)
-//            festivalList(getMonthNum(), getYearNum())
+
+            festivalList(getMonthNum()!!, getYearNum()!!)
+
         }
         binding!!.ArrowRight.setOnClickListener {
             var dateFormat: Date? = null
@@ -92,17 +119,18 @@ class PandugaluFrag : Fragment() {
             year = c[Calendar.YEAR].toString()
 
             binding!!.PresentMonthAndYear.setText(setTeluguMonth(month_year)+ year)
-//            festivalList(getMonthNum(), getYearNum())
+
+            festivalList(getMonthNum()!!, getYearNum()!!)
         }
 
-        //Recycler things goes here
-        PandugaluAdapter = PandugaluAdapter(recyclerViewData())
-        binding?.let {
-            it.PandugaluRecycler.layoutManager = LinearLayoutManager(requireContext())
-            it.PandugaluRecycler.adapter = PandugaluAdapter
-        }
+
+     festivalList(getMonthNum()!!, getYearNum()!!)
+
+
+
         return binding!!.root
     }
+
 
     private fun setTeluguMonth(month_year: String): String? {
         val index = month_year.indexOf(' ')
@@ -124,14 +152,42 @@ class PandugaluFrag : Fragment() {
         return montharray[p]
     }
 
-    private fun recyclerViewData() : ArrayList<PandugaluModel> {
-       val data : ArrayList<PandugaluModel> = arrayListOf()
-        data.add(PandugaluModel("12-11-2022","Event One"))
-        data.add(PandugaluModel("13-11-2022","Event Two"))
-        data.add(PandugaluModel("14-11-2022","Event Three"))
-        data.add(PandugaluModel("15-11-2022","Event Four"))
-        data.add(PandugaluModel("16-11-2022","Event Five"))
-        data.add(PandugaluModel("17-11-2022","Event Six"))
-       return data
+    private fun getMonthNum(): String? {
+        var newDate: Date? = null
+        try {
+            newDate = df.parse("" + month_year)
+        } catch (e: ParseException) {
+            e.printStackTrace()
+        }
+        val format = SimpleDateFormat("MM")
+        return format.format(newDate)
     }
+
+    private fun getYearNum(): String? {
+        var newDate: Date? = null
+        try {
+            newDate = df.parse("" + month_year)
+        } catch (e: ParseException) {
+            e.printStackTrace()
+        }
+        val format = SimpleDateFormat("yyyy")
+        return format.format(newDate)
+    }
+
+
+    private fun festivalList(monthNum: String, yearNum: String) {
+        if (databaseHelper!!.getmodelFestivalList(monthNum, yearNum).size !== 0) {
+          //  Log.d("festival", databaseHelper!!.getmodelFestivalList(monthNum, yearNum).toString())
+            festivalAdapter = FestivalAdapter(requireActivity(),
+                databaseHelper!!.getmodelFestivalList(monthNum, yearNum)
+            )
+            binding!!.recyclerView!!.adapter = festivalAdapter
+        } else {
+            binding!!.recyclerView!!.visibility = View.GONE
+        }
+    }
+
+
+
+
 }

@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 
+import com.greymatter.telugucalender.Model.Festival;
 import com.greymatter.telugucalender.Model.Panchangam;
 import com.greymatter.telugucalender.Model.PanchangamTab;
 
@@ -610,23 +611,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return panchangamTabs;
     }
-//    public ArrayList<Festival> getmodelFestivalList(String month,String year) {
-//        final ArrayList<Festival> festivals = new ArrayList<>();
-//        SQLiteDatabase db = this.getWritableDatabase();
-//        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_FESTIVAL_NAME + " WHERE STRFTIME('%m'," + DATE + ") = ? AND STRFTIME('%Y'," + DATE + ") = ? ORDER BY "+DATE, new String[]{month,year});
-//        if (cursor.moveToFirst()) {
-//            do {
-//                Festival festival1 = new Festival(cursor.getString(cursor.getColumnIndexOrThrow(FID)),cursor.getString(cursor.getColumnIndexOrThrow(DATE))
-//                        ,cursor.getString(cursor.getColumnIndexOrThrow(FESTIVAL)));
-//                //@SuppressLint("Range") String count = cursor.getString(cursor.getColumnIndex(QTY));
-//                festivals.add(festival1);
-//            } while (cursor.moveToNext());
-//
-//        }
-//        cursor.close();
-//        db.close();
-//        return festivals;
-//    }
+    public ArrayList<Festival> getmodelFestivalList(String month, String year) {
+        final ArrayList<Festival> festivals = new ArrayList<>();
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_FESTIVAL_NAME + " WHERE STRFTIME('%m'," + DATE + ") = ? AND STRFTIME('%Y'," + DATE + ") = ? ORDER BY "+DATE, new String[]{month,year});
+        if (cursor.moveToFirst()) {
+            do {
+                Festival festival1 = new Festival(cursor.getString(cursor.getColumnIndexOrThrow(FID)),cursor.getString(cursor.getColumnIndexOrThrow(DATE))
+                        ,cursor.getString(cursor.getColumnIndexOrThrow(FESTIVAL)));
+                //@SuppressLint("Range") String count = cursor.getString(cursor.getColumnIndex(QTY));
+                festivals.add(festival1);
+            } while (cursor.moveToNext());
+
+        }
+        cursor.close();
+        db.close();
+        return festivals;
+    }
+
 //    public ArrayList<Muhurtham> getMuhurthamList() {
 //        final ArrayList<Muhurtham> muhurthams = new ArrayList<>();
 //        SQLiteDatabase db = this.getWritableDatabase();

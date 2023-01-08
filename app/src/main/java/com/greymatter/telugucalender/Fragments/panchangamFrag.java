@@ -292,6 +292,7 @@ public class panchangamFrag extends Fragment {
         parseXML();
 
 
+
         previousMonth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)

@@ -25,6 +25,9 @@ import com.greymatter.telugucalender.databinding.PandugaluModelBinding
    inner class ItemViewHolder(private val itemView: PandugaluModelBinding)
         : RecyclerView.ViewHolder(itemView.root) {
              fun bind(arrayList: PandugaluModel) {
+
+
+
             }
     }
 }

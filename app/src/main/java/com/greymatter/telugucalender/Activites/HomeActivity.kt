@@ -34,7 +34,7 @@ class HomeActivity : AppCompatActivity() {
                     true
                 }
                 R.id.Pandugalu -> {
-                    fm!!.beginTransaction().replace(R.id.Container,com.greymatter.telugucalender.Fragments.PandugaluFrag()).commit()
+                    fm!!.beginTransaction().replace(R.id.Container,PandugaluFrag()).commit()
                     true
                     }
                 R.id.Muhurthalu -> {

@@ -3,7 +3,8 @@ package com.greymatter.telugucalender.helper;
 import android.widget.EditText;
 
 public class Constant {
-    public static final String MainBaseUrl = "https://admin.vibametelugucalendar.online/";
+   // public static final String MainBaseUrl = "https://admin.vibametelugucalendar.online/";
+    public static final String MainBaseUrl = "https://tc2023.greymatterworks.in/";
     //public static final String MainBaseUrl = "http://192.168.43.38/telugu_calendar/";
     public static final String BaseUrl = MainBaseUrl + "api/";
     public static final String PANCHANGAM_URL = BaseUrl + "panchangam.php";
@@ -96,6 +97,7 @@ public class Constant {
     public static final String PANCHANGAM_LIST = "panchangam_list";
     public static final String PANCHANGAM_TAB_LIST = "panchangam_tab_list";
     public static final String FESTIVALS_LIST = "festivals_list";
+    public static final String BALLI_SASTHAM_LIST = "balli_sastham_list";
     public static final String MUHURTHAM_LIST = "muhurtham_list";
     public static final String MUHURTHAM_TAB_LIST = "muhurtham_tab_list";
     public static final String POOJALU_LIST = "poojalu_list";

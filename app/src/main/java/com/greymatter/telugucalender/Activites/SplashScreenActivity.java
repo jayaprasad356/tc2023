@@ -75,6 +75,15 @@ public class SplashScreenActivity extends AppCompatActivity {
                         }
                         JSONArray jsonArray3 = object.getJSONArray(Constant.FESTIVALS_LIST);
 
+                        for (int i = 0; i < jsonArray3.length(); i++) {
+                            JSONObject jsonObject1 = jsonArray3.getJSONObject(i);
+                            if (jsonObject1 != null) {
+                                databaseHelper.AddToFestival(jsonObject1.getString(Constant.ID),jsonObject1.getString(Constant.DATE),jsonObject1.getString(Constant.FESTIVAL));
+                            } else {
+                                break;
+                            }
+                        }
+
 
                         Intent i = new Intent(activity, HomeActivity.class);
                         startActivity(i);
