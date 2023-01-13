@@ -270,7 +270,7 @@
 
                     android:layout_width="@dimen/_40sdp"
                     android:layout_height="@dimen/_40sdp"
-                    app:srcCompat="@drawable/moon_up"
+                    app:srcCompat="@drawable/moon_down"
                     android:scaleType="fitXY"/>
 
             </RelativeLayout>
