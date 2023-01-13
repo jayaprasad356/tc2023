@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 
+import com.greymatter.telugucalender.Model.Audio;
 import com.greymatter.telugucalender.Model.Festival;
 import com.greymatter.telugucalender.Model.Panchangam;
 import com.greymatter.telugucalender.Model.PanchangamTab;
@@ -838,22 +839,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
-//    public ArrayList<Audio> getAudioList() {
-//        final ArrayList<Audio> audio = new ArrayList<>();
-//        SQLiteDatabase db = this.getWritableDatabase();
-//        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_AUDIO, null);
-//        if (cursor.moveToFirst()) {
-//            do {
-//                Audio audio1 = new Audio(cursor.getString(cursor.getColumnIndexOrThrow(ID)),cursor.getString(cursor.getColumnIndexOrThrow(TITLE))
-//                        ,cursor.getString(cursor.getColumnIndexOrThrow(IMAGE)),cursor.getString(cursor.getColumnIndexOrThrow(LYRICS)),cursor.getString(cursor.getColumnIndexOrThrow(AUDIO)) );
-//                audio.add(audio1);
-//            } while (cursor.moveToNext());
-//
-//        }
-//        cursor.close();
-//        db.close();
-//        return audio;
-//    }
+    public ArrayList<Audio> getAudioList() {
+        final ArrayList<Audio> audio = new ArrayList<>();
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_AUDIO, null);
+        if (cursor.moveToFirst()) {
+            do {
+                Audio audio1 = new Audio(cursor.getString(cursor.getColumnIndexOrThrow(ID)),cursor.getString(cursor.getColumnIndexOrThrow(TITLE))
+                        ,cursor.getString(cursor.getColumnIndexOrThrow(IMAGE)),cursor.getString(cursor.getColumnIndexOrThrow(LYRICS)),cursor.getString(cursor.getColumnIndexOrThrow(AUDIO)) );
+                audio.add(audio1);
+            } while (cursor.moveToNext());
+
+        }
+        cursor.close();
+        db.close();
+        return audio;
+    }
 
     public void AddToPoojalu(String pjid, String name, String image) {
         try {

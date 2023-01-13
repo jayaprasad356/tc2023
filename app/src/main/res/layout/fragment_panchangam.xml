@@ -12,7 +12,7 @@
             android:id="@+id/headerMonth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/calMonth">
+            android:background="@color/calHeaderT">
 
             <ImageButton
                 android:id="@+id/ib_prev"
@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/headerMonth"
             android:orientation="vertical"
-            android:background="@color/calDates">
+            android:background="@color/white">
 
 
             <TableRow
@@ -89,7 +89,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="సోమ"
-                    android:textColor="@color/white"
+                    android:textColor="#ff005d"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
@@ -100,7 +100,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="మంగ"
-                    android:textColor="@color/white"
+                    android:textColor="#ff005d"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
@@ -112,7 +112,7 @@
                     android:gravity="center"
                     android:layout_marginRight="5dp"
                     android:text="బుధ"
-                    android:textColor="@color/white"
+                    android:textColor="#ff005d"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
@@ -124,7 +124,7 @@
                     android:gravity="center"
                     android:layout_marginRight="5dp"
                     android:text="గురు"
-                    android:textColor="@color/white"
+                    android:textColor="#ff005d"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
@@ -136,7 +136,7 @@
                     android:gravity="center"
                     android:layout_marginRight="5dp"
                     android:text="శుక్ర"
-                    android:textColor="@color/white"
+                    android:textColor="#ff005d"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
@@ -148,7 +148,7 @@
                     android:gravity="center"
                     android:layout_marginRight="5dp"
                     android:text="శని"
-                    android:textColor="@color/white"
+                    android:textColor="#ff005d"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
@@ -158,15 +158,14 @@
 
         <GridView
             android:id="@+id/gv_calendar"
-            android:layout_below="@+id/ll_calendar"
             android:layout_width="match_parent"
             android:layout_height="180dp"
-            android:nestedScrollingEnabled="true"
+            android:layout_below="@+id/ll_calendar"
+            android:background="@color/white"
             android:gravity="center"
-            android:background="@color/calDates"
             android:listSelector="@android:color/transparent"
-            android:numColumns="7">
-        </GridView>
+            android:nestedScrollingEnabled="true"
+            android:numColumns="7"></GridView>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -179,7 +178,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/calSunrise">
+            android:background="@color/calHeaderT">
 
             <TextView
                 android:id="@+id/sunrise"
@@ -191,7 +190,7 @@
                 android:textSize="18dp"
                 android:textStyle="bold"
                 android:layout_marginTop="-7dp"
-                android:textColor="@color/horoBg"/>
+                android:textColor="@color/white"/>
             <TextView
                 android:id="@+id/moonrise"
                 android:layout_width="wrap_content"
@@ -202,30 +201,92 @@
                 android:textSize="18dp"
                 android:textStyle="bold"
                 android:layout_marginTop="-7dp"
-                android:textColor="@color/horoBg"/>
+                android:textColor="@color/white"/>
 
         </LinearLayout>
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/sunimage"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_below="@+id/shubhasamayam"
-            android:background="@color/calSunrise">
+            android:background="@color/calHeaderT"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            >
 
-            <ImageView
+            <RelativeLayout
+                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/sun_moon"
-                android:scaleType="fitXY"/>
+                android:gravity="center"
+                >
 
-        </RelativeLayout>
+                <ImageView
+
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    app:srcCompat="@drawable/sun_up"
+                    android:scaleType="fitXY"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                >
+
+                <ImageView
+
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    app:srcCompat="@drawable/sun_down"
+                    android:scaleType="fitXY"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                >
+
+                <ImageView
+
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    app:srcCompat="@drawable/moon_up"
+                    android:scaleType="fitXY"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                >
+
+                <ImageView
+
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    app:srcCompat="@drawable/moon_up"
+                    android:scaleType="fitXY"/>
+
+            </RelativeLayout>
+
+
+
+
+
+        </LinearLayout>
         <LinearLayout
             android:id="@+id/suntext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/shubhasamayam"
             android:orientation="horizontal"
-            android:background="@color/calSunrise">
+            android:background="@color/calHeaderT">
 
 
             <TableRow

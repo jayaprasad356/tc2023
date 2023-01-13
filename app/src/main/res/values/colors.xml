@@ -10,7 +10,7 @@
     <color name="PrimaryRed">#FC4444</color>
 
 
-    <color name="calHeaderT">#F97F02</color>
+    <color name="calHeaderT">#fc6404</color>
     <color name="calMonth">#006D98</color>
     <color name="calDates">#009EDB</color>
     <color name="callight">#9988DBE3</color>
@@ -19,5 +19,10 @@
     <color name="calPan2">#FFFFFF</color>
     <color name="grey">#f2f2f2</color>
     <color name="horoBg">#003b46</color>
+
+
+    <color name="seek_bar_background">#ababab</color>
+    <color name="seek_bar_progress">#0D232A</color>
+    <color name="seek_bar_secondary_progress">#3399CC</color>
 
 </resources>

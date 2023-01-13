@@ -1,12 +1,16 @@
 package com.greymatter.telugucalender.Fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.greymatter.telugucalender.Activites.BhathiGeethaluActivity
 import com.greymatter.telugucalender.Activites.HomeActivity
+import com.greymatter.telugucalender.Activites.TempleListActivity
+import com.greymatter.telugucalender.Activites.TempleinfoActivity
 import com.greymatter.telugucalender.R
 import com.greymatter.telugucalender.databinding.FragmentMoreOptionsBinding
 
@@ -37,6 +41,16 @@ class MoreOptionsFrag : Fragment() {
         }
         binding.CvMoreApps.setOnClickListener {
             Toast.makeText(requireContext(),"wow",Toast.LENGTH_LONG).show()
+        }
+        binding.CvTempleinfo.setOnClickListener {
+            val intent = Intent(activity, TempleListActivity::class.java)
+            startActivity(intent)
+
+        }
+        binding.CvBhakthi.setOnClickListener {
+            val intent = Intent(activity, BhathiGeethaluActivity::class.java)
+            startActivity(intent)
+
         }
         return binding.root
     }

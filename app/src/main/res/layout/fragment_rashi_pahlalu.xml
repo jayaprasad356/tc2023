@@ -91,6 +91,7 @@
                     android:textStyle="bold"/>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/llTaurus"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -120,6 +121,7 @@
                     android:textStyle="bold"/>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/llGemini"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -156,6 +158,7 @@
             android:weightSum="3">
 
             <LinearLayout
+                android:id="@+id/llCancer"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -185,6 +188,7 @@
                     android:textStyle="bold"/>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/llLeo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -214,6 +218,7 @@
                     android:textStyle="bold"/>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/llVirgo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -250,6 +255,7 @@
             android:weightSum="3">
 
             <LinearLayout
+                android:id="@+id/llLibra"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -279,6 +285,7 @@
                     android:textStyle="bold"/>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/llScorpio"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -308,6 +315,7 @@
                     android:textStyle="bold"/>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/llSagittarius"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -344,6 +352,7 @@
             android:weightSum="3">
 
             <LinearLayout
+                android:id="@+id/llCapricorn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -373,6 +382,7 @@
                     android:textStyle="bold"/>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/llAquarius"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -402,6 +412,7 @@
                     android:textStyle="bold"/>
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/llPisces"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

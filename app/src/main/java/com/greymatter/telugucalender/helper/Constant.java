@@ -12,6 +12,7 @@ public class Constant {
     public static final String TELUGU_SAMKRUTHAM_URL = BaseUrl + "telugu-samkrutham-list.php";
     public static final String MAHA_PURANALU_URL = BaseUrl + "mahapuranalu-list.php";
     public static final String ALLDATALIST_URL = BaseUrl + "alldatalist.php";
+    public static final String RASI_LIST= BaseUrl + "rasi_list.php";
     public static final String HOROSCOPE_URL = BaseUrl + "horoscope.php";
     public static final String IMAGE_URL = BaseUrl + "images-category.php";
     public static final String IMAGE_LIST_URL = BaseUrl + "images-list.php";
@@ -50,6 +51,7 @@ public class Constant {
     public static final String KARANAM = "karanam";
     public static final String SAKUNALU = "sakunalu";
     public static final String BALLI_SASTHRAM = "balli_sasthram";
+    public static final String RASHI_ID = "rashi_id";
     public static final String SISSU_JANMA = "sissu_janma";
     public static final String NAMAKARAM = "namakaram";
     public static final String KAKI_SASTHRAM = "kaki_sasthram";
