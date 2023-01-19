@@ -6,6 +6,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 
 import com.greymatter.telugucalender.Model.Audio;
@@ -208,6 +209,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         try {
             if (!CheckFestivalItemExist(fid).equalsIgnoreCase("0")) {
                 UpdateFestival(fid,date,festival);
+
             } else {
                 SQLiteDatabase db = this.getWritableDatabase();
                 ContentValues values = new ContentValues();
@@ -216,6 +218,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(FESTIVAL, festival);
                 db.insert(TABLE_FESTIVAL_NAME, null, values);
                 db.close();
+
             }
 
         } catch (Exception e) {

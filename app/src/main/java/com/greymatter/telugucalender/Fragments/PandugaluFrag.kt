@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -105,22 +106,31 @@ class PandugaluFrag : Fragment() {
 
         }
         binding!!.ArrowRight.setOnClickListener {
-            var dateFormat: Date? = null
-            try {
-                dateFormat = df.parse(month_year)
-            } catch (e: ParseException) {
-                e.printStackTrace()
+
+            if (getYearNum().equals("2023")&&getMonthNum().equals("12")){
+
+                binding!!.PresentMonthAndYear.setText(setTeluguMonth(month_year)+ year)
+
             }
-            c.time = dateFormat
-            c.add(Calendar.MONTH, 1)
+            else{
+                var dateFormat: Date? = null
+                try {
+                    dateFormat = df.parse(month_year)
+                } catch (e: ParseException) {
+                    e.printStackTrace()
+                }
+                c.time = dateFormat
+                c.add(Calendar.MONTH, 1)
+                month_year = df.format(c.time)
+                year = c[Calendar.YEAR].toString()
+                binding!!.PresentMonthAndYear.setText(setTeluguMonth(month_year)+ year)
 
 
-            month_year = df.format(c.time)
-            year = c[Calendar.YEAR].toString()
 
-            binding!!.PresentMonthAndYear.setText(setTeluguMonth(month_year)+ year)
+                festivalList(getMonthNum()!!, getYearNum()!!)
 
-            festivalList(getMonthNum()!!, getYearNum()!!)
+            }
+
         }
 
 
@@ -183,6 +193,7 @@ class PandugaluFrag : Fragment() {
             )
             binding!!.recyclerView!!.adapter = festivalAdapter
         } else {
+            Toast.makeText(activity,"No Data",Toast.LENGTH_SHORT).show()
             binding!!.recyclerView!!.visibility = View.GONE
         }
     }
