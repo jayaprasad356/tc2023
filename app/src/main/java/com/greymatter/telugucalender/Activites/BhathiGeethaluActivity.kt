@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.greymatter.telugucalender.Adapters.AudioLiveAdapter
@@ -30,6 +31,14 @@ class BhathiGeethaluActivity : AppCompatActivity() {
         activity = this@BhathiGeethaluActivity
         session = Session(activity)
         databaseHelper = DatabaseHelper(activity)
+
+
+        var imgbackbttn = findViewById<ImageView>(R.id.imgbackbttn);
+
+        imgbackbttn.setOnClickListener(View.OnClickListener {
+            onBackPressed()
+        })
+
 
 
 

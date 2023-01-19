@@ -14,10 +14,6 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.SplashScreen" parent="Theme.MaterialComponents.NoActionBar">
-        <item name="colorPrimaryVariant">@color/PrimaryRed</item>
-        <item name="colorPrimary">@color/PrimaryRed</item>
-        <item name="colorSecondary">@color/white</item>
-        <item name="colorSecondaryVariant">@color/white</item>
-    </style>
+
+
 </resources>

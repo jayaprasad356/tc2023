@@ -1,25 +1,108 @@
 package com.greymatter.telugucalender.Activites
-
 import android.annotation.SuppressLint
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.app.Activity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
-import androidx.cardview.widget.CardView
+import android.widget.ImageView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
+import com.greymatter.telugucalender.Adapters.TempleinfoAdapter
+import com.greymatter.telugucalender.Model.Templeinfo
 import com.greymatter.telugucalender.R
+import com.greymatter.telugucalender.helper.ApiConfig
+import com.greymatter.telugucalender.helper.Constant
+import org.json.JSONArray
+import org.json.JSONObject
 
 class TempleListActivity : AppCompatActivity() {
+
+    var activity: Activity? = null
+    lateinit var recyclerView:RecyclerView
+    lateinit var templeinfoAdapter: TempleinfoAdapter
+
+
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_temple_list)
 
+        activity = this@TempleListActivity
 
 
-        var cardtemple = findViewById<CardView>(R.id.cardtemple)
-        cardtemple.setOnClickListener(View.OnClickListener {
-            val intent = Intent(this, TempleinfoActivity::class.java)
-            startActivity(intent)
+       recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
+
+
+        var imgbackbttn = findViewById<ImageView>(R.id.imgbackbttn);
+
+        imgbackbttn.setOnClickListener(View.OnClickListener {
+            onBackPressed()
         })
+
+
+
+
+        recyclerView.setLayoutManager(
+            LinearLayoutManager(
+                activity,
+                LinearLayoutManager.HORIZONTAL,
+                false
+            )
+        )
+
+
+
+        templelist()
+    }
+
+    private fun templelist() {
+
+        val params = HashMap<String, String>()
+        ApiConfig.RequestToVolley({ result, response ->
+            if (result) {
+                try {
+                    val jsonObject = JSONObject(response)
+                    if (jsonObject.getBoolean(Constant.SUCCESS)) {
+                        Log.d("Templeinfo",response)
+                        val jsonArray: JSONArray = jsonObject.getJSONArray(Constant.DATA)
+                        val g = Gson()
+                        val templeinfo: ArrayList<Templeinfo> = ArrayList<Templeinfo>()
+                        for (i in 0 until jsonArray.length()) {
+                            val jsonObject1 = jsonArray.getJSONObject(i)
+                            if (jsonObject1 != null) {
+                                val group: Templeinfo =
+                                    g.fromJson(jsonObject1.toString(), Templeinfo::class.java)
+                                templeinfo.add(group)
+                            } else {
+                                break
+                            }
+                        }
+
+                        templeinfoAdapter = TempleinfoAdapter(
+                            this@TempleListActivity,
+                            templeinfo
+                            )
+                        recyclerView.setAdapter(templeinfoAdapter)
+//                        val adapter = activity?.let { TempleinfoAdapter(it, templeinfo) }
+//                        recyclerView!!.setAdapter(adapter)
+
+                    } else {
+                        Toast.makeText(
+                            activity,
+                            jsonObject.getString(Constant.MESSAGE),
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+            }
+        }, activity, Constant.TEMPLEINFO_LIST, params, true)
+
+
     }
 }
