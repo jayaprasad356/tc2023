@@ -68,23 +68,49 @@ class MuhurthaluFrag : Fragment() {
 
         binding!!.PresentMonthAndYear.setText(setTeluguMonth(month_year)+ year)
         binding!!.ArrowLeft.setOnClickListener {
-            var dateFormat: Date? = null
-            try {
-                dateFormat = df.parse(month_year)
-            } catch (e: ParseException) {
-                e.printStackTrace()
+
+            if (getYearNum().equals("2023")&&getMonthNum().equals("01")){
+
+                cal.add(Calendar.MONTH, monthcount)
+                val dateFormat = SimpleDateFormat("MMMM yyyy")
+                month_year = dateFormat.format(cal.time)
+                year = cal[Calendar.YEAR].toString()
+
+
+
+
+                binding!!.PresentMonthAndYear.setText(setTeluguMonth(month_year)+ year)
+
+
+
+
             }
-            c.setTime(dateFormat)
-            c.add(Calendar.MONTH, -1)
 
 
-            month_year = df.format(c.getTime())
-            year = c[Calendar.YEAR].toString()
+            else{
+
+                var dateFormat: Date? = null
+                try {
+                    dateFormat = df.parse(month_year)
+                } catch (e: ParseException) {
+                    e.printStackTrace()
+                }
+                c.setTime(dateFormat)
+                c.add(Calendar.MONTH, -1)
 
 
-            binding!!.PresentMonthAndYear.setText(setTeluguMonth(month_year)+ year)
-//            festivalList(getMonthNum(), getYearNum())
+                month_year = df.format(c.getTime())
+                year = c[Calendar.YEAR].toString()
+
+                binding!!.PresentMonthAndYear.setText(setTeluguMonth(month_year)+ year)
+
+
+
+            }
+
+
         }
+
         binding!!.ArrowRight.setOnClickListener {
 
             if (getYearNum().equals("2023")&&getMonthNum().equals("12")){

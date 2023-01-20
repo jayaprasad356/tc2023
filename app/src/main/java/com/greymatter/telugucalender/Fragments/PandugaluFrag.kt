@@ -87,22 +87,46 @@ class PandugaluFrag : Fragment() {
 
         binding!!.PresentMonthAndYear.setText(setTeluguMonth(month_year)+ year)
         binding!!.ArrowLeft.setOnClickListener {
-            var dateFormat: Date? = null
-            try {
-                dateFormat = df.parse(month_year)
-            } catch (e: ParseException) {
-                e.printStackTrace()
+
+            if (getYearNum().equals("2023")&&getMonthNum().equals("01")){
+
+                cal.add(Calendar.MONTH, monthcount)
+                val dateFormat = SimpleDateFormat("MMMM yyyy")
+                month_year = dateFormat.format(cal.time)
+                year = cal[Calendar.YEAR].toString()
+
+
+
+
+                binding!!.PresentMonthAndYear.setText(setTeluguMonth(month_year)+ year)
+
+
+                festivalList(getMonthNum()!!, getYearNum()!!)
+
             }
-            c.setTime(dateFormat)
-            c.add(Calendar.MONTH, -1)
 
 
-            month_year = df.format(c.getTime())
-            year = c[Calendar.YEAR].toString()
+           else{
 
-            binding!!.PresentMonthAndYear.setText(setTeluguMonth(month_year)+ year)
+                var dateFormat: Date? = null
+                try {
+                    dateFormat = df.parse(month_year)
+                } catch (e: ParseException) {
+                    e.printStackTrace()
+                }
+                c.setTime(dateFormat)
+                c.add(Calendar.MONTH, -1)
 
-            festivalList(getMonthNum()!!, getYearNum()!!)
+
+                month_year = df.format(c.getTime())
+                year = c[Calendar.YEAR].toString()
+
+                binding!!.PresentMonthAndYear.setText(setTeluguMonth(month_year)+ year)
+
+                festivalList(getMonthNum()!!, getYearNum()!!)
+
+           }
+
 
         }
         binding!!.ArrowRight.setOnClickListener {
