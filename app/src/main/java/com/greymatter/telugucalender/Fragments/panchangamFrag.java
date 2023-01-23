@@ -102,117 +102,117 @@ public class panchangamFrag extends Fragment {
         //**********2019 Holidays **************
 
 
-
-        HomeCollection.date_collection_arr.add( new HomeCollection("2021-11-04" ,"diwali","* నరక చతుర్ధశి (దీపావళి) *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2021-12-25" ,"maxres","*  క్రిస్టమస్  *"));
-
-
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-01-01" ,"bhogi","* భోగి *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-01-14" ,"pongal","* మకర సంక్రాంతి *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-01-26" ,"republic","* రిపబ్లిక్ డే *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-03-01" ,"shivaratri","* మహాశివరాత్రి *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-03-18" ,"holi","* హోలీ  పౌర్ణమి *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-04-02" ,"ugadi"," * ఉగాది పండుగ *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-04-10" ,"ramnavami","* శ్రీరామ నవమి *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-04-15" ,"friday","* గుడ్ ఫ్రైడే  *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-05-01" ,"mayday"," * కార్మికుల దినొత్సవం   *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-05-03" ,"Idul Fitr"," * కార్మికుల దినొత్సవం   *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-07-10" ,"bakrid","* బక్రీద్  *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-08-15" ,"independence","* స్వాతంత్య్ర దినోత్సవం *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-08-31" ,"varalaxmi","* వరలక్ష్మి వ్రతం   *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-08-18" ,"janmashtami","* శ్రీకృష్ణాష్టమి  *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-08-09" ,"muharram","* మొహర్రం  *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-09-05" ,"teachersday","* మొహర్రం  *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-10-02" ,"gandhi","* గాంధీ జయంతి *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-10-03" ,"astami","*  మహర్నవమి *\n* దుర్గాష్టమి  *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-10-05" ,"durga","* విజయ దశమి *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-10-24" ,"diwali","* నరక చతుర్ధశి (దీపావళి) *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-12-25" ,"maxres","*  క్రిస్టమస్  *"));
-
-
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-01-01" ,"bhogi","* భోగి *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-01-14" ,"pongal","* మకర సంక్రాంతి *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-01-26" ,"republic","* రిపబ్లిక్ డే *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-02-18" ,"shivaratri","* మహాశివరాత్రి *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-03-07" ,"holi","* హోలీ  పౌర్ణమి *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-03-22" ,"ugadi"," * ఉగాది పండుగ *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-03-30" ,"ramnavami","* శ్రీరామ నవమి *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-04-07" ,"friday","* గుడ్ ఫ్రైడే  *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-04-22" ,"idulfitr","* రంజాన్ *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-05-01" ,"mayday"," * కార్మికుల దినొత్సవం   *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-06-29" ,"bakrid","* బక్రీద్  *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-07-29" ,"bakrid","* బక్రీద్  *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-08-15" ,"independence","* స్వాతంత్య్ర దినోత్సవం *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-09-07" ,"janmashtami","* శ్రీకృష్ణాష్టమి  *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-09-19" ,"ganesh","* వినాయక చవితి  *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-09-05" ,"teachersday","* మొహర్రం  *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-10-02" ,"gandhi","* గాంధీ జయంతి *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-10-22" ,"astami","*  మహర్నవమి *\n* దుర్గాష్టమి  *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-10-24" ,"durga","* విజయ దశమి *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-11-12" ,"diwali","* నరక చతుర్ధశి (దీపావళి) *"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-12-25" ,"maxres","*  క్రిస్టమస్  *"));
-
-
-
-
-        //***********Amavasya Punnami Dates***************
-
-        HomeCollection.date_collection_arr.add( new HomeCollection("2021-11-19" ,"","Purnami"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2021-11-04" ,"","Amayasya"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2021-12-19" ,"","Purnami"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2021-12-04" ,"","Amayasya"));
-
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-01-17" ,"","Purnami"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-01-02" ,"","Amayasya"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-02-16" ,"","Purnami"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-02-01" ,"","Amayasya"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-03-18" ,"","Purnami"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-03-02" ,"","Amayasya"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-04-16" ,"","Purnami"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-04-01" ,"","Amayasya"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-04-30" ,"","Amayasya"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-05-16" ,"","Purnami"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-05-30" ,"","Amayasya"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-06-14" ,"","Purnami"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-06-29" ,"","Amayasya"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-07-13" ,"","Purnami"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-07-28" ,"","Amayasya"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-08-12" ,"","Purnami"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-08-27" ,"","Amayasya"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-09-10" ,"","Purnami"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-09-25" ,"","Amayasya"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-10-09" ,"","Purnami"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-10-25" ,"","Amayasya"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-11-08" ,"","Purnami"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-11-23" ,"","Amayasya"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-12-08" ,"","Purnami"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2022-12-23" ,"","Amayasya"));
-
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-01-06" ,"","Purnami"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-01-21" ,"","Amayasya"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-02-05" ,"","Purnami"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-02-20" ,"","Amayasya"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-03-07" ,"","Purnami"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-03-21" ,"","Amayasya"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-04-06" ,"","Purnami"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-04-20" ,"","Amayasya"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-05-05" ,"","Purnami"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-05-19" ,"","Amayasya"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-06-04" ,"","Purnami"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-06-18" ,"","Amayasya"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-07-03" ,"","Purnami"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-07-17" ,"","Amayasya"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-08-01" ,"","Purnami"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-08-31" ,"","Purnami"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-08-16" ,"","Amayasya"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-09-29" ,"","Purnami"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-09-14" ,"","Amayasya"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-10-28" ,"","Purnami"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-10-14" ,"","Amayasya"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-11-27" ,"","Purnami"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-11-13" ,"","Amayasya"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-12-26" ,"","Purnami"));
-        HomeCollection.date_collection_arr.add( new HomeCollection("2023-12-12" ,"","Amayasya"));
+//
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2021-11-04" ,"diwali","* నరక చతుర్ధశి (దీపావళి) *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2021-12-25" ,"maxres","*  క్రిస్టమస్  *"));
+//
+//
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-01-01" ,"bhogi","* భోగి *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-01-14" ,"pongal","* మకర సంక్రాంతి *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-01-26" ,"republic","* రిపబ్లిక్ డే *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-03-01" ,"shivaratri","* మహాశివరాత్రి *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-03-18" ,"holi","* హోలీ  పౌర్ణమి *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-04-02" ,"ugadi"," * ఉగాది పండుగ *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-04-10" ,"ramnavami","* శ్రీరామ నవమి *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-04-15" ,"friday","* గుడ్ ఫ్రైడే  *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-05-01" ,"mayday"," * కార్మికుల దినొత్సవం   *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-05-03" ,"Idul Fitr"," * కార్మికుల దినొత్సవం   *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-07-10" ,"bakrid","* బక్రీద్  *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-08-15" ,"independence","* స్వాతంత్య్ర దినోత్సవం *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-08-31" ,"varalaxmi","* వరలక్ష్మి వ్రతం   *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-08-18" ,"janmashtami","* శ్రీకృష్ణాష్టమి  *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-08-09" ,"muharram","* మొహర్రం  *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-09-05" ,"teachersday","* మొహర్రం  *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-10-02" ,"gandhi","* గాంధీ జయంతి *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-10-03" ,"astami","*  మహర్నవమి *\n* దుర్గాష్టమి  *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-10-05" ,"durga","* విజయ దశమి *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-10-24" ,"diwali","* నరక చతుర్ధశి (దీపావళి) *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-12-25" ,"maxres","*  క్రిస్టమస్  *"));
+//
+//
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-01-01" ,"bhogi","* భోగి *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-01-14" ,"pongal","* మకర సంక్రాంతి *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-01-26" ,"republic","* రిపబ్లిక్ డే *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-02-18" ,"shivaratri","* మహాశివరాత్రి *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-03-07" ,"holi","* హోలీ  పౌర్ణమి *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-03-22" ,"ugadi"," * ఉగాది పండుగ *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-03-30" ,"ramnavami","* శ్రీరామ నవమి *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-04-07" ,"friday","* గుడ్ ఫ్రైడే  *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-04-22" ,"idulfitr","* రంజాన్ *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-05-01" ,"mayday"," * కార్మికుల దినొత్సవం   *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-06-29" ,"bakrid","* బక్రీద్  *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-07-29" ,"bakrid","* బక్రీద్  *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-08-15" ,"independence","* స్వాతంత్య్ర దినోత్సవం *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-09-07" ,"janmashtami","* శ్రీకృష్ణాష్టమి  *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-09-19" ,"ganesh","* వినాయక చవితి  *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-09-05" ,"teachersday","* మొహర్రం  *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-10-02" ,"gandhi","* గాంధీ జయంతి *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-10-22" ,"astami","*  మహర్నవమి *\n* దుర్గాష్టమి  *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-10-24" ,"durga","* విజయ దశమి *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-11-12" ,"diwali","* నరక చతుర్ధశి (దీపావళి) *"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-12-25" ,"maxres","*  క్రిస్టమస్  *"));
+//
+//
+//
+//
+//        //***********Amavasya Punnami Dates***************
+//
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2021-11-19" ,"","Purnami"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2021-11-04" ,"","Amayasya"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2021-12-19" ,"","Purnami"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2021-12-04" ,"","Amayasya"));
+//
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-01-17" ,"","Purnami"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-01-02" ,"","Amayasya"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-02-16" ,"","Purnami"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-02-01" ,"","Amayasya"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-03-18" ,"","Purnami"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-03-02" ,"","Amayasya"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-04-16" ,"","Purnami"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-04-01" ,"","Amayasya"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-04-30" ,"","Amayasya"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-05-16" ,"","Purnami"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-05-30" ,"","Amayasya"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-06-14" ,"","Purnami"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-06-29" ,"","Amayasya"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-07-13" ,"","Purnami"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-07-28" ,"","Amayasya"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-08-12" ,"","Purnami"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-08-27" ,"","Amayasya"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-09-10" ,"","Purnami"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-09-25" ,"","Amayasya"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-10-09" ,"","Purnami"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-10-25" ,"","Amayasya"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-11-08" ,"","Purnami"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-11-23" ,"","Amayasya"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-12-08" ,"","Purnami"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2022-12-23" ,"","Amayasya"));
+//
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-01-06" ,"","Purnami"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-01-21" ,"","Amayasya"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-02-05" ,"","Purnami"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-02-20" ,"","Amayasya"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-03-07" ,"","Purnami"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-03-21" ,"","Amayasya"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-04-06" ,"","Purnami"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-04-20" ,"","Amayasya"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-05-05" ,"","Purnami"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-05-19" ,"","Amayasya"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-06-04" ,"","Purnami"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-06-18" ,"","Amayasya"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-07-03" ,"","Purnami"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-07-17" ,"","Amayasya"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-08-01" ,"","Purnami"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-08-31" ,"","Purnami"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-08-16" ,"","Amayasya"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-09-29" ,"","Purnami"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-09-14" ,"","Amayasya"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-10-28" ,"","Purnami"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-10-14" ,"","Amayasya"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-11-27" ,"","Purnami"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-11-13" ,"","Amayasya"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-12-26" ,"","Purnami"));
+//        HomeCollection.date_collection_arr.add( new HomeCollection("2023-12-12" ,"","Amayasya"));
 
         cal_month = (GregorianCalendar) GregorianCalendar.getInstance();
         cal_month_copy = (GregorianCalendar) cal_month.clone();

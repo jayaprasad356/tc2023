@@ -1,16 +1,15 @@
 package com.greymatter.telugucalender.Fragments
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.greymatter.telugucalender.Activites.BhathiGeethaluActivity
 import com.greymatter.telugucalender.Activites.HomeActivity
 import com.greymatter.telugucalender.Activites.TempleListActivity
-import com.greymatter.telugucalender.Activites.TempleinfoActivity
 import com.greymatter.telugucalender.R
 import com.greymatter.telugucalender.databinding.FragmentMoreOptionsBinding
 
@@ -40,7 +39,10 @@ class MoreOptionsFrag : Fragment() {
                 ?.addToBackStack("null")?.commit()
         }
         binding.CvMoreApps.setOnClickListener {
-            Toast.makeText(requireContext(),"wow",Toast.LENGTH_LONG).show()
+            val url = "https://play.google.com/store/apps/developer?id=Telugu+Trending+Apps&hl=en&gl=US"
+            val i = Intent(Intent.ACTION_VIEW)
+            i.data = Uri.parse(url)
+            startActivity(i)
         }
         binding.CvTempleinfo.setOnClickListener {
             val intent = Intent(activity, TempleListActivity::class.java)

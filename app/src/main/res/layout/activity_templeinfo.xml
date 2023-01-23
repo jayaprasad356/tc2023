@@ -22,13 +22,13 @@
             />
 
         <TextView
+            android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:text="Title"
             android:textColor="@color/black"
-            android:layout_centerInParent="true"
-            android:textSize="@dimen/_16sdp"
-            />
+            android:textSize="@dimen/_16sdp" />
 
     </RelativeLayout>
 
@@ -51,12 +51,11 @@
             >
 
 
-
             <ImageView
+                android:id="@+id/imgtemple"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_200sdp"
-                android:background="@drawable/temple_img"
-                />
+                android:background="@drawable/temple_img" />
 
             <RelativeLayout
                 android:layout_marginTop="@dimen/_10sdp"
@@ -108,10 +107,7 @@
                     android:id="@+id/tvTempledescription"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="On Friday, the Madurai Bench of Madras HC quashed two defamation cases against devotee, activist Rangarajan Narasimhan who had alleged mismanagement by officials managing Sri Ranganatha Swamy Temple and questioned the condition of thousands of temples that are facing negligence.
-
-
-“Tamil Nadu is a land of temples. They have played a central role in our culture. However, their current condition leaves a lot to be desired. Lands endowed for their maintenance have been gobbled up by private interests. Antique idols have been stolen and smuggled overseas. The temple staff are paid a pittance. Thousands of temples are facing utter neglect. Even poojas are not being performed. Much needs to be done to revive their glory,” the bench added."
+                    android:text=""
                     android:textSize="@dimen/_14sdp"
                     android:textAlignment="center"
                     android:textColor="@color/black"

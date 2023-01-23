@@ -2,6 +2,8 @@ package com.greymatter.telugucalender.helper;
 
 import android.widget.EditText;
 
+import org.jetbrains.annotations.Nullable;
+
 public class Constant {
    // public static final String MainBaseUrl = "https://admin.vibametelugucalendar.online/";
     //public static final String MainBaseUrl = "https://tc2023.greymatterworks.in/";
@@ -12,6 +14,7 @@ public class Constant {
     public static final String TELUGU_SAMKRUTHAM_URL = BaseUrl + "telugu-samkrutham-list.php";
     public static final String MAHA_PURANALU_URL = BaseUrl + "mahapuranalu-list.php";
     public static final String ALLDATALIST_URL = BaseUrl + "alldatalist.php";
+    public static final String TEMPLEINFO_LIST= BaseUrl + "templeinfo_list.php";
     public static final String RASI_LIST= BaseUrl + "rasi_list.php";
     public static final String HOROSCOPE_URL = BaseUrl + "horoscope.php";
     public static final String IMAGE_URL = BaseUrl + "images-category.php";
@@ -158,8 +161,13 @@ public class Constant {
     public static final String POSTAL_TRACKER_URL = "https://www.indiapost.gov.in/vas/Pages/IndiaPostHome.aspx";
     public static final String PNR_TRACKER_URL = "https://www.indianrail.gov.in/enquiry/StaticPages/StaticEnquiry.jsp?StaticPage=index.html";
     public static final String COURIER_TRACKER_URL = "https://www.professionalcourier.in/";
+    public static final String TEMPLEINFO_ID = "templeinfo_id";
+    public static final String TEMPLEINFO_NAME = "templeinfo_name";
+    public static final String TEMPLEINFO_LOCATION = "templeinfo_location";
+    public static final String TEMPLEINFO_DESCRIPTION = "templeinfo_description";
+    public static final String TEMPLEINFO_IMAGE = "templeinfo_image";
 
-    public static int etLengthConversion(EditText editText) {
+ public static int etLengthConversion(EditText editText) {
         return editText.getText().toString().length();
     }
     public static StringBuilder strbappend(String str) {

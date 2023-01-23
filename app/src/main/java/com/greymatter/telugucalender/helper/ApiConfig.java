@@ -8,7 +8,6 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.view.View;
 import android.widget.Toast;
-
 import androidx.annotation.RequiresApi;
 
 

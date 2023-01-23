@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.greymatter.telugucalender.R;
 import com.greymatter.telugucalender.helper.ApiConfig;
@@ -28,6 +29,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_splash_screen);
         activity = SplashScreenActivity.this;
         databaseHelper = new DatabaseHelper(activity);
 
