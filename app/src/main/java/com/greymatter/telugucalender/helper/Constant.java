@@ -6,8 +6,8 @@ import org.jetbrains.annotations.Nullable;
 
 public class Constant {
    // public static final String MainBaseUrl = "https://admin.vibametelugucalendar.online/";
-    //public static final String MainBaseUrl = "https://tc2023.greymatterworks.in/";
-    public static final String MainBaseUrl = "http://192.168.43.38/telugucalender2023/";
+    public static final String MainBaseUrl = "https://tc2023.greymatterworks.in/";
+   // public static final String MainBaseUrl = "http://192.168.43.38/telugucalender2023/";
     public static final String BaseUrl = MainBaseUrl + "api/";
     public static final String PANCHANGAM_URL = BaseUrl + "panchangam.php";
     public static final String SAKUNA_SASTHRAM_URL = BaseUrl + "sakuna-sasthram-list.php";

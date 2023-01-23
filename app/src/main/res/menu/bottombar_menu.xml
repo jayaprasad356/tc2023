@@ -7,29 +7,29 @@
         android:enabled="true"
         android:icon="@drawable/panchangam"
         android:iconTint="@color/white"
-        android:title="పంచాంగము"/>
+        android:title="పంచాంగం"/>
     <item
         android:id="@+id/Pandugalu"
         android:enabled="true"
         android:icon="@drawable/pandugalu"
         android:iconTint="@color/white"
-        android:title="పంచాంగము"/>
+        android:title="పండుగలు"/>
     <item
         android:id="@+id/Muhurthalu"
         android:enabled="true"
         android:icon="@drawable/muhurtham"
         android:iconTint="@color/white"
-        android:title="పంచాంగము"/>
+        android:title="ముహుర్తాలు"/>
     <item
         android:id="@+id/RashiPhalalu"
         android:enabled="true"
         android:icon="@drawable/rasiphalalu"
         android:iconTint="@color/white"
-        android:title="పంచాంగము"/>
+        android:title="రాశి ఫలాలు"/>
     <item
         android:id="@+id/More"
         android:enabled="true"
         android:icon="@drawable/marikonni"
         android:iconTint="@color/white"
-        android:title="పంచాంగము"/>
+        android:title="మరి కొన్ని"/>
 </menu>

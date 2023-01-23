@@ -296,7 +296,6 @@ class RashiPahlaluFrag : Fragment() {
 
 
     private fun rasi(rashi_id: Int, rashi_year: String, rashi_month: String) {
-
         val params = HashMap<String, String>()
         params[Constant.RASHI_ID] = rashi_id.toString()
         params[Constant.YEAR] = rashi_year

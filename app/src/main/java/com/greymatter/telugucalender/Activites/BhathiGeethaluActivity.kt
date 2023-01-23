@@ -45,7 +45,7 @@ class BhathiGeethaluActivity : AppCompatActivity() {
         databaseHelper = DatabaseHelper(activity)
         recyclerView = findViewById(R.id.recyclerView)
         // val gridLayoutManager = GridLayoutManager(activity, 2)
-        recyclerView!!.setLayoutManager(LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false))
+        recyclerView!!.setLayoutManager(LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false))
         audiolive()
     }
 

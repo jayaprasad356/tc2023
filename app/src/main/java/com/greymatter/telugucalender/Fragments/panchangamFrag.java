@@ -299,7 +299,7 @@ public class panchangamFrag extends Fragment {
             {
                 if(cal_month.get(GregorianCalendar.YEAR) >2020)
                 {
-                    if(currentMonth == 10 && cal_month.get(GregorianCalendar.YEAR) == 2021)
+                    if(currentMonth == 0 && cal_month.get(GregorianCalendar.YEAR) == 2023)
                     {
                         Toast.makeText(getContext(),"ప్రదర్శించడానికి డేటా లేదు", Toast.LENGTH_SHORT).show();
 
@@ -464,7 +464,11 @@ public class panchangamFrag extends Fragment {
                 hwAdapter.notifyDataSetChanged();
                 if(loadXmlFile.equals(monthE[(Integer.parseInt(cl_month)-1)]+"_"+ Integer.parseInt(cl_year)))
                 {
-                    printRecords();
+                    try {
+                        printRecords();
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
 
                 }else
                 {
@@ -526,14 +530,15 @@ public class panchangamFrag extends Fragment {
                 processParser(pullParser);
             } catch (IOException e) {
                 e.printStackTrace();
+            } catch (ParseException e) {
+                e.printStackTrace();
             }
         } catch (XmlPullParserException e) {
             e.printStackTrace();
         }
     }
 
-    private void processParser(XmlPullParser pullParser) throws IOException, XmlPullParserException
-    {
+    private void processParser(XmlPullParser pullParser) throws IOException, XmlPullParserException, ParseException {
         records = new ArrayList<>();
         int eventType = pullParser.getEventType();
 
@@ -643,17 +648,14 @@ public class panchangamFrag extends Fragment {
         printRecords();
     }
 
-    private void printRecords()
-    {
+    private void printRecords() throws ParseException {
         String date  = (clickedDate + 1) + "" ;
         String strCurrentDate = loadXmlFile + "_"+date;
         SimpleDateFormat format = new SimpleDateFormat("MMMM_yyyy_dd");
         Date newDate = null;
-        try {
+
             newDate = format.parse(strCurrentDate);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+
 
         format = new SimpleDateFormat("yyyy-MM-dd");
         String cadate = format.format(newDate);
