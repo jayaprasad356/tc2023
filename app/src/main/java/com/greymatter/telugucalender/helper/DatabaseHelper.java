@@ -10,6 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.greymatter.telugucalender.Model.Audio;
 import com.greymatter.telugucalender.Model.Festival;
+import com.greymatter.telugucalender.Model.MuhurthamTab;
 import com.greymatter.telugucalender.Model.Panchangam;
 import com.greymatter.telugucalender.Model.PanchangamTab;
 
@@ -72,7 +73,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     final String PanchangamTabTableInfo = TABLE_PANCHANGAMTAB_NAME + "(" + PTID + " TEXT ," + PID + " TEXT ," + TITLE + " TEXT ," + DESCRIPTION + " TEXT)";
     final String FestivalTableInfo = TABLE_FESTIVAL_NAME + "(" + FID + " TEXT ," + DATE + " REAL ," + FESTIVAL + " TEXT)";
     final String MuhurthamTableInfo = TABLE_MUHURTHAM_NAME + "(" + MID + " TEXT ," + MUHURTHAM + " TEXT)";
-    final String MuhurthamTabTableInfo = TABLE_MUHURTHAMTAB_NAME + "(" + MTID + " TEXT ," + MID + " TEXT ," + TITLE + " TEXT ," + DESCRIPTION + " TEXT)";
+    final String MuhurthamTabTableInfo = TABLE_MUHURTHAMTAB_NAME + "(" + MTID + " TEXT ," + MID + " TEXT ," + TITLE + " TEXT ," + DESCRIPTION + " TEXT ," + DATE + " TEXT)";
     final String PoojaluTableInfo = TABLE_POOJALU_NAME + "(" + PJID + " TEXT ," + NAME + " TEXT ," + IMAGE + " TEXT)";
     final String PoojaluSubMenuTableInfo = TABLE_POOJALU_SUBMENU_NAME + "(" + ID + " TEXT ," + PJID + " TEXT ," + NAME + " TEXT ," + IMAGE + " TEXT)";
     final String PoojaluTabTableInfo = TABLE_POOJALU_TAB + "(" + ID + " TEXT ," + POOJALU_ID + " TEXT ," + SUBCATEGORY_ID + " TEXT ," + TITLE + " TEXT ," + DESCRIPTION + " TEXT ," + SUB_TITLE + " TEXT ," + SUB_DESCRIPTION + " TEXT)";
@@ -240,10 +241,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public void AddToMuhurthamTab(String mtid,String mid, String title, String description){
+    public void AddToMuhurthamTab(String mtid,String mid, String title, String description, String date){
         try {
             if (!CheckMuharthamTabItemExist(mtid).equalsIgnoreCase("0")) {
-                UpdateMuhurthamTab(mtid,mid,title,description);
+                UpdateMuhurthamTab(mtid,mid,title,description,date);
             } else {
                 SQLiteDatabase db = this.getWritableDatabase();
                 ContentValues values = new ContentValues();
@@ -251,6 +252,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(MID, mid);
                 values.put(TITLE, title);
                 values.put(DESCRIPTION, description);
+                values.put(DATE, date);
                 db.insert(TABLE_MUHURTHAMTAB_NAME, null, values);
                 db.close();
             }
@@ -305,13 +307,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.update(TABLE_PANCHANGAMTAB_NAME, values, PTID + " = ?", new String[]{ptid});
         db.close();
     }
-    public void UpdateMuhurthamTab(String mtid,String mid,String title,String description){
+    public void UpdateMuhurthamTab(String mtid,String mid,String title,String description,String date){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(PTID, mtid);
         values.put(PID, mid);
         values.put(TITLE, title);
         values.put(DESCRIPTION, description);
+        values.put(DATE, date);
         db.update(TABLE_MUHURTHAMTAB_NAME, values, MTID + " = ?", new String[]{mtid});
         db.close();
     }
@@ -646,23 +649,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 //        db.close();
 //        return muhurthams;
 //    }
-//    public ArrayList<MuhurthamTab> getMuhurthamTabList(String mid) {
-//        final ArrayList<MuhurthamTab> muhurthamTabs = new ArrayList<>();
-//        SQLiteDatabase db = this.getWritableDatabase();
-//        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_MUHURTHAMTAB_NAME + " WHERE " + MID + " = ?", new String[]{mid});
-//        if (cursor.moveToFirst()) {
-//            do {
-//                MuhurthamTab muhurthamTab = new MuhurthamTab(cursor.getString(cursor.getColumnIndexOrThrow(MTID)),cursor.getString(cursor.getColumnIndexOrThrow(MID))
-//                        ,cursor.getString(cursor.getColumnIndexOrThrow(TITLE)),cursor.getString(cursor.getColumnIndexOrThrow(DESCRIPTION)));
-//                //@SuppressLint("Range") String count = cursor.getString(cursor.getColumnIndex(QTY));
-//                muhurthamTabs.add(muhurthamTab);
-//            } while (cursor.moveToNext());
-//
-//        }
-//        cursor.close();
-//        db.close();
-//        return muhurthamTabs;
-//    }
+    public ArrayList<MuhurthamTab> getMuhurthamTabList(String mid,String month, String year) {
+        final ArrayList<MuhurthamTab> muhurthamTabs = new ArrayList<>();
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_MUHURTHAMTAB_NAME + " WHERE " + MID + " = ? AND STRFTIME('%m'," + DATE + ") = ? AND STRFTIME('%Y'," + DATE + ") = ? ORDER BY "+DATE, new String[]{mid,month,year});
+        //Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_MUHURTHAMTAB_NAME + " WHERE " + MID + " = ?" , new String[]{"1"});
+        if (cursor.moveToFirst()) {
+            do {
+                MuhurthamTab muhurthamTab = new MuhurthamTab(cursor.getString(cursor.getColumnIndexOrThrow(MTID)),cursor.getString(cursor.getColumnIndexOrThrow(MID))
+                        ,cursor.getString(cursor.getColumnIndexOrThrow(TITLE)),cursor.getString(cursor.getColumnIndexOrThrow(DESCRIPTION)));
+                //@SuppressLint("Range") String count = cursor.getString(cursor.getColumnIndex(QTY));
+                muhurthamTabs.add(muhurthamTab);
+            } while (cursor.moveToNext());
+
+        }
+        cursor.close();
+        db.close();
+        return muhurthamTabs;
+    }
 //    public ArrayList<Poojalu> getPoojaluList() {
 //        final ArrayList<Poojalu> poojalus = new ArrayList<>();
 //        SQLiteDatabase db = this.getWritableDatabase();

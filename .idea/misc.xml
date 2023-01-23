@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Studio Projects/TeluguCalender2023/app/src/main/res/drawable/options_bg.xml" value="0.167" />
+        <entry key="..\:/Studio Projects/TeluguCalender2023/app/src/main/res/drawable/select_bg.xml" value="0.129" />
+        <entry key="..\:/Studio Projects/TeluguCalender2023/app/src/main/res/drawable/unselect_bg.xml" value="0.129" />
+        <entry key="..\:/Studio Projects/TeluguCalender2023/app/src/main/res/layout/fragment_muhurthalu.xml" value="0.17552083333333332" />
+        <entry key="..\:/Studio Projects/TeluguCalender2023/app/src/main/res/layout/muhurthalu_model.xml" value="0.17552083333333332" />
         <entry key="..\:/tc2023/app/src/main/res/drawable/bordercurve.xml" value="0.12" />
         <entry key="..\:/tc2023/app/src/main/res/drawable/current_clicked.xml" value="0.12" />
         <entry key="..\:/tc2023/app/src/main/res/drawable/current_day.xml" value="0.12" />

@@ -4,11 +4,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.greymatter.telugucalender.Model.MuhurthaluModel
+import com.greymatter.telugucalender.Model.MuhurthamTab
 import com.greymatter.telugucalender.Model.PandugaluModel
 import com.greymatter.telugucalender.databinding.MuhurthaluModelBinding
 import com.greymatter.telugucalender.databinding.PandugaluModelBinding
 
- class MuhurthaluAdapter(private val MuhurtahluArrayList : ArrayList<MuhurthaluModel>)
+ class MuhurthaluAdapter(private val MuhurtahluArrayList : ArrayList<MuhurthamTab>)
      : RecyclerView.Adapter<MuhurthaluAdapter.MuhurthaluItemViewHolder>() {
      private lateinit var  binding : MuhurthaluModelBinding
      inner class MuhurthaluItemViewHolder(val itemView: MuhurthaluModelBinding)
@@ -22,9 +23,8 @@ import com.greymatter.telugucalender.databinding.PandugaluModelBinding
     override fun onBindViewHolder(holder: MuhurthaluAdapter.MuhurthaluItemViewHolder, position: Int) {
         with(holder) {
             with(MuhurtahluArrayList[position]) {
-             binding.TvRashi.text = this.Rashi
-             binding.TvTimingsStart.text = this.TimingsStart
-                binding.TvTimingsEnd.text = this.TimingsEnd
+             binding.tvTitle.text = this.title
+             binding.tvDescription.text = this.description
             }
         }
     }

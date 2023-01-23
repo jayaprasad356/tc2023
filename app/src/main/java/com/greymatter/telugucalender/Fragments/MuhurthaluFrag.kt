@@ -2,14 +2,18 @@ package com.greymatter.telugucalender.Fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.greymatter.telugucalender.Adapters.FestivalAdapter
 import com.greymatter.telugucalender.Adapters.MuhurthaluAdapter
 import com.greymatter.telugucalender.Model.MuhurthaluModel
+import com.greymatter.telugucalender.R
 import com.greymatter.telugucalender.databinding.FragmentMuhurthaluBinding
+import com.greymatter.telugucalender.helper.DatabaseHelper
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
@@ -18,6 +22,7 @@ class MuhurthaluFrag : Fragment() {
 
 
     var month_year =""
+    var select_option ="1"
     var year =""
     var montharray = arrayOf(
         "జనవరి ",
@@ -37,15 +42,13 @@ class MuhurthaluFrag : Fragment() {
     var df = SimpleDateFormat("MMMM yyyy")
     var monthcount = 0
     var cal = Calendar.getInstance()
+    var databaseHelper: DatabaseHelper? = null
 
 
 
     private lateinit var binding : FragmentMuhurthaluBinding
-    private lateinit var dataListOne :ArrayList<MuhurthaluModel>
-    private lateinit var dataListTwo :ArrayList<MuhurthaluModel>
-    private lateinit var dataListThree :ArrayList<MuhurthaluModel>
-    private lateinit var dataListFour :ArrayList<MuhurthaluModel>
     private lateinit var MuhurthaluAdapter : MuhurthaluAdapter
+
 
     // This is the part of BottomNavigation
     @SuppressLint("NotifyDataSetChanged")
@@ -64,6 +67,7 @@ class MuhurthaluFrag : Fragment() {
         val dateFormat = SimpleDateFormat("MMMM yyyy")
         month_year = dateFormat.format(cal.getTime())
         year = cal[Calendar.YEAR].toString()
+        databaseHelper = DatabaseHelper(activity)
 
 
         binding!!.PresentMonthAndYear.setText(setTeluguMonth(month_year)+ year)
@@ -83,7 +87,7 @@ class MuhurthaluFrag : Fragment() {
 
 
             binding!!.PresentMonthAndYear.setText(setTeluguMonth(month_year)+ year)
-//            festivalList(getMonthNum(), getYearNum())
+            muhurthamTabList(select_option,getMonthNum()!!,getYearNum()!!)
         }
         binding!!.ArrowRight.setOnClickListener {
             var dateFormat: Date? = null
@@ -100,59 +104,87 @@ class MuhurthaluFrag : Fragment() {
             year = c[Calendar.YEAR].toString()
 
             binding!!.PresentMonthAndYear.setText(setTeluguMonth(month_year)+ year)
-//            festivalList(getMonthNum(), getYearNum())
+            muhurthamTabList(select_option,getMonthNum()!!,getYearNum()!!)
         }
 
 
 
-
-
-
-
-
-
-        dataListOne = arrayListOf()
-        dataListTwo = arrayListOf()
-        dataListThree = arrayListOf()
-        dataListFour = arrayListOf()
-
-        with(dataListOne) {
-            this.add(MuhurthaluModel("SomeRashiOne","20-11-2022 05:27 AM","20-11-2022 09:27 AM"))
-        }
-        with(dataListTwo) {
-            this.add(MuhurthaluModel("SomeRashiTwo","20-11-2022 05:27 AM","20-11-2022 05:27 AM"))
-        }
-        with(dataListThree) {
-            this.add(MuhurthaluModel("SomeRashiThree","20-11-2022 05:27 AM","20-11-2022 05:27 AM"))
-        }
-        with(dataListFour) {
-            this.add(MuhurthaluModel("SomeRashiFour","20-11-2022 05:27 AM","20-11-2022 05:27 AM"))
-        }
         binding.MuhurthaluRecycler.layoutManager = LinearLayoutManager(requireActivity())
-        MuhurthaluAdapter = MuhurthaluAdapter(dataListOne)
-        binding.MuhurthaluRecycler.adapter = MuhurthaluAdapter
         binding.OptionOne.setOnClickListener {
-            MuhurthaluAdapter = MuhurthaluAdapter(dataListOne)
-            binding.MuhurthaluRecycler.adapter = MuhurthaluAdapter
-            MuhurthaluAdapter.notifyDataSetChanged()
+            unselectall();
+            binding.OptionOne.setBackgroundResource(R.drawable.select_bg)
+            select_option ="1"
+            muhurthamTabList(select_option,getMonthNum()!!,getYearNum()!!)
+
+            Log.d("MURUTHAM_LIST", select_option + " - "+getMonthNum()!!+ " - "+getYearNum()!!)
+
         }
         binding.OptionTwo.setOnClickListener {
-            MuhurthaluAdapter = MuhurthaluAdapter(dataListTwo)
-            binding.MuhurthaluRecycler.adapter = MuhurthaluAdapter
-            MuhurthaluAdapter.notifyDataSetChanged()
+            unselectall();
+            binding.OptionTwo.setBackgroundResource(R.drawable.select_bg)
+            select_option ="2"
+            muhurthamTabList(select_option,getMonthNum()!!,getYearNum()!!)
         }
         binding.OptionThree.setOnClickListener {
-            MuhurthaluAdapter = MuhurthaluAdapter(dataListThree)
-            binding.MuhurthaluRecycler.adapter = MuhurthaluAdapter
-            MuhurthaluAdapter.notifyDataSetChanged()
+            unselectall();
+            binding.OptionThree.setBackgroundResource(R.drawable.select_bg)
+            select_option ="3"
+            muhurthamTabList(select_option,getMonthNum()!!,getYearNum()!!)
         }
         binding.OptionFour.setOnClickListener {
-            MuhurthaluAdapter = MuhurthaluAdapter(dataListFour)
-            binding.MuhurthaluRecycler.adapter = MuhurthaluAdapter
-            MuhurthaluAdapter.notifyDataSetChanged()
+            unselectall();
+            binding.OptionFour.setBackgroundResource(R.drawable.select_bg)
+            select_option ="4"
+            muhurthamTabList(select_option,getMonthNum()!!,getYearNum()!!)
         }
 
+        muhurthamTabList(select_option,getMonthNum()!!,getYearNum()!!)
+
+        //Log.d("MURUTHAM_SIZE", databaseHelper!!.getMuhurthamTabList("1","01","2023").size.toString())
+
         return binding.root
+    }
+
+    private fun unselectall() {
+        binding.OptionOne.setBackgroundResource(R.drawable.unselect_bg)
+        binding.OptionTwo.setBackgroundResource(R.drawable.unselect_bg)
+        binding.OptionThree.setBackgroundResource(R.drawable.unselect_bg)
+        binding.OptionFour.setBackgroundResource(R.drawable.unselect_bg)
+    }
+
+    private fun muhurthamTabList(mid: String,monthNum: String, yearNum: String) {
+        Log.d("MURUTHAM_LIST_", select_option + " - "+getMonthNum()!!+ " - "+getYearNum()!!)
+
+        if (databaseHelper!!.getMuhurthamTabList(mid,monthNum, yearNum).size != 0) {
+            binding.MuhurthaluRecycler!!.visibility = View.VISIBLE
+            MuhurthaluAdapter = MuhurthaluAdapter(
+                databaseHelper!!.getMuhurthamTabList(mid,monthNum, yearNum)
+            )
+            binding.MuhurthaluRecycler!!.adapter = MuhurthaluAdapter
+        } else {
+            binding.MuhurthaluRecycler!!.visibility = View.GONE
+        }
+    }
+    private fun getMonthNum(): String? {
+        var newDate: Date? = null
+        try {
+            newDate = df.parse("" + month_year)
+        } catch (e: ParseException) {
+            e.printStackTrace()
+        }
+        val format = SimpleDateFormat("MM")
+        return format.format(newDate)
+    }
+
+    private fun getYearNum(): String? {
+        var newDate: Date? = null
+        try {
+            newDate = df.parse("" + month_year)
+        } catch (e: ParseException) {
+            e.printStackTrace()
+        }
+        val format = SimpleDateFormat("yyyy")
+        return format.format(newDate)
     }
 
 

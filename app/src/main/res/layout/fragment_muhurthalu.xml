@@ -18,12 +18,14 @@
             android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
-            android:src="@drawable/ic_baseline_arrow_left_24"/>
+            android:src="@drawable/ic_baseline_arrow_left_24" />
 
         <TextView
             android:id="@+id/PresentMonthAndYear"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginStart="-26dp"
+            android:layout_marginEnd="26dp"
             android:layout_toStartOf="@id/ArrowRight"
             android:layout_toEndOf="@id/ArrowLeft"
             android:gravity="center"
@@ -31,6 +33,7 @@
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold" />
+
         <ImageView
             android:id="@+id/ArrowRight"
             android:layout_width="50dp"
@@ -61,13 +64,10 @@
                 android:textColor="@color/white"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:clickable="true"
-                android:focusableInTouchMode="true"
-                android:focusable="true"
                 android:textSize="16sp"
                 android:layout_marginStart="10dp"
                 android:textStyle="bold"
-                android:background="@drawable/options_bg"/>
+                android:background="@drawable/select_bg"/>
             <TextView
                 android:id="@+id/OptionTwo"
                 android:layout_width="0dp"
@@ -77,13 +77,10 @@
                 android:textColor="@color/white"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:clickable="true"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
                 android:layout_marginHorizontal="10dp"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:background="@drawable/options_bg"/>
+                android:background="@drawable/unselect_bg"/>
         </LinearLayout>
 
         <LinearLayout
@@ -102,11 +99,8 @@
                 android:textColor="@color/white"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:clickable="true"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
                 android:textSize="15sp"
-                android:background="@drawable/options_bg"
+                android:background="@drawable/unselect_bg"
                 android:layout_marginStart="10dp"
                 android:textStyle="bold" />
             <TextView
@@ -116,15 +110,12 @@
                 android:layout_weight="1"
                 android:text="వాహన ముహూర్తం"
                 android:textColor="@color/white"
-                android:clickable="true"
-                android:focusableInTouchMode="true"
-                android:focusable="true"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:layout_marginHorizontal="10dp"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:background="@drawable/options_bg"/>
+                android:background="@drawable/unselect_bg"/>
         </LinearLayout>
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
