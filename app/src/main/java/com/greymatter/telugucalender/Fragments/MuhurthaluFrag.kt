@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.greymatter.telugucalender.Adapters.FestivalAdapter
@@ -115,8 +116,6 @@ class MuhurthaluFrag : Fragment() {
             binding.OptionOne.setBackgroundResource(R.drawable.select_bg)
             select_option ="1"
             muhurthamTabList(select_option,getMonthNum()!!,getYearNum()!!)
-
-            Log.d("MURUTHAM_LIST", select_option + " - "+getMonthNum()!!+ " - "+getYearNum()!!)
 
         }
         binding.OptionTwo.setOnClickListener {

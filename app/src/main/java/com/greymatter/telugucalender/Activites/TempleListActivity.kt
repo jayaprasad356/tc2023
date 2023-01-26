@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
+import com.greymatter.telugucalender.Adapters.AudioLiveAdapter
+import com.greymatter.telugucalender.Adapters.BallisastramAdapter
 import com.greymatter.telugucalender.Adapters.TempleinfoAdapter
 import com.greymatter.telugucalender.Model.Templeinfo
 import com.greymatter.telugucalender.R
@@ -23,6 +25,8 @@ class TempleListActivity : AppCompatActivity() {
     var activity: Activity? = null
     lateinit var recyclerView:RecyclerView
     lateinit var templeinfoAdapter: TempleinfoAdapter
+    var audioLiveAdapter: AudioLiveAdapter? = null
+
 
 
 
@@ -46,13 +50,8 @@ class TempleListActivity : AppCompatActivity() {
 
 
 
-        recyclerView.setLayoutManager(
-            LinearLayoutManager(
-                activity,
-                LinearLayoutManager.HORIZONTAL,
-                false
-            )
-        )
+        recyclerView!!.setLayoutManager(LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false))
+
 
 
 
@@ -60,14 +59,16 @@ class TempleListActivity : AppCompatActivity() {
     }
 
     private fun templelist() {
+        Log.d("Templeinfo", Constant.TEMPLEINFO_LIST)
 
         val params = HashMap<String, String>()
         ApiConfig.RequestToVolley({ result, response ->
+
             if (result) {
                 try {
                     val jsonObject = JSONObject(response)
                     if (jsonObject.getBoolean(Constant.SUCCESS)) {
-                        Log.d("Templeinfo",response)
+
                         val jsonArray: JSONArray = jsonObject.getJSONArray(Constant.DATA)
                         val g = Gson()
                         val templeinfo: ArrayList<Templeinfo> = ArrayList<Templeinfo>()
@@ -81,14 +82,12 @@ class TempleListActivity : AppCompatActivity() {
                                 break
                             }
                         }
+                        val adapter = TempleinfoAdapter(this@TempleListActivity, templeinfo)
+                        recyclerView.setAdapter(adapter)
+                        templeinfoAdapter.notifyDataSetChanged()
 
-                        templeinfoAdapter = TempleinfoAdapter(
-                            this@TempleListActivity,
-                            templeinfo
-                            )
-                        recyclerView.setAdapter(templeinfoAdapter)
-//                        val adapter = activity?.let { TempleinfoAdapter(it, templeinfo) }
-//                        recyclerView!!.setAdapter(adapter)
+
+
 
                     } else {
                         Toast.makeText(

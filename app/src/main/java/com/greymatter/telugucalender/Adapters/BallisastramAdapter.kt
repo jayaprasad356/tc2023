@@ -4,16 +4,12 @@ import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.greymatter.telugucalender.Model.Ballisastram
-import com.greymatter.telugucalender.Model.Festival
 import com.greymatter.telugucalender.R
-
-import java.text.ParseException
-import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 class BallisastramAdapter(val activity: Activity, ballisastram: ArrayList<Ballisastram>) :
@@ -34,8 +30,10 @@ class BallisastramAdapter(val activity: Activity, ballisastram: ArrayList<Ballis
         val holder = holderParent as ExploreItemHolder
         val ballisastram: Ballisastram = ballisastram[position]
 
-        holder.tvdescription.setText(ballisastram.description)
         holder.tvTitle.setText(ballisastram.title)
+        holder.tvdescription.setVerticalScrollBarEnabled(true)
+
+        holder.tvdescription.loadDataWithBaseURL("", ballisastram.description, "text/html", "UTF-8", "")
     }
 
     override fun getItemCount(): Int {
@@ -44,7 +42,7 @@ class BallisastramAdapter(val activity: Activity, ballisastram: ArrayList<Ballis
 
     internal class ExploreItemHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
-        val tvdescription: TextView
+        val tvdescription: WebView
         val tvTitle: TextView
 
         init {

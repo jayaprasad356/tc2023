@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:orientation="vertical"
@@ -11,7 +12,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="WebViewLayout">
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="@dimen/_30sdp"
@@ -30,17 +32,14 @@
                 android:textColor="@color/white"
                 android:textSize="18sp"/>
         </androidx.cardview.widget.CardView>
+        <WebView
+            android:id="@+id/tvdescription"
+            android:layout_marginHorizontal="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
 
-            <TextView
-                android:layout_marginTop="@dimen/_5sdp"
-                android:id="@+id/tvdescription"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Part1 :"
-                android:textColor="@color/black"
-                android:gravity="center"
-               />
+
 
 
 

@@ -6,8 +6,16 @@
         <entry key="..\:/Studio Projects/TeluguCalender2023/app/src/main/res/drawable/options_bg.xml" value="0.167" />
         <entry key="..\:/Studio Projects/TeluguCalender2023/app/src/main/res/drawable/select_bg.xml" value="0.129" />
         <entry key="..\:/Studio Projects/TeluguCalender2023/app/src/main/res/drawable/unselect_bg.xml" value="0.129" />
+        <entry key="..\:/Studio Projects/TeluguCalender2023/app/src/main/res/layout/activity_temple_list.xml" value="0.17552083333333332" />
+        <entry key="..\:/Studio Projects/TeluguCalender2023/app/src/main/res/layout/activity_templeinfo.xml" value="0.17552083333333332" />
+        <entry key="..\:/Studio Projects/TeluguCalender2023/app/src/main/res/layout/ballisastram.xml" value="0.17552083333333332" />
+        <entry key="..\:/Studio Projects/TeluguCalender2023/app/src/main/res/layout/fragment_balli_sastram.xml" value="0.17552083333333332" />
+        <entry key="..\:/Studio Projects/TeluguCalender2023/app/src/main/res/layout/fragment_more_options.xml" value="0.17552083333333332" />
         <entry key="..\:/Studio Projects/TeluguCalender2023/app/src/main/res/layout/fragment_muhurthalu.xml" value="0.17552083333333332" />
+        <entry key="..\:/Studio Projects/TeluguCalender2023/app/src/main/res/layout/fragment_rashi_pahlalu.xml" value="0.17552083333333332" />
         <entry key="..\:/Studio Projects/TeluguCalender2023/app/src/main/res/layout/muhurthalu_model.xml" value="0.17552083333333332" />
+        <entry key="..\:/Studio Projects/TeluguCalender2023/app/src/main/res/layout/templelist_layout.xml" value="0.16666666666666666" />
+        <entry key="..\:/Studio Projects/TeluguCalender2023/app/src/main/res/menu/bottombar_menu.xml" value="0.17552083333333332" />
         <entry key="..\:/tc2023/app/src/main/res/drawable/bordercurve.xml" value="0.12" />
         <entry key="..\:/tc2023/app/src/main/res/drawable/current_clicked.xml" value="0.12" />
         <entry key="..\:/tc2023/app/src/main/res/drawable/current_day.xml" value="0.12" />

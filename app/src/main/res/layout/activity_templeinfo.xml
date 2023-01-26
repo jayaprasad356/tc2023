@@ -17,7 +17,6 @@
             android:id="@+id/imgbackbttn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/ic_baseline_arrow_left_24"
             android:backgroundTint="@color/black"
             />
 
@@ -55,7 +54,7 @@
                 android:id="@+id/imgtemple"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_200sdp"
-                android:background="@drawable/temple_img" />
+                 />
 
             <RelativeLayout
                 android:layout_marginTop="@dimen/_10sdp"
@@ -87,13 +86,13 @@
 
                 <ScrollView
                     android:layout_below="@+id/tvTempleLocation"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_10sdp"
                     >
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/white"
                         app:cardCornerRadius="@dimen/_10sdp"
@@ -105,7 +104,7 @@
 
                 <TextView
                     android:id="@+id/tvTempledescription"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text=""
                     android:textSize="@dimen/_14sdp"
