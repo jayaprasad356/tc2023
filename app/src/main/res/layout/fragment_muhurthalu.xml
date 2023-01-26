@@ -24,7 +24,6 @@
             android:id="@+id/PresentMonthAndYear"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginEnd="26dp"
             android:layout_toStartOf="@id/ArrowRight"
             android:layout_toEndOf="@id/ArrowLeft"
             android:gravity="center"
