@@ -24,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.google.android.material.progressindicator.CircularProgressIndicator;
 import com.greymatter.telugucalender.R;
 import com.greymatter.telugucalender.helper.Constant;
 
@@ -58,11 +59,13 @@ public class AudioPlayActivity extends AppCompatActivity {
     MediaPlayer mediaPlayer;
     ImageView imgBack;
     SharedPreferences sharedpreferences;
+    CircularProgressIndicator loading;
     TextView tvLyrics;
     boolean loop = false;
     String[] chalisatime = {"0:00","0:23","0:55","1:17","1:44","2:06","2:30","2:53","3:18","3:40","4:06","4:28","4:54","5:16",
             "5:42","6:04","6:29","6:52","7:17","7:39","8:04","8:26","9:00"};
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +80,7 @@ public class AudioPlayActivity extends AppCompatActivity {
         tvTitle =  findViewById(R.id.tvTitle);
         tvTitle1 =  findViewById(R.id.tvTitle1);
         imgBack =  findViewById(R.id.imgBack);
+        loading =  findViewById(R.id.loading);
         tvLyrics =  findViewById(R.id.tvLyrics);
         Title = getIntent().getStringExtra(Constant.AUDIO_TITLE);
         Audio = getIntent().getStringExtra(Constant.AUDIO);
@@ -218,6 +222,8 @@ public class AudioPlayActivity extends AppCompatActivity {
             public void onPrepared(MediaPlayer mp) {
                 String totalTime = createTimeLabel(hfmPlayer.getDuration());
                 totTime.setText(totalTime);
+                loading.setVisibility(View.GONE);
+                playIcon.setVisibility(View.VISIBLE);
                 mSeekBar.setMax(hfmPlayer.getDuration());
                 //playIcon.setBackgroundResource(R.drawable.b_play);
             }
@@ -336,8 +342,10 @@ public class AudioPlayActivity extends AppCompatActivity {
     private void play() {
 
         if (hfmPlayer != null && !hfmPlayer.isPlaying()) {
-            hfmPlayer.start();
             playIcon.setBackgroundResource(R.drawable.b_pause);
+            hfmPlayer.start();
+
+
         } else {
             pause();
         }
@@ -346,8 +354,9 @@ public class AudioPlayActivity extends AppCompatActivity {
 
     private void pause() {
         if (hfmPlayer.isPlaying()) {
-            hfmPlayer.pause();
             playIcon.setBackgroundResource(R.drawable.b_play);
+            hfmPlayer.pause();
+
 
         }
     }
