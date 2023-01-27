@@ -20,6 +20,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="hasthi"
+            android:fontFamily="@font/timmanaregular"
+
             android:textColor="@color/PrimaryRed"
             android:textStyle="bold"
             android:layout_marginVertical="10dp"
@@ -31,6 +33,7 @@
         android:layout_height="wrap_content"
         android:text="20-11-2022 05:27 AM"
         android:textColor="@color/black"
+        android:fontFamily="@font/nats"
         android:textStyle="bold"
         android:layout_gravity="center"
         android:gravity="center"

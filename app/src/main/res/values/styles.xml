@@ -6,4 +6,13 @@
     </style>
 
 
+
+
+    <style name="BottomNavigationViewTextStyle">
+
+        <item name="fontFamily">@font/timmanaregular</item>
+
+    </style>
+
+
 </resources>

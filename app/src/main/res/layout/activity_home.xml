@@ -12,8 +12,8 @@
         android:id="@+id/Container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        android:layout_above="@id/BottomNavigation"/>
+        android:layout_above="@id/BottomNavigation"
+        android:layout_centerInParent="true" />
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -26,6 +26,7 @@
         android:padding="3dp"
         app:itemRippleColor="@color/white"
         app:menu="@menu/bottombar_menu"
+        app:itemTextAppearanceActive="@style/BottomNavigationViewTextStyle"
         android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>

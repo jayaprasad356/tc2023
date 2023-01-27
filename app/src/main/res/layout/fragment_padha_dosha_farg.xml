@@ -26,6 +26,7 @@
                 android:text="Namakaranam"
                 android:textStyle="bold"
                 android:layout_gravity="center"
+                android:fontFamily="@font/timmanaregular"
                 android:textColor="@color/white"
                 android:textSize="18sp"/>
         </androidx.cardview.widget.CardView>

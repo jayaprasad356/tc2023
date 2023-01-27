@@ -27,7 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Some"
-                android:textStyle="bold"
+                android:fontFamily="@font/timmanaregular"
                 android:layout_gravity="center"
                 android:textColor="@color/white"
                 android:textSize="18sp"/>

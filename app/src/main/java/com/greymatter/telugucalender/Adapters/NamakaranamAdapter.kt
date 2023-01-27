@@ -4,6 +4,7 @@ import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.greymatter.telugucalender.Model.Ballisastram
@@ -35,7 +36,9 @@ class NamakaranamAdapter(val activity: Activity, namakaranam: ArrayList<Namakara
         val holder = holderParent as ExploreItemHolder
         val namakaranam: Namakaranam = namakaranam[position]
 
-        holder.tvdescription.setText(namakaranam.description)
+        holder.tvdescription.setVerticalScrollBarEnabled(true)
+
+        holder.tvdescription.loadDataWithBaseURL("", namakaranam.description, "text/html", "UTF-8", "")
         holder.tvTitle.setText(namakaranam.title)
     }
 
@@ -45,7 +48,7 @@ class NamakaranamAdapter(val activity: Activity, namakaranam: ArrayList<Namakara
 
     internal class ExploreItemHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
-        val tvdescription: TextView
+        val tvdescription: WebView
         val tvTitle: TextView
 
         init {

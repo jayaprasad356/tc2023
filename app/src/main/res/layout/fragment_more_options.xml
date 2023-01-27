@@ -60,8 +60,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="బల్లి శాస్త్రం"
                 android:padding="10dp"
+                android:text="బల్లి శాస్త్రం"
+                android:fontFamily="@font/timmanaregular"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -70,6 +71,7 @@
                 android:layout_width="100dp"
                 android:layout_height="40dp"
                 android:layout_centerInParent="true"
+                android:fontFamily="@font/timmanaregular"
                 android:src="@drawable/ic_baseline_arrow_right_24"
                 android:layout_alignParentEnd="true"/>
         </RelativeLayout>
@@ -107,8 +109,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="నామకరణం"
+                android:fontFamily="@font/timmanaregular"
                 android:padding="10dp"
+                android:text="నామకరణం"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -160,6 +163,7 @@
                 android:padding="5dp"
                 android:layout_centerVertical="true"
                 android:text="శిశు జనన పద దోషాలు"
+                android:fontFamily="@font/timmanaregular"
                 android:textColor="@color/white"
                 android:textSize="17sp"
                 android:textStyle="bold" />
@@ -205,8 +209,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+                android:fontFamily="@font/timmanaregular"
                 android:padding="10dp"
-                android:text="Temple Info"
+                android:text="దేవాలయాలు"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -254,8 +259,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+                android:fontFamily="@font/timmanaregular"
                 android:padding="10dp"
-                android:text="BhakthiGeethalu"
+                android:text="భక్తి సంగీతం"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -305,10 +311,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="మారిని యాప్సు"
                 android:padding="10dp"
-                android:textSize="16sp"
+                android:text="మారిని యాప్సు"
+                android:fontFamily="@font/timmanaregular"
                 android:textColor="@color/white"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
             <ImageView

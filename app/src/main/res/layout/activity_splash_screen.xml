@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:text="తెలుగు పంచాంగం క్యాలెండర్"
         android:layout_gravity="center"
+        android:fontFamily="@font/timmanaregular"
         android:gravity="center"
         android:textColor="@color/white"
         android:textSize="30sp"/>

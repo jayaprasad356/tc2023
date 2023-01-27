@@ -24,6 +24,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="12-12-12"
+                android:fontFamily="@font/timmanaregular"
+
                 android:textColor="@color/black"
                 android:layout_marginVertical="10dp"
                 android:gravity="center"
@@ -34,6 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Some Accosation"
+            android:fontFamily="@font/nats"
             android:textColor="@color/PrimaryRed"
             android:textStyle="bold"
             android:layout_gravity="center"

@@ -27,7 +27,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Temple Info"
+            android:fontFamily="@font/timmanaregular"
+            android:text="దేవాలయాలు"
             android:textColor="@color/black"
             android:textSize="@dimen/_16sdp" />
 

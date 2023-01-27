@@ -24,6 +24,7 @@
             android:id="@+id/PresentMonthAndYear"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:fontFamily="@font/timmanaregular"
             android:layout_toStartOf="@id/ArrowRight"
             android:layout_toEndOf="@id/ArrowLeft"
             android:gravity="center"

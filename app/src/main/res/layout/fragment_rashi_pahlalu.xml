@@ -29,6 +29,7 @@
             android:layout_toEndOf="@id/ArrowLeft"
             android:gravity="center"
             android:text="December 2022"
+            android:fontFamily="@font/timmanaregular"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -86,7 +87,7 @@
                     android:layout_height="wrap_content"
                     android:text="మేషం"
                     android:layout_gravity="center"
-                    android:layout_marginVertical="10dp"
+                    android:fontFamily="@font/nats"
                     android:textColor="@color/black"
                     android:textStyle="bold"/>
             </LinearLayout>
@@ -111,14 +112,17 @@
                         android:layout_height="match_parent"
                         android:src="@drawable/vrushbam"/>
                 </androidx.cardview.widget.CardView>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="వృషభం"
                     android:layout_gravity="center"
-                    android:layout_marginVertical="10dp"
+                   
+                    android:text="వృషభం"
+                    android:fontFamily="@font/nats"
+
                     android:textColor="@color/black"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/llGemini"
@@ -146,7 +150,9 @@
                     android:layout_height="wrap_content"
                     android:text="మిధునం"
                     android:layout_gravity="center"
-                    android:layout_marginVertical="10dp"
+                    android:fontFamily="@font/nats"
+
+                   
                     android:textColor="@color/black"
                     android:textStyle="bold"/>
             </LinearLayout>
@@ -183,8 +189,10 @@
                     android:layout_height="wrap_content"
                     android:text="కర్కాటకం"
                     android:layout_gravity="center"
-                    android:layout_marginVertical="10dp"
+                   
                     android:textColor="@color/black"
+                    android:fontFamily="@font/nats"
+
                     android:textStyle="bold"/>
             </LinearLayout>
             <LinearLayout
@@ -213,8 +221,10 @@
                     android:layout_height="wrap_content"
                     android:text="సింహం"
                     android:layout_gravity="center"
-                    android:layout_marginVertical="10dp"
+                   
                     android:textColor="@color/black"
+                    android:fontFamily="@font/nats"
+
                     android:textStyle="bold"/>
             </LinearLayout>
             <LinearLayout
@@ -243,8 +253,10 @@
                     android:layout_height="wrap_content"
                     android:text="కన్యా"
                     android:layout_gravity="center"
-                    android:layout_marginVertical="10dp"
+                   
                     android:textColor="@color/black"
+                    android:fontFamily="@font/nats"
+
                     android:textStyle="bold"/>
             </LinearLayout>
         </LinearLayout>
@@ -280,8 +292,10 @@
                     android:layout_height="wrap_content"
                     android:text="తుల"
                     android:layout_gravity="center"
-                    android:layout_marginVertical="10dp"
+                   
                     android:textColor="@color/black"
+                    android:fontFamily="@font/nats"
+
                     android:textStyle="bold"/>
             </LinearLayout>
             <LinearLayout
@@ -310,8 +324,10 @@
                     android:layout_height="wrap_content"
                     android:text="ఫాశికం"
                     android:layout_gravity="center"
-                    android:layout_marginVertical="10dp"
+                   
                     android:textColor="@color/black"
+                    android:fontFamily="@font/nats"
+
                     android:textStyle="bold"/>
             </LinearLayout>
             <LinearLayout
@@ -340,7 +356,9 @@
                     android:layout_height="wrap_content"
                     android:text="ధనుసు"
                     android:layout_gravity="center"
-                    android:layout_marginVertical="10dp"
+                   
+                    android:fontFamily="@font/nats"
+
                     android:textColor="@color/black"
                     android:textStyle="bold"/>
             </LinearLayout>
@@ -377,8 +395,10 @@
                     android:layout_height="wrap_content"
                     android:text="మకారం"
                     android:layout_gravity="center"
-                    android:layout_marginVertical="10dp"
+                   
                     android:textColor="@color/black"
+                    android:fontFamily="@font/nats"
+
                     android:textStyle="bold"/>
             </LinearLayout>
             <LinearLayout
@@ -407,8 +427,10 @@
                     android:layout_height="wrap_content"
                     android:text="కుంభం"
                     android:layout_gravity="center"
-                    android:layout_marginVertical="10dp"
+                   
                     android:textColor="@color/black"
+                    android:fontFamily="@font/nats"
+
                     android:textStyle="bold"/>
             </LinearLayout>
             <LinearLayout
@@ -437,8 +459,10 @@
                     android:layout_height="wrap_content"
                     android:text="మీన"
                     android:layout_gravity="center"
-                    android:layout_marginVertical="10dp"
+                   
                     android:textColor="@color/black"
+                    android:fontFamily="@font/nats"
+
                     android:textStyle="bold"/>
             </LinearLayout>
         </LinearLayout>

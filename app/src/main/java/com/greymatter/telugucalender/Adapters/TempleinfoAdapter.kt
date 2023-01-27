@@ -40,7 +40,7 @@ class TempleinfoAdapter(val activity: Activity, templeinfo: ArrayList<Templeinfo
 
         holder.tvTemplename.setText(templeinfo.name)
         holder.tvTempleLocation.setText(templeinfo.location)
-        Glide.with(activity).load(templeinfo.image).placeholder(R.drawable.temple_img)
+        Glide.with(activity).load(templeinfo.image).placeholder(R.drawable.four_img)
             .into(holder.imgtemple)
 
         holder.itemView.setOnClickListener(View.OnClickListener {
