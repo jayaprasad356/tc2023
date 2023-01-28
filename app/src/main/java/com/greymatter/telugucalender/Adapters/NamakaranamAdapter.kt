@@ -38,8 +38,22 @@ class NamakaranamAdapter(val activity: Activity, namakaranam: ArrayList<Namakara
 
         holder.tvdescription.setVerticalScrollBarEnabled(true)
 
-        holder.tvdescription.loadDataWithBaseURL("", namakaranam.description, "text/html", "UTF-8", "")
+        holder.tvdescription.loadDataWithBaseURL("file:///android_asset/fonts/", "<html>\n" + "<link rel='stylesheet' type='text/css' href='file:///android_asset/fonts/nats.css'>"+
+                "<style>\n" +
+                "body {\n" +
+                "    font-family: 'nats';\n" +
+                "}\n" +
+                "\n" +
+                "</style>"+
+                "<body>\n" +
+                namakaranam.description+
+                "</body>\n" +
+                "</html>"
+            , "text/html", "UTF-8", "")
+        holder.tvdescription.getSettings().setJavaScriptEnabled(true);
+        holder.tvdescription.getSettings().setLoadWithOverviewMode(true);
         holder.tvTitle.setText(namakaranam.title)
+
     }
 
     override fun getItemCount(): Int {
