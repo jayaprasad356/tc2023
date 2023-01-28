@@ -1,5 +1,6 @@
 package com.greymatter.telugucalender.Fragments;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.graphics.Typeface;
 import android.net.Uri;
@@ -19,8 +20,11 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.gson.Gson;
 import com.greymatter.telugucalender.Adapters.HwAdapter;
+import com.greymatter.telugucalender.Adapters.PanchangamTab2Adapter;
 import com.greymatter.telugucalender.Adapters.PanchangamTabAdapter;
 import com.greymatter.telugucalender.Model.PanchangamTab;
 import com.greymatter.telugucalender.helper.ApiConfig;
@@ -55,9 +59,10 @@ public class panchangamFrag extends Fragment {
 
     public static String selectedGridDate;
     public static int cutmonth;
-    RecyclerView recyclerView;
+    RecyclerView recyclerView,recyclerView2;
     Activity activity;
     PanchangamTabAdapter panchangamTabAdapter;
+    PanchangamTab2Adapter panchangamTab2Adapter;
 
     private static GregorianCalendar cal_month,cal_month_copy;
     private HwAdapter hwAdapter;
@@ -79,11 +84,14 @@ public class panchangamFrag extends Fragment {
     private String[] month = {"జనవరి", "ఫిబ్రవరి", "మార్చి", "ఏప్రిల్", " మే ", "జూన్", "జూలై", "ఆగస్టు", "సెప్టెంబర్", "అక్టోబర్", "నవంబర్", "డిసెంబర్"};
     private String[] monthE = {"January", "February", "March", "Aprial", "May", "June", "July", "August", "September", "October", "November", "December"};
 
+
+    private AdView mAdView,mAdView2;
     public panchangamFrag() {
         // Required empty public constructor
     }
 
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -93,9 +101,19 @@ public class panchangamFrag extends Fragment {
 
         activity = getActivity();
 
+
+        mAdView = root.findViewById(R.id.adView1);
+        mAdView2 = root.findViewById(R.id.adView2);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+     mAdView2.loadAd(adRequest);
+
         databaseHelper = new DatabaseHelper(activity);
         recyclerView = root.findViewById(R.id.recyclerView);
+        recyclerView2 = root.findViewById(R.id.recyclerView2);
         recyclerView.setLayoutManager(new LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false));
+        recyclerView2.setLayoutManager(new LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false));
 
         HomeCollection.date_collection_arr=new ArrayList<HomeCollection>();
 
@@ -662,6 +680,7 @@ public class panchangamFrag extends Fragment {
         Log.d("CURRENTDATE",""+cadate);
         //panchangamApi(cadate);
         panchangamList(cadate);
+        panchangamList2(cadate);
 
         String festival;
 
@@ -768,6 +787,36 @@ public class panchangamFrag extends Fragment {
         }
         else {
             recyclerView.setVisibility(View.GONE);
+            sunrise.setText("-");
+            sunset.setText("-");
+            moonrise.setText("-");
+            moonset.setText("-");
+
+        }
+
+
+    }private void panchangamList2(String cadate)
+    {
+        if (databaseHelper.getmodelPanchangamList(cadate).size() !=0){
+            recyclerView2.setVisibility(View.VISIBLE);
+            sunrise.setText(databaseHelper.getmodelPanchangamList(cadate).get(0).getSunrise());
+            sunset.setText(databaseHelper.getmodelPanchangamList(cadate).get(0).getSunset());
+            moonrise.setText(databaseHelper.getmodelPanchangamList(cadate).get(0).getMoonrise());
+            moonset.setText(databaseHelper.getmodelPanchangamList(cadate).get(0).getMoonset());
+
+            if (databaseHelper.getmodelPanchangamTabList(databaseHelper.getmodelPanchangamList(cadate).get(0).getId()).size() !=0){
+                panchangamTabAdapter = new PanchangamTabAdapter(activity, databaseHelper.getmodelPanchangamTabList(databaseHelper.getmodelPanchangamList(cadate).get(0).getId()));
+                recyclerView2.setAdapter(panchangamTabAdapter);
+
+            }
+            else {
+                recyclerView2.setVisibility(View.GONE);
+            }
+
+
+        }
+        else {
+            recyclerView2.setVisibility(View.GONE);
             sunrise.setText("-");
             sunset.setText("-");
             moonrise.setText("-");

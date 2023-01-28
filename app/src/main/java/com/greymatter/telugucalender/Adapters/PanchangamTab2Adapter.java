@@ -12,16 +12,22 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.greymatter.telugucalender.Model.PanchangamTab;
 import com.greymatter.telugucalender.R;
 
-
 import java.util.ArrayList;
+import java.util.List;
 
 
-public class PanchangamTabAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class PanchangamTab2Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     final Activity activity;
     ArrayList<PanchangamTab> panchangamTabs;
+    private List<String> data;
 
-    public PanchangamTabAdapter(Activity activity, ArrayList<PanchangamTab> panchangamTabs) {
+
+    public List<String> getDataAfterTwo() {
+        return data.subList(2, data.size());
+    }
+
+    public PanchangamTab2Adapter(Activity activity, ArrayList<PanchangamTab> panchangamTabs) {
         this.activity = activity;
         this.panchangamTabs = panchangamTabs;
     }
@@ -47,7 +53,7 @@ public class PanchangamTabAdapter extends RecyclerView.Adapter<RecyclerView.View
     public int getItemCount()
     {
 
-        return 2;
+        return getDataAfterTwo().size();
     }
 
     static class ExploreItemHolder extends RecyclerView.ViewHolder {
