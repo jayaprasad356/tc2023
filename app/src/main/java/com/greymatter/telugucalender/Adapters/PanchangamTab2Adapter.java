@@ -13,6 +13,7 @@ import com.greymatter.telugucalender.Model.PanchangamTab;
 import com.greymatter.telugucalender.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -24,6 +25,9 @@ public class PanchangamTab2Adapter extends RecyclerView.Adapter<RecyclerView.Vie
 
 
     public List<String> getDataAfterTwo() {
+        if (data == null) {
+            return Collections.emptyList();
+        }
         return data.subList(2, data.size());
     }
 
@@ -52,7 +56,6 @@ public class PanchangamTab2Adapter extends RecyclerView.Adapter<RecyclerView.Vie
     @Override
     public int getItemCount()
     {
-
         return getDataAfterTwo().size();
     }
 

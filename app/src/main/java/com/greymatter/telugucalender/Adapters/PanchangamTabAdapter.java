@@ -47,7 +47,7 @@ public class PanchangamTabAdapter extends RecyclerView.Adapter<RecyclerView.View
     public int getItemCount()
     {
 
-        return 2;
+        return panchangamTabs.size() ;
     }
 
     static class ExploreItemHolder extends RecyclerView.ViewHolder {

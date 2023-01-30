@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:orientation="vertical"
     tools:context=".Fragments.MuhurthaluFrag">
@@ -120,11 +121,55 @@
                 android:textStyle="bold"
                 android:background="@drawable/unselect_bg"/>
         </LinearLayout>
+
+
+        <com.google.android.gms.ads.AdView
+            android:layout_marginTop="@dimen/_2sdp"
+            android:id="@+id/adView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:adSize="SMART_BANNER"
+            app:adUnitId="ca-app-pub-1838677544163695/5836042774" />
+
+
     </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+
+
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/MuhurthaluRecycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         tools:listitem="@layout/muhurthalu_model"/>
+
+
+    <com.google.android.gms.ads.AdView
+        android:layout_marginTop="@dimen/_2sdp"
+        android:id="@+id/adView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:adSize="SMART_BANNER"
+        app:adUnitId="ca-app-pub-1838677544163695/5836042774" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
 </LinearLayout>

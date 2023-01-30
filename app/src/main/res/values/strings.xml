@@ -5,4 +5,5 @@
     <string name="admob_app_id">ca-app-pub-1838677544163695~2965702396</string>
     <string name="admob_unit_banner_id">ca-app-pub-1838677544163695/6062908527</string>
     <string name="admob_unit_banner_rec_id">ca-app-pub-1838677544163695/9068361727</string>
+    <string name="admob_interstitial_id">ca-app-pub-1838677544163695/3867720528</string>
 </resources>

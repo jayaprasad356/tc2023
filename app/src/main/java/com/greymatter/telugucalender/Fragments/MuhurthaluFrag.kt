@@ -6,12 +6,11 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.greymatter.telugucalender.Adapters.FestivalAdapter
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
 import com.greymatter.telugucalender.Adapters.MuhurthaluAdapter
-import com.greymatter.telugucalender.Model.MuhurthaluModel
 import com.greymatter.telugucalender.R
 import com.greymatter.telugucalender.databinding.FragmentMuhurthaluBinding
 import com.greymatter.telugucalender.helper.DatabaseHelper
@@ -44,6 +43,8 @@ class MuhurthaluFrag : Fragment() {
     var monthcount = 0
     var cal = Calendar.getInstance()
     var databaseHelper: DatabaseHelper? = null
+    private var mAdView: AdView? = null
+    private  var mAdView2:AdView? = null
 
 
 
@@ -62,6 +63,12 @@ class MuhurthaluFrag : Fragment() {
 
 
 
+
+        mAdView = binding.root.findViewById<AdView>(R.id.adView1)
+        mAdView2 = binding.root.findViewById<AdView>(R.id.adView2)
+        val adRequest = AdRequest.Builder().build()
+        mAdView!!.loadAd(adRequest)
+        mAdView2!!.loadAd(adRequest)
 
         //Date logic goes here
         cal.add(Calendar.MONTH, monthcount)

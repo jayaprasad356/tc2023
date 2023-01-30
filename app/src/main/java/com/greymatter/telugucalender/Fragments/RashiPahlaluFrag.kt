@@ -11,6 +11,8 @@ import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
 import com.google.gson.Gson
 import com.greymatter.telugucalender.R
 import com.greymatter.telugucalender.databinding.FragmentRashiPahlaluBinding
@@ -46,6 +48,7 @@ class RashiPahlaluFrag : Fragment() {
     var df = SimpleDateFormat("MMMM yyyy")
     var monthcount = 0
     var cal = Calendar.getInstance()
+    private var mAdView: AdView? = null
 
 
 
@@ -59,6 +62,12 @@ class RashiPahlaluFrag : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentRashiPahlaluBinding.inflate(layoutInflater, container, false)
 
+
+
+
+        mAdView = binding.root.findViewById<AdView>(R.id.adView1)
+        val adRequest = AdRequest.Builder().build()
+        mAdView!!.loadAd(adRequest)
 
         //Date logic goes here
         cal.add(Calendar.MONTH, monthcount)

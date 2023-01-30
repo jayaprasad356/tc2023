@@ -68,6 +68,10 @@ class PandugaluFrag : Fragment() {
         activity = getActivity()
 
         databaseHelper = DatabaseHelper(activity)
+
+
+
+
         binding!!.recyclerView.setLayoutManager(
             LinearLayoutManager(
                 activity,
