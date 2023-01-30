@@ -362,7 +362,11 @@
 
 
         </LinearLayout>
-
+        <FrameLayout
+            android:id="@+id/fl_adplaceholder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
 
         <com.google.android.gms.ads.AdView
             xmlns:ads="http://schemas.android.com/apk/res-auto"
@@ -370,7 +374,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             ads:adSize="SMART_BANNER"
-            ads:adUnitId="ca-app-pub-3940256099942544/6300978111"/>
+            ads:adUnitId="ca-app-pub-1838677544163695/6062908527"/>
 
 
 
@@ -390,7 +394,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             ads:adSize="MEDIUM_RECTANGLE"
-            ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+            android:visibility="gone"
+            ads:adUnitId="@string/admob_unit_banner_rec_id">
         </com.google.android.gms.ads.AdView>
 
 
