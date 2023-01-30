@@ -89,7 +89,7 @@ class HomeActivity : AppCompatActivity() {
                     displayInterstitial()
                 }
             })
-           // interstitial!!.loadAd(adIRequest)
+          interstitial!!.loadAd(adIRequest)
 
 
             handler!!.postDelayed({
