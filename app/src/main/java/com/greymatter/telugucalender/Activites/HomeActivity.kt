@@ -21,6 +21,7 @@ import com.greymatter.telugucalender.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
     var activityHomeBinding: ActivityHomeBinding? = null
+    private lateinit var mInterstitialAd: InterstitialAd
     private var interstitial: InterstitialAd? = null
     var handler: Handler? = null
     val adIRequest = AdRequest.Builder().build()
@@ -41,6 +42,29 @@ class HomeActivity : AppCompatActivity() {
             com.greymatter.telugucalender.R.id.Container,
             com.greymatter.telugucalender.Fragments.panchangamFrag()
         ).commit()
+
+
+        // Create an InterstitialAd object.
+        mInterstitialAd = InterstitialAd(this)
+        val adUnitId = resources.getString(R.string.appopen)
+        mInterstitialAd.adUnitId = adUnitId
+
+
+        // Load the interstitial ad.
+        val adRequest = AdRequest.Builder().build()
+        mInterstitialAd.loadAd(adRequest)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (mInterstitialAd.isLoaded) {
+            mInterstitialAd.show()
+        } else {
+            // Load the ad again if it's not loaded yet.
+            val adRequest = AdRequest.Builder().build()
+            mInterstitialAd.loadAd(adRequest)
+        }
+
 
 
         handler = Handler()
@@ -100,6 +124,9 @@ class HomeActivity : AppCompatActivity() {
 
         }, 30000)
     }
+
+
+
 
     private fun displayInterstitial() {
         // If Interstitial Ads are loaded then show them, otherwise do nothing.

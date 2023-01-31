@@ -9,6 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
 import com.greymatter.telugucalender.Model.PanchangamTab;
 import com.greymatter.telugucalender.R;
 
@@ -21,10 +24,14 @@ public class PanchangamTabAdapter extends RecyclerView.Adapter<RecyclerView.View
     final Activity activity;
     ArrayList<PanchangamTab> panchangamTabs;
 
+    private static final int VIEW_TYPE_AD = 1;
+    private static final int VIEW_TYPE_ITEM = 0;
+
     public PanchangamTabAdapter(Activity activity, ArrayList<PanchangamTab> panchangamTabs) {
         this.activity = activity;
         this.panchangamTabs = panchangamTabs;
     }
+
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -34,13 +41,31 @@ public class PanchangamTabAdapter extends RecyclerView.Adapter<RecyclerView.View
 
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holderParent, int position) {
-        final ExploreItemHolder holder = (ExploreItemHolder) holderParent;
-        final PanchangamTab panchangamTab = panchangamTabs.get(position);
-        holder.tvTitle.setText(panchangamTab.getTitle());
-        holder.tvContent.setText(panchangamTab.getDescription());
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        if ( position == 3) {
+
+            final ExploreItemHolder itemHolder = (ExploreItemHolder) holder;
+            final PanchangamTab panchangamTab = panchangamTabs.get(position);
+            AdView adView = new AdView(activity);
+            ViewGroup parent = (ViewGroup) holder.itemView;
+            parent.addView(adView);
+            adView.setAdSize(AdSize.SMART_BANNER);
+            String adUnitId = activity.getResources().getString(R.string.panchangambanner2);
+            adView.setAdUnitId(adUnitId);
+            AdRequest adRequest = new AdRequest.Builder().build();
+            adView.loadAd(adRequest);
+
+        }
 
 
+
+
+        else {
+            final ExploreItemHolder itemHolder = (ExploreItemHolder) holder;
+            final PanchangamTab panchangamTab = panchangamTabs.get(position);
+            itemHolder.tvTitle.setText(panchangamTab.getTitle());
+            itemHolder.tvContent.setText(panchangamTab.getDescription());
+        }
     }
 
     @Override
