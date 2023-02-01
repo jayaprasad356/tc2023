@@ -45,35 +45,18 @@ class FestivalAdapter(val activity: Activity, festivals: ArrayList<Festival>) :
                 val adRequest = AdRequest.Builder().build()
                 holder.adView.loadAd(adRequest)
 
-
-
-//                try {
-//
-//                    val adView = AdView(activity)
-//                    val parent = holder.itemView as ViewGroup
-//                    parent.addView(adView)
-//                    adView.adSize = AdSize.BANNER
-//                    adView.adUnitId = "ca-app-pub-1838677544163695/8226402397"
-//                    val adRequest = AdRequest.Builder().build()
-//                    adView.loadAd(adRequest)
-//                } catch (e: ParseException) {
-//                    e.printStackTrace()
-//                }
-
+            }
+            else if (position == 6 ){
+                holder.adView.visibility = View.VISIBLE
+                holder.l1.visibility = View.GONE
+                val adRequest = AdRequest.Builder().build()
+                holder.adView.loadAd(adRequest)
 
             }
 
-//            if (position == 6) {
-//                val holder = holderParent as ExploreItemHolder
-//                val adView = AdView(activity)
-//                val parent = holder.itemView as ViewGroup
-//                parent.addView(adView)
-//                adView.adSize = AdSize.BANNER
-//                adView.adUnitId = "ca-app-pub-1838677544163695/6114410229"
-//                val adRequest = AdRequest.Builder().build()
-//                adView.loadAd(adRequest)
-//
-//            }
+
+
+
 
 
             else {

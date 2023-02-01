@@ -127,10 +127,7 @@ public class panchangamFrag extends Fragment {
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-//        MobileAds.initialize(activity, new OnInitializationCompleteListener() {
-//            @Override
-//            public void onInitializationComplete(InitializationStatus initializationStatus) {}
-//        });
+
 //        refreshAd();
 
         databaseHelper = new DatabaseHelper(activity);

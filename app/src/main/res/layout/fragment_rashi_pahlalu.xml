@@ -69,8 +69,8 @@
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:layout_gravity="center"
                     app:cardElevation="0dp"
@@ -99,8 +99,8 @@
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:layout_gravity="center"
                     app:cardElevation="0dp"
@@ -132,8 +132,8 @@
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:layout_gravity="center"
                     app:cardElevation="0dp"
@@ -171,8 +171,8 @@
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:layout_gravity="center"
                     app:cardElevation="0dp"
@@ -203,8 +203,8 @@
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:layout_gravity="center"
                     app:cardElevation="0dp"
@@ -235,8 +235,8 @@
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:layout_gravity="center"
                     app:cardElevation="0dp"
@@ -274,8 +274,8 @@
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:layout_gravity="center"
                     app:cardElevation="0dp"
@@ -306,8 +306,8 @@
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:layout_gravity="center"
                     app:cardElevation="0dp"
@@ -338,8 +338,8 @@
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:layout_gravity="center"
                     app:cardElevation="0dp"
@@ -377,8 +377,8 @@
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:layout_gravity="center"
                     app:cardElevation="0dp"
@@ -409,8 +409,8 @@
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:layout_gravity="center"
                     app:cardElevation="0dp"
@@ -441,8 +441,8 @@
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:layout_gravity="center"
                     app:cardElevation="0dp"
@@ -471,12 +471,47 @@
 
 
 
-    <com.google.android.gms.ads.AdView
-        android:layout_marginTop="@dimen/_4sdp"
-        android:id="@+id/adView1"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:adSize="MEDIUM_RECTANGLE"
-        app:adUnitId="ca-app-pub-1838677544163695/9583700181" />
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/fl_adplaceholder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
+
+        <CheckBox
+            android:visibility="gone"
+            android:id="@+id/cb_start_muted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Start video ads muted" />
+
+        <Button
+            android:visibility="gone"
+            android:id="@+id/btn_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Refresh Ad" />
+
+        <TextView
+            android:visibility="gone"
+            android:text="Video status: "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:id="@+id/tv_video_status"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+
+    </LinearLayout>
 
 </LinearLayout>
