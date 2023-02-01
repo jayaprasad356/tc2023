@@ -4,6 +4,7 @@ import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.ads.AdRequest
@@ -34,44 +35,51 @@ class FestivalAdapter(val activity: Activity, festivals: ArrayList<Festival>) :
     }
 
     override fun onBindViewHolder(holderParent: RecyclerView.ViewHolder, position: Int) {
-
+        val holder = holderParent as ExploreItemHolder
+        val festival: Festival = festivals[position]
 
         try {
             if (position == 1 ) {
-
-
-                try {
-                    val holder = holderParent as ExploreItemHolder
-                    val adView = AdView(activity)
-                    val parent = holder.itemView as ViewGroup
-                    parent.addView(adView)
-                    adView.adSize = AdSize.BANNER
-                    adView.adUnitId = "ca-app-pub-1838677544163695/8226402397"
-                    val adRequest = AdRequest.Builder().build()
-                    adView.loadAd(adRequest)
-                } catch (e: ParseException) {
-                    e.printStackTrace()
-                }
-
-
-            }
-
-            if (position == 6) {
-                val holder = holderParent as ExploreItemHolder
-                val adView = AdView(activity)
-                val parent = holder.itemView as ViewGroup
-                parent.addView(adView)
-                adView.adSize = AdSize.BANNER
-                adView.adUnitId = "ca-app-pub-1838677544163695/6114410229"
+                holder.adView.visibility = View.VISIBLE
+                holder.l1.visibility = View.GONE
                 val adRequest = AdRequest.Builder().build()
-                adView.loadAd(adRequest)
+                holder.adView.loadAd(adRequest)
+
+
+
+//                try {
+//
+//                    val adView = AdView(activity)
+//                    val parent = holder.itemView as ViewGroup
+//                    parent.addView(adView)
+//                    adView.adSize = AdSize.BANNER
+//                    adView.adUnitId = "ca-app-pub-1838677544163695/8226402397"
+//                    val adRequest = AdRequest.Builder().build()
+//                    adView.loadAd(adRequest)
+//                } catch (e: ParseException) {
+//                    e.printStackTrace()
+//                }
+
 
             }
+
+//            if (position == 6) {
+//                val holder = holderParent as ExploreItemHolder
+//                val adView = AdView(activity)
+//                val parent = holder.itemView as ViewGroup
+//                parent.addView(adView)
+//                adView.adSize = AdSize.BANNER
+//                adView.adUnitId = "ca-app-pub-1838677544163695/6114410229"
+//                val adRequest = AdRequest.Builder().build()
+//                adView.loadAd(adRequest)
+//
+//            }
 
 
             else {
-                val holder = holderParent as ExploreItemHolder
-                val festival: Festival = festivals[position]
+                holder.adView.visibility = View.GONE
+                holder.l1.visibility = View.VISIBLE
+
                 val strCurrentDate = "Wed, 18 Apr 2012 07:55:29 +0000"
                 var format = SimpleDateFormat("yyy-MM-dd")
                 var newDate: Date? = null
@@ -103,10 +111,14 @@ class FestivalAdapter(val activity: Activity, festivals: ArrayList<Festival>) :
         RecyclerView.ViewHolder(itemView) {
         val tvFestival: TextView
         val tvDate: TextView
+        val adView: AdView
+        val l1: LinearLayout
 
         init {
             tvFestival = itemView.findViewById(R.id.tvFestival)
             tvDate = itemView.findViewById(R.id.tvDate)
+            adView = itemView.findViewById(R.id.adView)
+            l1 = itemView.findViewById(R.id.l1)
         }
     }
 }

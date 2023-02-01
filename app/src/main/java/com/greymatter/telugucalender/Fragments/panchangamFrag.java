@@ -138,6 +138,7 @@ public class panchangamFrag extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false));
 
 
+
         HomeCollection.date_collection_arr=new ArrayList<HomeCollection>();
 
         //**********2019 Holidays **************

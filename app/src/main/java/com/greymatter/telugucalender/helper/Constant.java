@@ -39,6 +39,7 @@ public class Constant {
     public static final String MUHURTHAM_ID = "muhurtham_id";
     public static final String POOJALU_ID = "poojalu_id";
     public static final String GRAHALU_ID = "grahalu_id";
+    public static final String APP_OPEN_AD = "app_open_ad";
     public static final String NAKSHATRALU_ID = "nakshatralu_id";
     public static final String SUBCATEGORY_ID = "subcategory_id";
     public static final String NAME = "name";
