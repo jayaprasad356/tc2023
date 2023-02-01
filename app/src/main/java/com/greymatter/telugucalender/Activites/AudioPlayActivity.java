@@ -24,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
 import com.greymatter.telugucalender.R;
 import com.greymatter.telugucalender.helper.Constant;
@@ -55,11 +56,12 @@ public class AudioPlayActivity extends AppCompatActivity {
     Boolean jsonload = false;
     private JSONObject obj;
     private JSONObject splandata;
-    private String lyricsData,Audio,Lyrics;
+    private String lyricsData,Audio,Lyrics,Image;
     MediaPlayer mediaPlayer;
     ImageView imgBack;
     SharedPreferences sharedpreferences;
     CircularProgressIndicator loading;
+    ImageView ivimage;
     TextView tvLyrics;
     boolean loop = false;
     String[] chalisatime = {"0:00","0:23","0:55","1:17","1:44","2:06","2:30","2:53","3:18","3:40","4:06","4:28","4:54","5:16",
@@ -71,6 +73,7 @@ public class AudioPlayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_audio_play);
         curTime = findViewById(R.id.currentState);
+        ivimage = findViewById(R.id.ivimage);
         totTime =  findViewById(R.id.totalValue);
         mSeekBar =  findViewById(R.id.mySeekbar);
         playIcon =  findViewById(R.id.playBtn);
@@ -85,10 +88,12 @@ public class AudioPlayActivity extends AppCompatActivity {
         Title = getIntent().getStringExtra(Constant.AUDIO_TITLE);
         Audio = getIntent().getStringExtra(Constant.AUDIO);
         Lyrics = getIntent().getStringExtra(Constant.LYRICS);
+        Image = getIntent().getStringExtra(Constant.AUDIO_IMAGE);
         tvTitle.setText(Title);
         tvTitle1.setText(Title);
         tvLyrics.setText(Lyrics);
         tvLyrics.setMovementMethod(new ScrollingMovementMethod());
+        Glide.with(AudioPlayActivity.this).load(Image).placeholder(R.drawable.temple_img).into(ivimage);
 
         sharedpreferences = AudioPlayActivity.this.getSharedPreferences("BBR", Context.MODE_PRIVATE);
         hfmPlayer = new MediaPlayer();

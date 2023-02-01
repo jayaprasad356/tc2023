@@ -167,8 +167,9 @@ public class Constant {
     public static final String TEMPLEINFO_LOCATION = "templeinfo_location";
     public static final String TEMPLEINFO_DESCRIPTION = "templeinfo_description";
     public static final String TEMPLEINFO_IMAGE = "templeinfo_image";
+    public static final String AUDIO_IMAGE = "audio_image";
 
- public static int etLengthConversion(EditText editText) {
+    public static int etLengthConversion(EditText editText) {
         return editText.getText().toString().length();
     }
     public static StringBuilder strbappend(String str) {
