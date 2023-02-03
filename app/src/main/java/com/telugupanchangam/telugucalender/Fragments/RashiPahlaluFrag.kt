@@ -410,26 +410,31 @@ class RashiPahlaluFrag : Fragment() {
                 // OnUnifiedNativeAdLoadedListener implementation.
                 // If this callback occurs after the activity is destroyed, you must call
                 // destroy and return or you may get a memory leak.
-                var isDestroyed = false
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-                    isDestroyed = isDestroyed
+                var isDestroyed: Boolean = false
+                try {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                        isDestroyed = isDestroyed
+                    }
+                    if (isDestroyed || requireActivity().isFinishing() || requireActivity().isChangingConfigurations()) {
+                        unifiedNativeAd.destroy()
+                        return@OnUnifiedNativeAdLoadedListener
+                    }
+                    if (nativeAd != null) {
+                        nativeAd!!.destroy()
+                    }
+
+                    nativeAd = unifiedNativeAd
+                    val frameLayout: FrameLayout = binding.root.findViewById<FrameLayout>(com.telugupanchangam.telugucalender.R.id.fl_adplaceholder)
+                    val adView = layoutInflater
+                        .inflate(com.telugupanchangam.telugucalender.R.layout.ad_unified, null) as UnifiedNativeAdView
+                    populateUnifiedNativeAdView(unifiedNativeAd, adView)
+                    frameLayout.removeAllViews()
+                    frameLayout.addView(adView)
+                } catch (e: Exception) {
+                    Log.e("ERROR", "An error occurred while destroying the ad: ${e.message}")
                 }
-                if (isDestroyed || requireActivity().isFinishing() ||requireActivity().isChangingConfigurations()) {
-                    unifiedNativeAd.destroy()
-                    return@OnUnifiedNativeAdLoadedListener
-                }
-                // You must call destroy on old ads when you are done with them,
-                // otherwise you will have a memory leak.
-                if (nativeAd != null) {
-                    nativeAd!!.destroy()
-                }
-                nativeAd = unifiedNativeAd
-                val frameLayout: FrameLayout = binding.root.findViewById<FrameLayout>(com.telugupanchangam.telugucalender.R.id.fl_adplaceholder)
-                val adView = layoutInflater
-                    .inflate(com.telugupanchangam.telugucalender.R.layout.ad_unified, null) as UnifiedNativeAdView
-                populateUnifiedNativeAdView(unifiedNativeAd, adView)
-                frameLayout.removeAllViews()
-                frameLayout.addView(adView)
+
+
             })
         val videoOptions =
             VideoOptions.Builder().setStartMuted(startVideoAdsMuted!!.isChecked).build()
