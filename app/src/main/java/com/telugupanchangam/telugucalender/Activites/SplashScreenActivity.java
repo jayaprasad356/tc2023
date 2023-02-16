@@ -52,7 +52,6 @@ public class SplashScreenActivity extends AppCompatActivity {
                     JSONObject jsonObject = new JSONObject(response);
                     if (jsonObject.getBoolean(Constant.SUCCESS)) {
                         Log.d("response", response);
-                        databaseHelper.deleteDb(activity);
                         JSONObject object = new JSONObject(response);
                         JSONArray jsonArray = object.getJSONArray(Constant.PANCHANGAM_LIST);
 //                        SQLiteDatabase db = databaseHelper.getWritableDatabase();
