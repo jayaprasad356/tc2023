@@ -27,6 +27,7 @@ class HomeActivity : AppCompatActivity() {
     var handler: Handler? = null
     val adIRequest = AdRequest.Builder().build()
     var session: Session? = null
+    var i: Int=1;
 
     companion object {
         var fm: FragmentManager? = null
@@ -99,29 +100,58 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
+
+
+    private var lastAdDisplayedTime = 0L
+
     private fun playad() {
-        interstitial!!.loadAd(adIRequest)
 
+
+        val currentTime = System.currentTimeMillis()
+
+        // Calculate the delay for the next ad display
+        val timeSinceLastAd = currentTime - lastAdDisplayedTime
+        val nextAdDelay = kotlin.math.max(0L, 30000L - timeSinceLastAd)
+
+        // Schedule the next ad display
         handler!!.postDelayed({
-            displayInterstitial()
-            interstitial!!.setAdListener(object : AdListener() {
-                override fun onAdFailedToLoad(errorCode: Int) {
+            interstitial!!.loadAd(adIRequest)
+        }, nextAdDelay)
 
-                }
-                override fun onAdClosed() {
-                    playad()}
-                override fun onAdOpened() {
+        interstitial!!.setAdListener(object : AdListener() {
+            override fun onAdFailedToLoad(errorCode: Int) {
+                // Retry loading the ad after 30 seconds
+                handler!!.postDelayed({
+                    playad()
+                }, 30000)
+            }
 
-                }
-                override fun onAdLoaded() {
+            override fun onAdClosed() {
+                // Update the last ad displayed time
+                lastAdDisplayedTime = System.currentTimeMillis()
 
-                }
-            })
+                // Schedule the next ad display after 30 seconds
+                handler!!.postDelayed({
+                    playad()
+                }, 30000)
+            }
 
+            override fun onAdOpened() {
 
+            }
 
-        }, 30000)
+            override fun onAdLoaded() {
+                // Update the last ad displayed time
+                lastAdDisplayedTime = System.currentTimeMillis()
+
+                // Display the ad after it is loaded
+                displayInterstitial()
+            }
+        })
+
     }
+
+
 
 
 
