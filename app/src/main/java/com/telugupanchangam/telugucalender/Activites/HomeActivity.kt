@@ -123,7 +123,7 @@ class HomeActivity : AppCompatActivity() {
                 // Retry loading the ad after 30 seconds
                 handler!!.postDelayed({
                     playad()
-                }, 30000)
+                }, 2500)
             }
 
             override fun onAdClosed() {
