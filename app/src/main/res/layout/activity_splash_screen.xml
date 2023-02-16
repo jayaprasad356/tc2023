@@ -26,4 +26,15 @@
         android:progressTint="@color/white"
         android:progressBackgroundTint="@color/white"
         android:layout_marginTop="250dp"/>
+    <TextView
+        android:id="@+id/tvInstruction"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:textSize="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="Importing Data Please Wait..."
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+
+        android:layout_height="wrap_content"/>
 </LinearLayout>
