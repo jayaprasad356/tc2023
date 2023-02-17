@@ -3,6 +3,7 @@ package com.telugupanchangam.telugucalender.Activites
 
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
@@ -17,8 +18,10 @@ import com.telugupanchangam.telugucalender.Fragments.PandugaluFrag
 import com.telugupanchangam.telugucalender.Fragments.RashiPahlaluFrag
 import com.telugupanchangam.telugucalender.R
 import com.telugupanchangam.telugucalender.databinding.ActivityHomeBinding
-import com.telugupanchangam.telugucalender.helper.Constant
 import com.telugupanchangam.telugucalender.helper.Session
+import java.util.concurrent.Executors
+import java.util.concurrent.ScheduledExecutorService
+import java.util.concurrent.TimeUnit
 
 
 class HomeActivity : AppCompatActivity() {
@@ -28,6 +31,8 @@ class HomeActivity : AppCompatActivity() {
     val adIRequest = AdRequest.Builder().build()
     var session: Session? = null
     var i: Int=1;
+
+    private var mInterstitialAd: InterstitialAd? = null
 
     companion object {
         var fm: FragmentManager? = null
@@ -48,8 +53,39 @@ class HomeActivity : AppCompatActivity() {
         ).commit()
 
 
+        prepareAd()
+
+        val scheduler: ScheduledExecutorService = Executors.newSingleThreadScheduledExecutor()
+
+        scheduler.scheduleAtFixedRate(Runnable {
+            Log.i("hello", "world")
+            runOnUiThread {
+                if (mInterstitialAd!!.isLoaded) {
+                    mInterstitialAd!!.show()
+                } else {
+                    Log.d("TAG", " Interstitial not loaded")
+                }
+                prepareAd()
+            }
+        }, 40, 40, TimeUnit.SECONDS)
+
+
 
     }
+
+
+
+    private fun prepareAd() {
+        mInterstitialAd = InterstitialAd(this)
+        mInterstitialAd!!.setAdUnitId("ca-app-pub-1838677544163695/3867720528")
+        mInterstitialAd!!.loadAd(AdRequest.Builder().build())
+
+
+    }
+
+
+
+
 
     override fun onStart() {
         super.onStart()
@@ -64,7 +100,7 @@ class HomeActivity : AppCompatActivity() {
 
 
 
-        playad()
+      //  playad()
 
 
 

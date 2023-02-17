@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -42,10 +43,17 @@ public class PanchangamTabAdapter extends RecyclerView.Adapter<RecyclerView.View
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+
+
+
+        final ExploreItemHolder itemHolder = (ExploreItemHolder) holder;
+        final PanchangamTab panchangamTab = panchangamTabs.get(position);
+
         if ( position == 3) {
 
-            final ExploreItemHolder itemHolder = (ExploreItemHolder) holder;
-            final PanchangamTab panchangamTab = panchangamTabs.get(position);
+
+            itemHolder.layout.setVisibility(View.GONE);
+
             AdView adView = new AdView(activity);
             ViewGroup parent = (ViewGroup) holder.itemView;
             parent.addView(adView);
@@ -61,8 +69,7 @@ public class PanchangamTabAdapter extends RecyclerView.Adapter<RecyclerView.View
 
 
         else {
-            final ExploreItemHolder itemHolder = (ExploreItemHolder) holder;
-            final PanchangamTab panchangamTab = panchangamTabs.get(position);
+
             itemHolder.tvTitle.setText(panchangamTab.getTitle());
             itemHolder.tvContent.setText(panchangamTab.getDescription());
         }
@@ -77,10 +84,12 @@ public class PanchangamTabAdapter extends RecyclerView.Adapter<RecyclerView.View
 
     static class ExploreItemHolder extends RecyclerView.ViewHolder {
         final TextView tvTitle,tvContent;
+        final LinearLayout layout;
         public ExploreItemHolder(@NonNull View itemView) {
             super(itemView);
             tvTitle = itemView.findViewById(R.id.tvTitle);
             tvContent = itemView.findViewById(R.id.tvContent);
+            layout = itemView.findViewById(R.id.layout);
         }
     }
 }

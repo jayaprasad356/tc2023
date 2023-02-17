@@ -39,7 +39,7 @@ class MoreOptionsFrag : Fragment() {
                 ?.addToBackStack("null")?.commit()
         }
         binding.CvMoreApps.setOnClickListener {
-            val url = "https://play.google.com/store/apps/developer?id=Telugu+Trending+Apps&hl=en&gl=US"
+            val url = "https://play.google.com/store/apps/dev?id=5677441121992087281"
             val i = Intent(Intent.ACTION_VIEW)
             i.data = Uri.parse(url)
             startActivity(i)
