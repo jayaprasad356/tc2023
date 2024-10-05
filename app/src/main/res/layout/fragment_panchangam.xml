@@ -1,180 +1,238 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
     android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/calHeaderT"
+        android:paddingHorizontal="@dimen/_10sdp"
+        >
+
+        <ImageButton
+            android:id="@+id/ibBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:background="@drawable/arrow_back"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_toRightOf="@+id/ibBack"
+            android:fontFamily="@font/sree"
+            android:gravity="center"
+            android:text="నేటి పంచాంగం"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20sdp" />
+
+
+    </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
         android:orientation="vertical">
-        <LinearLayout
-            android:id="@+id/headerMonth"
+
+
+        <com.google.android.material.card.MaterialCardView
+            app:cardUseCompatPadding="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/calHeaderT">
-
-            <ImageButton
-                android:id="@+id/ib_prev"
-                android:layout_width="70dp"
-                android:layout_height="45dp"
-                android:layout_gravity="center"
-                app:srcCompat="@drawable/ic_baseline_arrow_left_24"
-                android:scaleType="fitXY"
-                android:background="@null"/>
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="@dimen/_2sdp">
 
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
-
-                <TextView
-                    android:id="@+id/tv_month"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:textAlignment="center"
-                    android:layout_gravity="center"
-                    android:text="జనవరి - 2018"
-                    android:layout_marginTop="-10dp"
-                    android:textColor="@color/white"
-                    android:textSize="25dp"
-                    android:fontFamily="@font/timmanaregular"
-                    android:gravity="center"
-                    android:textStyle="bold" />
-
-            </RelativeLayout>
-
-            <ImageButton
-                android:id="@+id/Ib_next"
-                android:layout_width="70dp"
-                android:layout_height="45dp"
-                android:layout_gravity="center"
-                app:srcCompat="@drawable/ic_baseline_arrow_right_24"
-                android:scaleType="fitXY"
-                android:background="@null"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/ll_calendar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/headerMonth"
-            android:orientation="vertical"
-            android:background="@color/white">
-
-
-            <TableRow
-                android:id="@+id/tableRow1"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-7dp">
+                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/TextView06"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/headerMonth"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="ఆది"
-                    android:fontFamily="@font/nats"
-                    android:textColor="#ff005d"
-                    android:textAlignment="center"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
+                    android:background="@color/calHeaderT"
+                    android:padding="@dimen/_5sdp">
 
-                <TextView
-                    android:id="@+id/TextView05"
-                    android:layout_width="wrap_content"
+                    <ImageButton
+                        android:id="@+id/ib_prev"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:background="@null"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/left_button" />
+
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/tv_month"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="-10dp"
+                            android:fontFamily="@font/ramabhadra"
+                            android:gravity="center"
+                            android:text="జనవరి - 2018"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="25dp" />
+
+                    </RelativeLayout>
+
+                    <ImageButton
+                        android:id="@+id/Ib_next"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:background="@null"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/right_button" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_calendar"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_below="@+id/headerMonth"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+
+                    <TableRow
+                        android:id="@+id/tableRow1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-7dp">
+
+                        <TextView
+                            android:id="@+id/TextView06"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/nats"
+                            android:gravity="center"
+                            android:text="ఆది"
+                            android:textAlignment="center"
+                            android:textColor="#ff005d"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/TextView05"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/nats"
+                            android:gravity="center"
+                            android:text="సోమ"
+                            android:textColor="#ff005d"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/TextView04"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/nats"
+                            android:gravity="center"
+                            android:text="మంగ"
+                            android:textColor="#ff005d"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/TextView03"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/nats"
+                            android:gravity="center"
+                            android:text="బుధ"
+
+                            android:textColor="#ff005d"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/TextView02"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/nats"
+                            android:gravity="center"
+                            android:text="గురు"
+                            android:textColor="#ff005d"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/TextView01"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/nats"
+                            android:gravity="center"
+                            android:text="శుక్ర"
+                            android:textColor="#ff005d"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/nats"
+                            android:gravity="center"
+                            android:text="శని"
+                            android:textColor="#ff005d"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                    </TableRow>
+
+                </LinearLayout>
+
+                <GridView
+                    android:id="@+id/gv_calendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_below="@+id/ll_calendar"
+                    android:background="@color/white"
                     android:gravity="center"
-                    android:text="సోమ"
-                    android:textColor="#ff005d"
-                    android:fontFamily="@font/nats"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
+                    android:listSelector="@android:color/transparent"
+                    android:nestedScrollingEnabled="true"
+                    android:numColumns="7"></GridView>
 
-                <TextView
-                    android:id="@+id/TextView04"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="మంగ"
-                    android:fontFamily="@font/nats"
-                    android:textColor="#ff005d"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/TextView03"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="5dp"
-                    android:text="బుధ"
-                    android:fontFamily="@font/nats"
+            </LinearLayout>
 
-                    android:textColor="#ff005d"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/TextView02"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="5dp"
-                    android:text="గురు"
-                    android:fontFamily="@font/nats"
-                    android:textColor="#ff005d"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
+        </com.google.android.material.card.MaterialCardView>
 
-                <TextView
-                    android:id="@+id/TextView01"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="5dp"
-                    android:text="శుక్ర"
-                    android:textColor="#ff005d"
-                    android:fontFamily="@font/nats"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textView1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="5dp"
-                    android:text="శని"
-                    android:fontFamily="@font/nats"
-                    android:textColor="#ff005d"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
-
-            </TableRow>
-
-        </LinearLayout>
-
-        <GridView
-            android:id="@+id/gv_calendar"
-            android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:layout_below="@+id/ll_calendar"
-            android:background="@color/white"
-            android:gravity="center"
-            android:listSelector="@android:color/transparent"
-            android:nestedScrollingEnabled="true"
-            android:numColumns="7"></GridView>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -184,210 +242,913 @@
 
         </RelativeLayout>
 
-        <LinearLayout
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+
+
+
+
+
+        <RelativeLayout
+            android:layout_marginBottom="@dimen/_10sdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/calHeaderT">
+           >
 
-            <TextView
-                android:id="@+id/sunrise"
-                android:layout_width="wrap_content"
+
+            <LinearLayout
+                android:id="@+id/sunimage"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="సూర్య గమనం"
-                android:fontFamily="@font/timmanaregular"
+                android:orientation="horizontal"
+                android:weightSum="4">
 
-                android:textSize="18dp"
-                android:textStyle="bold"
-                android:layout_marginTop="-7dp"
-                android:textColor="@color/white"/>
-            <TextView
-                android:id="@+id/moonrise"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="చంద్ర గమనం"
-                android:textSize="18dp"
-                android:textStyle="bold"
-                android:fontFamily="@font/timmanaregular"
-                android:layout_marginTop="-7dp"
-                android:textColor="@color/white"/>
 
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/sunimage"
+                <com.google.android.material.card.MaterialCardView
+                    app:cardUseCompatPadding="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_2sdp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/calHeaderT"
+                            android:fontFamily="@font/ramabhadra"
+                            android:gravity="center"
+                            android:text="సూర్యోదయం"
+                            android:textColor="@color/white" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_24sdp"
+                            android:layout_height="@dimen/_24sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:scaleType="fitXY"
+                            app:srcCompat="@drawable/sunrise" />
+
+
+                        <TextView
+                            android:id="@+id/sunriseT"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ramabhadra"
+                            android:gravity="center"
+                            android:text="00:01AM"
+                            android:padding="@dimen/_4sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp" />
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+
+                <com.google.android.material.card.MaterialCardView
+                    app:cardUseCompatPadding="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_2sdp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/calHeaderT"
+                            android:fontFamily="@font/ramabhadra"
+                            android:gravity="center"
+                            android:text="సూర్యాస్తమయం"
+                            android:textColor="@color/white" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_24sdp"
+                            android:layout_height="@dimen/_24sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:scaleType="fitXY"
+                            app:srcCompat="@drawable/sunset" />
+
+
+                        <TextView
+                            android:id="@+id/sunset"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ramabhadra"
+                            android:gravity="center"
+                            android:text="00:01AM"
+                            android:padding="@dimen/_4sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp" />
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+
+                <com.google.android.material.card.MaterialCardView
+                    app:cardUseCompatPadding="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_2sdp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/calHeaderT"
+                            android:fontFamily="@font/ramabhadra"
+                            android:gravity="center"
+                            android:text="చంద్రోదయం"
+                            android:textColor="@color/white" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_24sdp"
+                            android:layout_height="@dimen/_24sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:scaleType="fitXY"
+                            app:srcCompat="@drawable/moonrise" />
+
+
+                        <TextView
+                            android:id="@+id/moonriseT"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ramabhadra"
+                            android:gravity="center"
+                            android:text="00:01AM"
+                            android:padding="@dimen/_4sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp" />
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    app:cardUseCompatPadding="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_2sdp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/calHeaderT"
+                            android:fontFamily="@font/ramabhadra"
+                            android:gravity="center"
+                            android:text="చంద్రాస్తమయం"
+                            android:textColor="@color/white" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_24sdp"
+                            android:layout_height="@dimen/_24sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:scaleType="fitXY"
+                            app:srcCompat="@drawable/moonset" />
+
+
+                        <TextView
+                            android:id="@+id/moonset"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ramabhadra"
+                            android:gravity="center"
+                            android:text="00:01AM"
+                            android:padding="@dimen/_4sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp" />
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_marginHorizontal="@dimen/_8sdp"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_below="@+id/shubhasamayam"
-            android:background="@color/calHeaderT"
-            android:orientation="horizontal"
-            android:weightSum="4"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="@color/calHeaderT">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/tvDateweek"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ramabhadra"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdp" />
+
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    app:dividerColor="@color/white"
+                    app:dividerThickness="@dimen/_1sdp" />
+
+
+                <TextView
+                    android:id="@+id/tvkalam"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ramabhadra"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner"
             >
 
-            <RelativeLayout
-                android:layout_weight="1"
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_marginVertical="@dimen/_10sdp"
+                app:cardUseCompatPadding="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                >
-
-                <ImageView
-
-                    android:layout_width="@dimen/_40sdp"
-                    android:layout_height="@dimen/_40sdp"
-                    app:srcCompat="@drawable/sun_up"
-                    android:scaleType="fitXY"/>
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                >
-
-                <ImageView
-
-                    android:layout_width="@dimen/_40sdp"
-                    android:layout_height="@dimen/_40sdp"
-                    app:srcCompat="@drawable/sun_down"
-                    android:scaleType="fitXY"/>
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                >
-
-                <ImageView
-
-                    android:layout_width="@dimen/_40sdp"
-                    android:layout_height="@dimen/_40sdp"
-                    app:srcCompat="@drawable/moon_up"
-                    android:scaleType="fitXY"/>
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                >
-
-                <ImageView
-
-                    android:layout_width="@dimen/_40sdp"
-                    android:layout_height="@dimen/_40sdp"
-                    app:srcCompat="@drawable/moon_down"
-                    android:scaleType="fitXY"/>
-
-            </RelativeLayout>
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:strokeColor="@color/calHeaderT"
+                app:strokeWidth="@dimen/_1sdp">
 
 
-
-
-
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/suntext"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/shubhasamayam"
-            android:orientation="horizontal"
-            android:background="@color/calHeaderT">
-
-
-            <TableRow
-                android:id="@+id/tableRow2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/sunriseT"
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="00:01AM"
-                    android:fontFamily="@font/nats"
-                    android:textColor="@color/horoBg"
-                    android:textStyle="bold"
-                    android:textSize="18dp"/>
-                <TextView
-                    android:id="@+id/sunset"
-                    android:layout_width="0dp"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_150sdp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+
+                        <RelativeLayout
+                            android:background="@drawable/left_bottom_stroke"
+                            android:padding="@dimen/_4sdp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:fontFamily="@font/ramabhadra"
+                                android:text="తిథి"
+                                android:textColor="@color/calHeaderT"
+                                android:textSize="@dimen/_16sdp" />
+
+
+                            <TextView
+                                android:id="@+id/tvthidhi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/lora_regular"
+                                android:text=""
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp"
+                                 />
+
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:background="@drawable/bottom_stroke"
+                            android:padding="@dimen/_4sdp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:fontFamily="@font/ramabhadra"
+                                android:text="నక్షత్రం"
+                                android:textColor="@color/calHeaderT"
+                                android:textSize="@dimen/_16sdp" />
+
+
+                            <TextView
+                                android:id="@+id/tvnakshatram"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/lora_regular"
+                                android:text=""
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp" />
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_150sdp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+
+                        <RelativeLayout
+                            android:background="@drawable/left_stroke"
+                            android:padding="@dimen/_4sdp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:fontFamily="@font/ramabhadra"
+                                android:text="యోగం"
+                                android:textColor="@color/calHeaderT"
+                                android:textSize="@dimen/_16sdp" />
+
+
+                            <TextView
+                                android:id="@+id/tvyogam"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/lora_regular"
+                                android:text=""
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp" />
+
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:background="@drawable/bottom_stroke"
+                            android:padding="@dimen/_4sdp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:fontFamily="@font/ramabhadra"
+                                android:text="కరణం"
+                                android:textColor="@color/calHeaderT"
+                                android:textSize="@dimen/_16sdp" />
+
+
+                            <TextView
+                                android:id="@+id/tvkaranam"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/lora_regular"
+                                android:text=""
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp" />
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="00:02PM"
-                    android:fontFamily="@font/nats"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
 
-                    android:textStyle="bold"
-                    android:textColor="@color/horoBg"
-                    android:textSize="18dp"/>
-                <TextView
-                    android:id="@+id/moonriseT"
-                    android:layout_width="0dp"
+
+                    <com.google.android.material.card.MaterialCardView
+                        app:cardUseCompatPadding="true"
+                        app:cardCornerRadius="@dimen/_5sdp"
+                        app:cardElevation="@dimen/_2sdp"
+                        app:cardBackgroundColor="@color/white"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            >
+
+
+
+
+                            <TextView
+                                android:background="@color/calHeaderT"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:fontFamily="@font/ramabhadra"
+                                android:text="అభిజిత్ ముహూర్తం"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_14sdp" />
+
+
+
+
+                            <TextView
+                                android:paddingVertical="@dimen/_5sdp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:id="@+id/tvabhijith_muhurtham"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/lora_regular"
+                                android:text=""
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp" />
+
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        app:cardUseCompatPadding="true"
+                        app:cardCornerRadius="@dimen/_5sdp"
+                        app:cardElevation="@dimen/_2sdp"
+                        app:cardBackgroundColor="@color/white"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            >
+
+
+                            <TextView
+                                android:background="@color/calHeaderT"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:fontFamily="@font/ramabhadra"
+                                android:text="బ్రహ్మ ముహూర్తం"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_14sdp" />
+
+
+                            <TextView
+                                android:paddingVertical="@dimen/_5sdp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:id="@+id/tvbhrama_muhurtham"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/lora_regular"
+                                android:text=""
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp" />
+
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="00:03AM"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/nats"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
 
-                    android:textColor="@color/horoBg"
-                    android:textSize="18dp"/>
 
-                <TextView
-                    android:id="@+id/moonset"
-                    android:layout_width="0dp"
+                    <com.google.android.material.card.MaterialCardView
+                        app:cardUseCompatPadding="true"
+                        app:cardCornerRadius="@dimen/_5sdp"
+                        app:cardElevation="@dimen/_2sdp"
+                        app:cardBackgroundColor="@color/white"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            >
+
+
+                            <TextView
+                                android:background="@color/calHeaderT"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:fontFamily="@font/ramabhadra"
+                                android:text="అమృత కాలం"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_14sdp" />
+
+
+                            <TextView
+                                android:paddingVertical="@dimen/_5sdp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:id="@+id/tvamrutha_kalam"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/lora_regular"
+                                android:text=""
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp" />
+
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        app:cardUseCompatPadding="true"
+                        app:cardCornerRadius="@dimen/_5sdp"
+                        app:cardElevation="@dimen/_2sdp"
+                        app:cardBackgroundColor="@color/white"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            >
+
+
+                            <TextView
+                                android:background="@color/calHeaderT"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:fontFamily="@font/ramabhadra"
+                                android:text="రాహుకాలం"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_14sdp" />
+
+
+                            <TextView
+                                android:paddingVertical="@dimen/_5sdp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:id="@+id/tvrahukalam"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/lora_regular"
+                                android:text=""
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp" />
+
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:fontFamily="@font/nats"
-
-                    android:textColor="@color/horoBg"
-                    android:text="00:04PM"
-                    android:textStyle="bold"
-                    android:textSize="18dp"/>
-
-            </TableRow>
+                    android:orientation="horizontal"
+                    android:weightSum="2">
 
 
+                    <com.google.android.material.card.MaterialCardView
+                        app:cardUseCompatPadding="true"
+                        app:cardCornerRadius="@dimen/_5sdp"
+                        app:cardElevation="@dimen/_2sdp"
+                        app:cardBackgroundColor="@color/white"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            >
+
+
+                            <TextView
+                                android:background="@color/calHeaderT"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:fontFamily="@font/ramabhadra"
+                                android:text="యమగండం"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_14sdp" />
+
+
+                            <TextView
+                                android:paddingVertical="@dimen/_5sdp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:id="@+id/tvyamakandam"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/lora_regular"
+                                android:text=""
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp" />
+
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        app:cardUseCompatPadding="true"
+                        app:cardCornerRadius="@dimen/_5sdp"
+                        app:cardElevation="@dimen/_2sdp"
+                        app:cardBackgroundColor="@color/white"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            >
+
+
+                            <TextView
+                                android:background="@color/calHeaderT"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:fontFamily="@font/ramabhadra"
+                                android:text="దుర్ముహూర్తం"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_14sdp" />
+
+
+                            <TextView
+                                android:paddingVertical="@dimen/_5sdp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:id="@+id/tvdhurmuhurtham"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/lora_regular"
+                                android:text=""
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp" />
+
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
 
 
 
-        </LinearLayout>
-        <FrameLayout
-            android:id="@+id/fl_adplaceholder"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp" />
-
-        <com.google.android.gms.ads.AdView
-            xmlns:ads="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/adView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            ads:adSize="SMART_BANNER"
-            ads:adUnitId="@string/panchangambanner1"/>
 
 
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        app:cardUseCompatPadding="true"
+                        app:cardCornerRadius="@dimen/_5sdp"
+                        app:cardElevation="@dimen/_2sdp"
+                        app:cardBackgroundColor="@color/white"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            >
+
+
+                            <TextView
+                                android:background="@color/calHeaderT"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:fontFamily="@font/ramabhadra"
+                                android:text="వర్జ్యం"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_14sdp" />
+
+
+                            <TextView
+                                android:paddingVertical="@dimen/_5sdp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:id="@+id/tvvarjyam"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/lora_regular"
+                                android:text=""
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp" />
+
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
+                        app:cardUseCompatPadding="true"
+                        app:cardCornerRadius="@dimen/_5sdp"
+                        app:cardElevation="@dimen/_2sdp"
+                        app:cardBackgroundColor="@color/white"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            >
+
+
+                            <TextView
+                                android:background="@color/calHeaderT"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:fontFamily="@font/ramabhadra"
+                                android:text="గుళిక"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_14sdp" />
+
+
+                            <TextView
+                                android:paddingVertical="@dimen/_5sdp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:id="@+id/tvgulika"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/lora_regular"
+                                android:text=""
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14sdp" />
+
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
 
 
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_marginHorizontal="@dimen/_10sdp"
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
 
 
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
 
 
 
@@ -397,4 +1158,4 @@
     </LinearLayout>
 
 
-</androidx.core.widget.NestedScrollView>
+</RelativeLayout>

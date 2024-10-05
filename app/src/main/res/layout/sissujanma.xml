@@ -1,42 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    app:cardCornerRadius="@dimen/_10sdp"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="@dimen/_2sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/grey"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="WebViewLayout">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardtitle"
+        <TextView
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:background="@color/calHeaderT"
+            android:id="@+id/tvTitle"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_alignParentTop="true"
-            app:cardBackgroundColor="@color/PrimaryRed"
-            app:cardCornerRadius="10dp">
-
-            <TextView
-                android:id="@+id/tvTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="start"
-                android:layout_marginStart="10dp"
-                android:fontFamily="@font/timmanaregular"
-                android:gravity="center"
-
-                android:text="Aswani nashatram :- "
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-        </androidx.cardview.widget.CardView>
+            android:layout_height="wrap_content"
+            android:text="Aswani Sastram :-"
+            android:fontFamily="@font/ramabhadra"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16sdp"
+            />
 
         <LinearLayout
+            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -49,9 +44,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="@font/nats"
+                android:fontFamily="@font/lora_regular"
                 android:gravity="center"
-                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingHorizontal="@dimen/_12sdp"
                 android:text="Part1 :"
                 android:textColor="@color/black" />
 
@@ -60,4 +55,4 @@
     </LinearLayout>
 
 
-</RelativeLayout>
+</com.google.android.material.card.MaterialCardView>

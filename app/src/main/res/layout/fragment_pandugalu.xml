@@ -8,36 +8,73 @@
     tools:context=".Fragments.PandugaluFrag">
 
     <RelativeLayout
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@color/PrimaryRed"
-        android:layout_marginBottom="0dp">
+        android:layout_height="wrap_content"
+        android:background="@color/calHeaderT"
+        android:paddingHorizontal="@dimen/_10sdp"
+        >
+
+        <ImageButton
+            android:id="@+id/ibBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:background="@drawable/arrow_back"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_toRightOf="@+id/ibBack"
+            android:fontFamily="@font/sree"
+            android:gravity="center"
+            android:text="పండుగలు"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20sdp" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="@color/calHeaderT"
+        android:padding="@dimen/_5sdp">
 
         <ImageView
             android:id="@+id/ArrowLeft"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_alignParentStart="true"
-            android:src="@drawable/ic_baseline_arrow_left_24"/>
+            android:layout_centerVertical="true"
+            android:src="@drawable/left_button" />
 
         <TextView
             android:id="@+id/PresentMonthAndYear"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:fontFamily="@font/timmanaregular"
-            android:layout_toStartOf="@id/ArrowRight"
-            android:layout_toEndOf="@id/ArrowLeft"
-            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/ramabhadra"
             android:text="December 2022"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="25dp" />
+
+
         <ImageView
             android:id="@+id/ArrowRight"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_alignParentEnd="true"
-            android:src="@drawable/ic_baseline_arrow_right_24"/>
+            android:layout_centerVertical="true"
+            android:src="@drawable/right_button" />
 
     </RelativeLayout>
 

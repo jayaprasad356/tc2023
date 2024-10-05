@@ -303,7 +303,7 @@
                     android:layout_height="@dimen/_40sdp"
                     android:layout_alignParentStart="true"
                     android:layout_gravity="center"
-                    android:background="@drawable/more" />
+                    android:background="@drawable/more_ic" />
 
             </androidx.cardview.widget.CardView>
 

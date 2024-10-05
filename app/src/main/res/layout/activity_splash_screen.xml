@@ -1,23 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/PrimaryRed"
-    android:layout_gravity="center"
-    android:gravity="center"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".Activites.SplashScreenActivity">
 
+
     <TextView
+        android:layout_above="@+id/ivSplash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sree"
+        android:gravity="center"
+        android:text="వేద తెలుగు క్యాలెండర్"
+        android:textColor="@color/calHeaderT"
+        android:textSize="@dimen/_34sdp" />
+
+    <ImageView
+        android:layout_centerInParent="true"
+        android:id="@+id/ivSplash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="తెలుగు పంచాంగం క్యాలెండర్"
-        android:layout_gravity="center"
-        android:fontFamily="@font/timmanaregular"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:textSize="30sp"/>
+        android:src="@drawable/splash_img"
+        android:layout_gravity="center"/>
+
+
 
     <ProgressBar
         android:id="@+id/ProgressBar"
@@ -26,6 +35,7 @@
         android:progressTint="@color/white"
         android:progressBackgroundTint="@color/white"
         android:layout_marginTop="250dp"/>
+
     <TextView
         android:id="@+id/tvInstruction"
         android:visibility="gone"
@@ -35,6 +45,5 @@
         android:text="Importing Data Please Wait..."
         android:layout_gravity="center"
         android:textColor="@color/white"
-
         android:layout_height="wrap_content"/>
-</LinearLayout>
+</RelativeLayout>

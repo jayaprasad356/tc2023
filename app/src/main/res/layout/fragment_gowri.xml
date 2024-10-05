@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E7F0F4"
+    android:id="@+id/slider"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/calHeaderT"
+            android:paddingHorizontal="@dimen/_10sdp"
+            >
+
+            <ImageButton
+                android:id="@+id/ibBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:background="@drawable/arrow_back"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_toRightOf="@+id/ibBack"
+                android:fontFamily="@font/sree"
+                android:gravity="center"
+                android:text="గౌరీ పంచాంగం"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_20sdp" />
+
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/corner_bg"
+            android:backgroundTint="@color/white"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+
+            >
+
+
+            <HorizontalScrollView
+                android:id="@+id/scrollview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="@dimen/_5sdp"
+                android:scrollbars="none">
+
+
+                <LinearLayout
+                    android:id="@+id/lllist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_10sdp">
+
+                    <TextView
+                        android:id="@+id/tvSunday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:fontFamily="@font/ramabhadra"
+                        android:text="ఆదివారం"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_16sdp"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/tvMonday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:fontFamily="@font/ramabhadra"
+                        android:text="సోమవారం"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_16sdp" />
+
+                    <TextView
+                        android:id="@+id/tvTuesday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:fontFamily="@font/ramabhadra"
+                        android:text="మంగళవారం"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_16sdp"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/tvWednesday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:fontFamily="@font/ramabhadra"
+                        android:text="బుధవారం"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_16sdp"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/tvThursday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:fontFamily="@font/ramabhadra"
+                        android:text="గురువారం"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_16sdp"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/tvFriday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:fontFamily="@font/ramabhadra"
+                        android:text="శుక్రవారం"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_16sdp"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/tvSaturday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:fontFamily="@font/ramabhadra"
+                        android:text="శనివారం"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_16sdp" />
+
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </RelativeLayout>
+
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/l1"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginVertical="@dimen/_5sdp"
+            tools:listitem="@layout/gowri_tab_layout" />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

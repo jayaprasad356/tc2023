@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
@@ -22,6 +21,13 @@
         <entry key="..\:/Studio Projects/TeluguCalender2023/app/src/main/res/layout/pandugalu_model.xml" value="0.17552083333333332" />
         <entry key="..\:/Studio Projects/TeluguCalender2023/app/src/main/res/layout/templelist_layout.xml" value="0.16666666666666666" />
         <entry key="..\:/Studio Projects/TeluguCalender2023/app/src/main/res/menu/bottombar_menu.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/Tamil/AndroidStudioProjects/tc2023/app/src/main/res/layout/activity_bhathi_geethalu.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/Tamil/AndroidStudioProjects/tc2023/app/src/main/res/layout/activity_home.xml" value="0.15925925925925927" />
+        <entry key="..\:/Users/Tamil/AndroidStudioProjects/tc2023/app/src/main/res/layout/activity_splash_screen.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/Tamil/AndroidStudioProjects/tc2023/app/src/main/res/layout/activity_temple_list.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/Tamil/AndroidStudioProjects/tc2023/app/src/main/res/layout/activity_templeinfo.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/Tamil/AndroidStudioProjects/tc2023/app/src/main/res/layout/ad_unified.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/Tamil/AndroidStudioProjects/tc2023/app/src/main/res/layout/fragment_rashi_pahlalu.xml" value="0.17552083333333332" />
         <entry key="..\:/tc2023/app/src/main/res/drawable/bordercurve.xml" value="0.12" />
         <entry key="..\:/tc2023/app/src/main/res/drawable/current_clicked.xml" value="0.12" />
         <entry key="..\:/tc2023/app/src/main/res/drawable/current_day.xml" value="0.12" />
@@ -44,7 +50,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

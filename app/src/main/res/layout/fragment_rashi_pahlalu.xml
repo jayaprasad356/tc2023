@@ -1,518 +1,701 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white"
+    android:background="#F7F7F7"
     android:orientation="vertical"
     tools:context=".Fragments.RashiPahlaluFrag">
 
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/calHeaderT"
+        android:paddingHorizontal="@dimen/_10sdp"
+        >
+
+        <ImageButton
+            android:id="@+id/ibBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:background="@drawable/arrow_back"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_toRightOf="@+id/ibBack"
+            android:fontFamily="@font/sree"
+            android:gravity="center"
+            android:text="రాశి ఫలాలు"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20sdp" />
+
+
+    </RelativeLayout>
+
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@color/PrimaryRed"
-        android:layout_marginBottom="0dp">
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="@color/calHeaderT"
+        android:padding="@dimen/_5sdp">
 
         <ImageView
             android:id="@+id/ArrowLeft"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_alignParentStart="true"
-            android:src="@drawable/ic_baseline_arrow_left_24"/>
+            android:layout_centerVertical="true"
+            android:src="@drawable/left_button" />
 
         <TextView
             android:id="@+id/PresentMonthAndYear"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_toStartOf="@id/ArrowRight"
-            android:layout_toEndOf="@id/ArrowLeft"
-            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/ramabhadra"
             android:text="December 2022"
-            android:fontFamily="@font/timmanaregular"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="25dp" />
+
+
         <ImageView
             android:id="@+id/ArrowRight"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_alignParentEnd="true"
-            android:src="@drawable/ic_baseline_arrow_right_24"/>
+            android:layout_centerVertical="true"
+            android:src="@drawable/right_button" />
+
     </RelativeLayout>
 
-    <androidx.cardview.widget.CardView
+
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="vertical"
-        android:layout_marginHorizontal="10dp"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="0dp"
-        app:cardBackgroundColor="#DBDBDB">
+        android:layout_height="wrap_content">
+
 
         <LinearLayout
+            android:padding="@dimen/_15sdp"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="3">
+            android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:id="@+id/llAries"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center"
-                    app:cardElevation="0dp"
-                    app:cardBackgroundColor="@color/PrimaryRed"
-                    app:cardCornerRadius="120dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/mesham" />
-                </androidx.cardview.widget.CardView>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="మేషం"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/nats"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"/>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/llTaurus"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center"
-                    app:cardElevation="0dp"
-                    app:cardBackgroundColor="@color/PrimaryRed"
-                    app:cardCornerRadius="120dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/vrushbam"/>
-                </androidx.cardview.widget.CardView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                   
-                    android:text="వృషభం"
-                    android:fontFamily="@font/nats"
-
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/llGemini"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center"
-                    app:cardElevation="0dp"
-                    app:cardBackgroundColor="@color/PrimaryRed"
-                    app:cardCornerRadius="120dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/midhunam" />
-                </androidx.cardview.widget.CardView>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="మిధునం"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/nats"
-
-                   
-                    android:textColor="@color/black"
-                    android:textStyle="bold"/>
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="3">
-
-            <LinearLayout
-                android:id="@+id/llCancer"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center"
-                    app:cardElevation="0dp"
-                    app:cardBackgroundColor="@color/PrimaryRed"
-                    app:cardCornerRadius="120dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/karkatakam"/>
-                </androidx.cardview.widget.CardView>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="కర్కాటకం"
-                    android:layout_gravity="center"
-                   
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/nats"
-
-                    android:textStyle="bold"/>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/llLeo"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center"
-                    app:cardElevation="0dp"
-                    app:cardBackgroundColor="@color/PrimaryRed"
-                    app:cardCornerRadius="120dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/simha"/>
-                </androidx.cardview.widget.CardView>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="సింహం"
-                    android:layout_gravity="center"
-                   
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/nats"
-
-                    android:textStyle="bold"/>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/llVirgo"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center"
-                    app:cardElevation="0dp"
-                    app:cardBackgroundColor="@color/PrimaryRed"
-                    app:cardCornerRadius="120dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/kanya"/>
-                </androidx.cardview.widget.CardView>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="కన్య"
-                    android:layout_gravity="center"
-                   
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/nats"
-
-                    android:textStyle="bold"/>
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="3">
-
-            <LinearLayout
-                android:id="@+id/llLibra"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center"
-                    app:cardElevation="0dp"
-                    app:cardBackgroundColor="@color/PrimaryRed"
-                    app:cardCornerRadius="120dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/tula"/>
-                </androidx.cardview.widget.CardView>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="తుల"
-                    android:layout_gravity="center"
-                   
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/nats"
-
-                    android:textStyle="bold"/>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/llScorpio"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center"
-                    app:cardElevation="0dp"
-                    app:cardBackgroundColor="@color/PrimaryRed"
-                    app:cardCornerRadius="120dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/vruschikam"/>
-                </androidx.cardview.widget.CardView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/nats"
-
-                    android:text="వృశ్చికం"
-                    android:textColor="@color/black"
-
-                    android:textStyle="bold" />
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/llSagittarius"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center"
-                    app:cardElevation="0dp"
-                    app:cardBackgroundColor="@color/PrimaryRed"
-                    app:cardCornerRadius="120dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/dhanasu"/>
-                </androidx.cardview.widget.CardView>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="ధనుస్సు"
-                    android:layout_gravity="center"
-                   
-                    android:fontFamily="@font/nats"
-
-                    android:textColor="@color/black"
-                    android:textStyle="bold"/>
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="3">
-
-            <LinearLayout
-                android:id="@+id/llCapricorn"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center"
-                    app:cardElevation="0dp"
-                    app:cardBackgroundColor="@color/PrimaryRed"
-                    app:cardCornerRadius="120dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/makaram"/>
-                </androidx.cardview.widget.CardView>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="మకరం"
-                    android:layout_gravity="center"
-                   
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/nats"
-
-                    android:textStyle="bold"/>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/llAquarius"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center"
-                    app:cardElevation="0dp"
-                    app:cardBackgroundColor="@color/PrimaryRed"
-                    app:cardCornerRadius="120dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/kumbha"/>
-                </androidx.cardview.widget.CardView>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="కుంభం"
-                    android:layout_gravity="center"
-                   
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/nats"
-
-                    android:textStyle="bold"/>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/llPisces"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center"
-                    app:cardElevation="0dp"
-                    app:cardBackgroundColor="@color/PrimaryRed"
-                    app:cardCornerRadius="120dp">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/meena" />
-                </androidx.cardview.widget.CardView>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="మీనం"
-                    android:layout_gravity="center"
-                   
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/nats"
-
-                    android:textStyle="bold"/>
-            </LinearLayout>
-        </LinearLayout>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/_20sdp"
-        android:orientation="vertical">
+        android:layout_height="@dimen/_120sdp"
+        android:orientation="horizontal"
+        android:weightSum="3">
 
-        <FrameLayout
-            android:id="@+id/fl_adplaceholder"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp" />
 
-        <CheckBox
-            android:visibility="gone"
-            android:id="@+id/cb_start_muted"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="Start video ads muted" />
 
-        <Button
-            android:visibility="gone"
-            android:id="@+id/btn_refresh"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Refresh Ad" />
+        <com.google.android.material.card.MaterialCardView
+            app:strokeColor="@color/calHeaderT"
+            app:strokeWidth="1dp"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="@dimen/_2sdp"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_weight="1"
+            android:id="@+id/llAries"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:visibility="gone"
-            android:text="Video status: "
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_10sdp"
-            android:layout_marginRight="@dimen/_10sdp"
-            android:id="@+id/tv_video_status"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+           >
+
+
+
+                <ImageView
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:src="@drawable/mesham_new" />
+
+
+                <TextView
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/calHeaderT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/ramabhadra"
+                    android:text="మేషం"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                     />
+
+
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            app:strokeColor="@color/calHeaderT"
+            app:strokeWidth="1dp"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="@dimen/_2sdp"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_weight="1"
+            android:id="@+id/llTaurus"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+           >
+
+
+
+                <ImageView
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:src="@drawable/vrushabam_new" />
+
+
+                <TextView
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/calHeaderT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/ramabhadra"
+                    android:text="వృషభం"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                     />
+
+
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            app:strokeColor="@color/calHeaderT"
+            app:strokeWidth="1dp"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="@dimen/_2sdp"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_weight="1"
+            android:id="@+id/llGemini"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+           >
+
+
+
+                <ImageView
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:src="@drawable/midhunam_new" />
+
+
+                <TextView
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/calHeaderT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/ramabhadra"
+                    android:text="మిధునం"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                     />
+
+
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
 
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_120sdp"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+
+
+        <com.google.android.material.card.MaterialCardView
+            app:strokeColor="@color/calHeaderT"
+            app:strokeWidth="1dp"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="@dimen/_2sdp"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_weight="1"
+            android:id="@+id/llCancer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+           >
+
+
+
+                <ImageView
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:src="@drawable/karkatam_new" />
+
+
+                <TextView
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/calHeaderT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/ramabhadra"
+                    android:text="కర్కాటకం"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                     />
+
+
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            app:strokeColor="@color/calHeaderT"
+            app:strokeWidth="1dp"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="@dimen/_2sdp"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_weight="1"
+            android:id="@+id/llLeo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+           >
+
+
+
+                <ImageView
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:src="@drawable/simham_new" />
+
+
+                <TextView
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/calHeaderT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/ramabhadra"
+                    android:text="సింహం"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                     />
+
+
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            app:strokeColor="@color/calHeaderT"
+            app:strokeWidth="1dp"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="@dimen/_2sdp"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_weight="1"
+            android:id="@+id/llVirgo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+           >
+
+
+
+                <ImageView
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:src="@drawable/kanya_new" />
+
+
+                <TextView
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/calHeaderT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/ramabhadra"
+                    android:text="కన్య"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                     />
+
+
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_120sdp"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+
+
+        <com.google.android.material.card.MaterialCardView
+            app:strokeColor="@color/calHeaderT"
+            app:strokeWidth="1dp"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="@dimen/_2sdp"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_weight="1"
+            android:id="@+id/llLibra"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+           >
+
+
+
+                <ImageView
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:src="@drawable/thula_new" />
+
+
+                <TextView
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/calHeaderT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/ramabhadra"
+                    android:text="తుల"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                     />
+
+
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            app:strokeColor="@color/calHeaderT"
+            app:strokeWidth="1dp"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="@dimen/_2sdp"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_weight="1"
+            android:id="@+id/llScorpio"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+           >
+
+
+
+                <ImageView
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:src="@drawable/vruschikam_new" />
+
+
+                <TextView
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/calHeaderT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/ramabhadra"
+                    android:text="వృశ్చికం"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                     />
+
+
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            app:strokeColor="@color/calHeaderT"
+            app:strokeWidth="1dp"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="@dimen/_2sdp"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_weight="1"
+            android:id="@+id/llSagittarius"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+           >
+
+
+
+                <ImageView
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:src="@drawable/dhannussu_new" />
+
+
+                <TextView
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/calHeaderT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/ramabhadra"
+                    android:text="ధనుస్సు"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                     />
+
+
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_120sdp"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+
+
+        <com.google.android.material.card.MaterialCardView
+            app:strokeColor="@color/calHeaderT"
+            app:strokeWidth="1dp"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="@dimen/_2sdp"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_weight="1"
+            android:id="@+id/llCapricorn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+           >
+
+
+
+                <ImageView
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:src="@drawable/makaram_new" />
+
+
+                <TextView
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/calHeaderT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/ramabhadra"
+                    android:text="మకరం"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                     />
+
+
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            app:strokeColor="@color/calHeaderT"
+            app:strokeWidth="1dp"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="@dimen/_2sdp"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_weight="1"
+            android:id="@+id/llAquarius"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+           >
+
+
+
+                <ImageView
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:src="@drawable/kumbham_new" />
+
+
+                <TextView
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/calHeaderT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/ramabhadra"
+                    android:text="కుంభం"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                     />
+
+
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            app:strokeColor="@color/calHeaderT"
+            app:strokeWidth="1dp"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="@dimen/_2sdp"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_weight="1"
+            android:id="@+id/llPisces"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+           >
+
+
+
+                <ImageView
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:src="@drawable/meenam_new" />
+
+
+                <TextView
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/calHeaderT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/ramabhadra"
+                    android:text="మీనం"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                     />
+
+
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+    </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+
 
 </LinearLayout>

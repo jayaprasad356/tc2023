@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FDAA48"
+    android:padding="@dimen/_5sdp"
+    >
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/tvYearName"
+            android:fontFamily="@font/ramabhadra"
+            android:textSize="@dimen/_16sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Telugu Year Name Here"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:textSize="@dimen/_22sdp"
+            android:fontFamily="@font/lora_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="27-11-2023"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:id="@+id/tvWeekName"
+            android:textSize="@dimen/_16sdp"
+            android:fontFamily="@font/ramabhadra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Week Name Here"
+            android:textColor="@color/black"
+            />
+
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lora_regular"
+                android:text="శుభ సమయాలు :  "
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp" />
+
+
+            <TextView
+                android:id="@+id/tvGoodTimings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lora_regular"
+                android:text="Description Data Here"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

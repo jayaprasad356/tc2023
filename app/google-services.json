@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "727070226248",
+    "project_id": "vedha-telugu-calendar",
+    "storage_bucket": "vedha-telugu-calendar.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:727070226248:android:301677bc1075348eaa257d",
+        "android_client_info": {
+          "package_name": "com.telugucalendar.telugupanchangamr"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAQeqq1Z_v4glEuPMbV2MPtF6oQ4ofoqU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

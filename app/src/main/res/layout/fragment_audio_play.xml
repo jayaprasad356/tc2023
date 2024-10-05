@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/calHeaderT"
+            android:paddingHorizontal="@dimen/_10sdp"
+            >
+
+            <ImageButton
+                android:id="@+id/imgBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:background="@drawable/arrow_back"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_toRightOf="@+id/imgBack"
+                android:fontFamily="@font/sree"
+                android:gravity="center"
+                android:text="భక్తి గీతాలు"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_20sdp" />
+
+
+        </RelativeLayout>
+
+
+
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tvTitle1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:gravity="center"
+            android:textSize="@dimen/_12sdp"
+            android:fontFamily="@font/timmanaregular"
+            android:textColor="@color/black"
+            android:padding="@dimen/_10sdp"
+            />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_gravity="center"
+            app:cardBackgroundColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            app:cardCornerRadius="@dimen/_10sdp"
+            android:backgroundTint="#FBCEB2"
+            >
+
+
+            <LinearLayout
+                android:layout_margin="@dimen/_20sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+
+
+
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+
+                <ImageView
+                    android:scaleType="fitXY"
+                    android:id="@+id/ivimage"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_200sdp"
+                    android:background="@drawable/temple_img"
+                    />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:id="@+id/tvLyrics"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_80sdp"
+                    android:text=""
+                    android:fontFamily="@font/lora_regular"
+                    android:textSize="@dimen/_12sdp"
+                    android:gravity="center"
+                    android:scrollbars = "vertical"
+                    android:lineSpacingExtra="@dimen/_6sdp"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/_10sdp"
+                    />
+
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:padding="@dimen/_10sdp"
+        >
+
+
+
+
+
+
+
+        <LinearLayout
+            android:id="@+id/playerSetup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+            <ImageButton
+                android:id="@+id/backward"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:background="@drawable/rewind_new"/>
+            <Space
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+
+
+
+
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                app:indicatorColor="@color/calHeaderT"
+                app:indicatorSize="@dimen/_30sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:trackColor="@color/grey"
+                app:trackThickness="8dp" />
+
+            <ImageButton
+                android:visibility="gone"
+                android:id="@+id/playBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/pause_new"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+
+            <ImageButton
+                android:id="@+id/forward"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:background="@drawable/forward_new"/>
+            <Space
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+
+
+
+        </LinearLayout>
+
+
+
+
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/mySeekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:thumb="@drawable/sneek_bar_new"
+            android:progressDrawable="@drawable/seek_bar"
+            android:layout_marginTop="@dimen/_4sdp"
+
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:id="@+id/currentState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"
+                android:text="00:00"/>
+            <TextView
+                android:id="@+id/totalValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/black"
+                android:layout_alignParentEnd="true"
+                android:text="00:00"/>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/imgLoop"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:src="@drawable/ic_baseline_loop_24"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"/>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

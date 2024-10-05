@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activites.TempleListActivity"
+    android:background="#F7F7F7"
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/calHeaderT"
+        android:paddingHorizontal="@dimen/_10sdp"
+        >
+
+        <ImageButton
+            android:id="@+id/imgbackbttn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:background="@drawable/arrow_back"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_toRightOf="@+id/imgbackbttn"
+            android:fontFamily="@font/sree"
+            android:gravity="center"
+            android:text="దేవాలయాల సమాచారం"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20sdp" />
+
+
+    </RelativeLayout>
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="@dimen/_10sdp"
+        android:paddingHorizontal="@dimen/_20sdp"
+        android:background="#F7F7F7"
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar" />
+
+
+
+</RelativeLayout>

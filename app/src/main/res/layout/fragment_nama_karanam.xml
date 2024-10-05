@@ -8,31 +8,72 @@
     android:orientation="vertical"
     tools:context=".Fragments.NamaKaranamFrag">
 
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <androidx.cardview.widget.CardView
+
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
+            android:background="@color/calHeaderT"
+            android:paddingHorizontal="@dimen/_10sdp"
+            >
+
+            <ImageButton
+                android:id="@+id/imgbackbttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:background="@drawable/arrow_back"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_toRightOf="@+id/imgbackbttn"
+                android:fontFamily="@font/sree"
+                android:gravity="center"
+                android:text="నామకరణం"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_20sdp" />
+
+
+        </RelativeLayout>
+
+
+        <com.google.android.material.card.MaterialCardView
+            app:cardUseCompatPadding="true"
+            app:cardElevation="@dimen/_2sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="20dp"
             app:cardCornerRadius="10dp"
-            app:cardBackgroundColor="@color/PrimaryRed">
+            app:cardBackgroundColor="#EDF5FF">
 
             <TextView
+                android:padding="@dimen/_5sdp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="నామకరణం"
-                android:textStyle="bold"
-                android:fontFamily="@font/timmanaregular"
+                android:fontFamily="@font/ramabhadra"
                 android:layout_gravity="center"
-                android:textColor="@color/white"
+                android:textColor="@color/calHeaderT"
                 android:textSize="18sp"/>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
 
         <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginHorizontal="@dimen/_20sdp"
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

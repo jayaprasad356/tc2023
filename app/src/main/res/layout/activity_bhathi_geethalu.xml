@@ -33,14 +33,12 @@
     </RelativeLayout>
 
 
-
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="@dimen/_20sdp"
-        android:layout_below="@id/toolbar"
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
         android:layout_marginHorizontal="@dimen/_20sdp"
-        />
+        android:layout_marginTop="@dimen/_20sdp" />
 
 </RelativeLayout>

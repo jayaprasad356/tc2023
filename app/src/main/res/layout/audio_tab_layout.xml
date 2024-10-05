@@ -1,66 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginBottom="@dimen/_10sdp"
-    >
+   >
 
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_60sdp"
+        android:layout_height="wrap_content"
         app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="15dp"
-        android:backgroundTint="@color/PrimaryRed"
-        >
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="@dimen/_2sdp"
+        app:cardUseCompatPadding="true">
 
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingHorizontal="@dimen/_10sdp"
-            >
-
-
-        <ImageView
-            android:layout_width="@dimen/_50sdp"
-            android:layout_height="@dimen/_50sdp"
-            android:id="@+id/image"
-            android:scaleType="center"
-            android:layout_centerVertical="true"
-            />
-
-        <TextView
-            android:layout_toRightOf="@+id/image"
-            android:id="@+id/tvName"
-            android:layout_marginLeft="@dimen/_10sdp"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:text="Venkateshwara Swamy"
-            android:fontFamily="@font/timmanaregular"
-            android:textSize="@dimen/_14sdp"
-            android:layout_centerVertical="true"
-            />
+            android:padding="@dimen/_10sdp">
+
+
+            <com.google.android.material.card.MaterialCardView
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardBackgroundColor="@color/white"
+                android:id="@+id/cardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardElevation="0dp">
+
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_centerVertical="true"
+                    android:scaleType="center" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_toRightOf="@+id/cardView"
+                android:layout_toLeftOf="@+id/ivPlay"
+                android:fontFamily="@font/ramabhadra"
+                android:text="Venkateshwara Swamy"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp" />
 
 
             <ImageView
+                android:id="@+id/ivPlay"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
                 android:layout_alignParentRight="true"
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
-                android:scaleType="center"
                 android:layout_centerVertical="true"
-                android:background="@drawable/b_play"
-                />
-
-
+                android:background="@drawable/layer"
+                android:scaleType="center" />
 
 
         </RelativeLayout>
 
 
-
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 </RelativeLayout>

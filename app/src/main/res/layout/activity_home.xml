@@ -1,32 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activites.HomeActivity"
-    android:background="@color/white">
+    android:background="@color/white"
+    >
 
 
     <FrameLayout
         android:id="@+id/Container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/BottomNavigation"
+        android:layout_above="@+id/bannerAdContainer"
         android:layout_centerInParent="true" />
+
+    <FrameLayout
+        android:id="@+id/bannerAdContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="8dp">
+
+        <!-- BannerAdFragment will be added dynamically here -->
+    </FrameLayout>
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
         android:id="@+id/BottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/PrimaryRed"
-        app:itemTextColor="@color/white"
-        app:itemIconSize="26sp"
         android:padding="3dp"
+        app:itemIconSize="26sp"
         app:itemRippleColor="@color/white"
-        app:menu="@menu/bottombar_menu"
         app:itemTextAppearanceActive="@style/BottomNavigationViewTextStyle"
-        android:layout_alignParentBottom="true"/>
+        app:itemTextColor="@color/white"
+        app:menu="@menu/bottombar_menu" />
 
 </RelativeLayout>

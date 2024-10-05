@@ -1,45 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:orientation="vertical"
     tools:context=".Fragments.MuhurthaluFrag">
 
     <RelativeLayout
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@color/PrimaryRed"
-        android:layout_marginBottom="0dp">
+        android:layout_height="wrap_content"
+        android:background="@color/calHeaderT"
+        android:paddingHorizontal="@dimen/_10sdp"
+       >
+
+        <ImageButton
+            android:id="@+id/ibBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:background="@drawable/arrow_back"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_toRightOf="@+id/ibBack"
+            android:fontFamily="@font/sree"
+            android:gravity="center"
+            android:text="ముహూర్తములు"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20sdp" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="@color/calHeaderT"
+        android:padding="@dimen/_5sdp">
 
         <ImageView
             android:id="@+id/ArrowLeft"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_alignParentStart="true"
-            android:src="@drawable/ic_baseline_arrow_left_24" />
+            android:layout_centerVertical="true"
+            android:src="@drawable/left_button" />
 
         <TextView
             android:id="@+id/PresentMonthAndYear"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_toStartOf="@id/ArrowRight"
-            android:layout_toEndOf="@id/ArrowLeft"
-            android:gravity="center"
-            android:fontFamily="@font/timmanaregular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/ramabhadra"
             android:text="December 2022"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="25dp" />
+
 
         <ImageView
             android:id="@+id/ArrowRight"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_alignParentEnd="true"
-            android:src="@drawable/ic_baseline_arrow_right_24"/>
+            android:layout_centerVertical="true"
+            android:src="@drawable/right_button" />
+
     </RelativeLayout>
 
 
@@ -51,85 +88,103 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_80sdp"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="4">
 
-            <TextView
+
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/OptionOne"
-                android:layout_width="0dp"
-                android:layout_height="55dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="వివాహ ముహూర్తం"
-                android:fontFamily="@font/timmanaregular"
-                android:textColor="@color/white"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:textSize="16sp"
-                android:layout_marginStart="10dp"
-                android:textStyle="bold"
-                android:background="@drawable/select_bg"/>
-            <TextView
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="@dimen/_2sdp"
+                app:cardUseCompatPadding="true"
+                app:strokeWidth="@dimen/_1sdp"
+                app:strokeColor="@color/calHeaderT">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/baby_boy_1" />
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/OptionTwo"
-                android:layout_width="0dp"
-                android:fontFamily="@font/timmanaregular"
-                android:layout_height="55dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="నామకరణ ముహూర్తం"
-                android:textColor="@color/white"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:layout_marginHorizontal="10dp"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:background="@drawable/unselect_bg"/>
-        </LinearLayout>
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="@dimen/_2sdp"
+                app:cardUseCompatPadding="true"
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="5dp"
-            android:weightSum="2">
+                app:strokeColor="@color/calHeaderT">
 
-            <TextView
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/couple_1" />
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/OptionThree"
-                android:layout_width="0dp"
-                android:layout_height="55dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="గృహప్రవేశ ముహూర్తం"
-                android:fontFamily="@font/timmanaregular"
-                android:textColor="@color/white"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:textSize="15sp"
-                android:background="@drawable/unselect_bg"
-                android:layout_marginStart="10dp"
-                android:textStyle="bold" />
-            <TextView
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="@dimen/_2sdp"
+                app:cardUseCompatPadding="true"
+
+                app:strokeColor="@color/calHeaderT">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/house_2" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/OptionFour"
-                android:layout_width="0dp"
-                android:layout_height="55dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="వాహన ముహూర్తం"
-                android:textColor="@color/white"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:fontFamily="@font/timmanaregular"
-                android:layout_marginHorizontal="10dp"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:background="@drawable/unselect_bg"/>
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="@dimen/_2sdp"
+                app:cardUseCompatPadding="true"
+
+                app:strokeColor="@color/calHeaderT">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/car_1" />
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
         </LinearLayout>
 
 
-        <com.google.android.gms.ads.AdView
-            android:layout_marginTop="@dimen/_2sdp"
-            android:id="@+id/adView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:adSize="SMART_BANNER"
-            app:adUnitId="ca-app-pub-1838677544163695/5836042774" />
+
 
 
     </LinearLayout>
@@ -143,29 +198,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/MuhurthaluRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                tools:listitem="@layout/muhurthalu_model" />
 
 
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/MuhurthaluRecycler"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        tools:listitem="@layout/muhurthalu_model"/>
-
-
-    <com.google.android.gms.ads.AdView
-        android:layout_marginTop="@dimen/_2sdp"
-        android:id="@+id/adView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:adSize="SMART_BANNER"
-        app:adUnitId="ca-app-pub-1838677544163695/5836042774" />
 
 
         </LinearLayout>

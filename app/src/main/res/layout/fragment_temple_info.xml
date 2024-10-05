@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activites.TempleinfoActivity"
+    android:background="#F7F7F7"
+    >
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/calHeaderT"
+        android:paddingHorizontal="@dimen/_10sdp"
+        >
+
+        <ImageButton
+            android:id="@+id/imgbackbttn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:background="@drawable/arrow_back"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_toRightOf="@+id/imgbackbttn"
+            android:fontFamily="@font/sree"
+            android:gravity="center"
+            android:text="దేవాలయాల సమాచారం"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20sdp" />
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+    <com.google.android.material.card.MaterialCardView
+        app:cardElevation="@dimen/_2sdp"
+        android:id="@+id/cardview"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:backgroundTint="@color/white"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:orientation="vertical"
+            >
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_gravity="center"
+                app:cardCornerRadius="@dimen/_100sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imgtemple"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:scaleType="fitXY"
+                    />
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                >
+
+
+
+                <TextView
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/tvTemplename"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Temple Name"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/ramabhadra"
+                    android:textSize="@dimen/_16sdp"
+                    />
+
+                <TextView
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/tvTemplename"
+                    android:id="@+id/tvTempleLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Temple Location"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/lora_regular"
+                    android:textSize="@dimen/_12sdp"
+                    />
+
+
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        app:cardElevation="@dimen/_2sdp"
+        android:layout_below="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:backgroundTint="@color/white"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:orientation="vertical"
+            >
+
+
+
+
+
+
+
+            <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    >
+
+
+
+
+
+
+
+                        <TextView
+                            android:id="@+id/tvTempledescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textSize="@dimen/_12sdp"
+                            android:textAlignment="center"
+                            android:fontFamily="@font/lora_regular"
+                            android:textColor="@color/black"
+                            android:padding="@dimen/_10sdp"
+                            />
+
+
+
+
+
+                </ScrollView>
+
+
+
+        </LinearLayout>
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</RelativeLayout>

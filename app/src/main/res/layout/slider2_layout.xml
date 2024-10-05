@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#EFFD5F"
+    android:padding="@dimen/_5sdp">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <RelativeLayout
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:fontFamily="@font/ramabhadra"
+            android:textSize="@dimen/_14sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_26sdp"
+            android:text="సూర్యోదయం"
+            android:textColor="@color/black"
+            />
+
+            <TextView
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/ramabhadra"
+                android:textSize="@dimen/_14sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_26sdp"
+                android:text="సూర్యాస్తమయం"
+                android:textColor="@color/black"
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvSunrise"
+            android:fontFamily="@font/lora_semibold"
+            android:textSize="@dimen/_12sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="03:30 AM"
+            android:textColor="@color/black"
+            />
+
+            <TextView
+                android:id="@+id/tvSunset"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/lora_semibold"
+                android:textSize="@dimen/_12sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="03:30 AM"
+                android:textColor="@color/black"
+                />
+
+        </RelativeLayout>
+
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_marginTop="@dimen/_5sdp"
+            app:dividerColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_weight="2"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/ramabhadra"
+                android:textSize="@dimen/_16sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:text="తిథి"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/ramabhadra"
+                android:textSize="@dimen/_16sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:text="నక్షత్రం"
+                android:textColor="@color/black"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_weight="2"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvThidhi"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/lora_regular"
+                android:textSize="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description Data Here"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/tvNakshathram"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/lora_regular"
+                android:textSize="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description Data Here"
+                android:textColor="@color/black"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:visibility="gone"
+            android:textSize="@dimen/_20sdp"
+            android:fontFamily="@font/lora_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="27-11-2023"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:visibility="gone"
+            android:textSize="@dimen/_10sdp"
+            android:fontFamily="@font/lora_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Week Name Here"
+            android:textColor="@color/black"
+            />
+
+
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -2,34 +2,57 @@
     <string name="app_name">Telugu Calender</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    App ID : ca-app-pub-1838677544163695~2965702396
+
+    Banner :ca-app-pub-1838677544163695/2795750078
+    Interstitial : ca-app-pub-1838677544163695/3147884119
+
+
+    App ID : ca-app-pub-1838677544163695~2965702396
+
+    Banner Ad : ca-app-pub-1838677544163695/2795750078
+    Interstitial Ad : ca-app-pub-1838677544163695/3147884119
+    Native Ad : ca-app-pub-1838677544163695/2371232647
+    App Open Ad : ca-app-pub-1838677544163695/8745069307
+
+
+    App ID : ca-app-pub-1838677544163695~2965702396
+
+    Banner Ad : All Screens Top : ca-app-pub-1838677544163695/4166081889
+
+    App Exit Ad : ca-app-pub-1838677544163695/2058847194
+
+    Interstitial Ad : ca-app-pub-1838677544163695/9386618975
+
+
     <string name="admob_app_id">ca-app-pub-1838677544163695~2965702396</string>
-    <string name="admob_unit_banner_id">ca-app-pub-1838677544163695/6062908527</string>
-    <string name="admob_unit_banner_rec_id">ca-app-pub-1838677544163695/9068361727</string>
-    <string name="admob_interstitial_id">ca-app-pub-1838677544163695/3867720528</string>
-
-    <string name="testad1">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="testad2">ca-app-pub-3940256099942544/1033173712</string>
 
 
+    <string name="admob_unit_banner_id">ca-app-pub-1838677544163695/4166081889</string>
 
-    <string name="panchangambanner1">ca-app-pub-1838677544163695/3919475812</string>
-    <string name="panchangambanner2">ca-app-pub-1838677544163695/8318450470</string>
+    <string name="admob_interstitial_id">ca-app-pub-1838677544163695/3147884119</string>
 
-    <string name="festivalbanner1">ca-app-pub-1838677544163695/822640239</string>
-    <string name="festivalbanner2">ca-app-pub-1838677544163695/6114410229</string>
-
-    <string name="muhurthalubanner1">ca-app-pub-1838677544163695/5836042774</string>
-    <string name="muhurthalubanner2">ca-app-pub-1838677544163695/5836042774</string>
+    ca-app-pub-3940256099942544/1033173712
 
 
-    <string name="inter_ad_every_30sec">ca-app-pub-1838677544163695/3867720528</string>
-    <string name="appopen">ca-app-pub-1838677544163695/8928475519</string>
+    <!--    <string name="admob_unit_banner_rec_id">ca-app-pub-1838677544163695/9068361727</string>-->
+    <!--    <string name="testad1">ca-app-pub-3940256099942544/6300978111</string>-->
+    <!--    <string name="testad2">ca-app-pub-3940256099942544/1033173712</string>-->
 
 
+    <!--    <string name="panchangambanner1">ca-app-pub-1838677544163695/3919475812</string>-->
+    <!--    <string name="panchangambanner2">ca-app-pub-1838677544163695/8318450470</string>-->
+
+    <!--    <string name="festivalbanner1">ca-app-pub-1838677544163695/822640239</string>-->
+    <!--    <string name="festivalbanner2">ca-app-pub-1838677544163695/6114410229</string>-->
+
+    <!--    <string name="muhurthalubanner1">ca-app-pub-1838677544163695/5836042774</string>-->
+    <!--    <string name="muhurthalubanner2">ca-app-pub-1838677544163695/5836042774</string>-->
 
 
-
-
+    <!--    <string name="inter_ad_every_30sec">ca-app-pub-1838677544163695/3867720528</string>-->
+    <!--    <string name="appopen">ca-app-pub-1838677544163695/8928475519</string>-->
 
 
     Festival Banner - 1 : ca-app-pub-1838677544163695/8226402397
@@ -43,8 +66,6 @@
 
 
     Horoscope Native Banner : ca-app-pub-1838677544163695/9583700181
-
-
 
 
 </resources>
