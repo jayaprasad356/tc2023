@@ -1,8 +1,9 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:orientation="vertical"
     tools:context="com.telugucalendar.telugupanchangamr.Fragments.GovidaNamaluFragment">
 
     <RelativeLayout
@@ -36,4 +37,24 @@
 
     </RelativeLayout>
 
-</FrameLayout>
+
+    <TextView
+        android:layout_gravity="center"
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/calHeaderT"
+        android:fontFamily="@font/lora_semibold"
+        android:textSize="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        />
+
+
+    <WebView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/web"
+        />
+
+</LinearLayout>

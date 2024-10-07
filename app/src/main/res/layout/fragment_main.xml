@@ -456,7 +456,7 @@
                                     android:layout_height="70dp"
                                     android:layout_gravity="center"
                                     android:scaleType="fitXY"
-                                    android:src="@drawable/img_10" />
+                                    android:src="@drawable/govinda_namalu" />
 
                             </com.google.android.material.card.MaterialCardView>
 
@@ -466,7 +466,7 @@
                                 android:layout_gravity="center"
                                 android:fontFamily="@font/ramabhadra"
                                 android:maxLines="2"
-                                android:text="Govida Namalu"
+                                android:text="గోవింద నామాలు"
                                 android:textAlignment="center"
                                 android:textColor="@color/black"
                                 android:textSize="15sp" />
@@ -496,7 +496,7 @@
                                     android:layout_height="70dp"
                                     android:layout_gravity="center"
                                     android:scaleType="fitXY"
-                                    android:src="@drawable/img_11" />
+                                    android:src="@drawable/alivelu_manga" />
 
                             </com.google.android.material.card.MaterialCardView>
 
@@ -506,7 +506,7 @@
                                 android:layout_gravity="center"
                                 android:fontFamily="@font/ramabhadra"
                                 android:maxLines="2"
-                                android:text="Alivelu Manga"
+                                android:text="అలివేలు మంగ"
                                 android:textAlignment="center"
 
                                 android:textColor="@color/black"
@@ -537,7 +537,7 @@
                                     android:layout_height="70dp"
                                     android:layout_gravity="center"
                                     android:scaleType="fitXY"
-                                    android:src="@drawable/img_12" />
+                                    android:src="@drawable/pushkaralu" />
 
                             </com.google.android.material.card.MaterialCardView>
 
@@ -547,7 +547,8 @@
                                 android:layout_gravity="center"
                                 android:fontFamily="@font/ramabhadra"
                                 android:maxLines="2"
-                                android:text="Pushkaralu"
+                                android:text="పుష్కరాలు
+"
                                 android:textAlignment="center"
 
                                 android:textColor="@color/black"
@@ -578,7 +579,7 @@
                                     android:layout_height="70dp"
                                     android:layout_gravity="center"
                                     android:scaleType="fitXY"
-                                    android:src="@drawable/img_12" />
+                                    android:src="@drawable/vasthu_tips" />
 
                             </com.google.android.material.card.MaterialCardView>
 
@@ -588,7 +589,7 @@
                                 android:layout_gravity="center"
                                 android:fontFamily="@font/ramabhadra"
                                 android:maxLines="2"
-                                android:text="VasthunTips"
+                                android:text=" వాస్తు చిట్కాలు"
                                 android:textAlignment="center"
                                 android:textColor="@color/black"
                                 android:textSize="15sp" />
