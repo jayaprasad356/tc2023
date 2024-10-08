@@ -1,6 +1,7 @@
 package com.telugucalendar.telugupanchangamr.Adapters;
 
 import android.app.Activity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.telugucalendar.telugupanchangamr.Model.Gowri;
 import com.telugucalendar.telugupanchangamr.Model.Pushkaralu;
+import com.telugucalendar.telugupanchangamr.Model.PushkaraluVariant;
 import com.telugupanchangam.telugucalender.R;
 
 import java.util.ArrayList;
@@ -20,11 +22,11 @@ import java.util.ArrayList;
 public class PushkaraluAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     final Activity activity;
-    ArrayList<Pushkaralu> gowris;
+    ArrayList<Pushkaralu> pushkaralus;
 
-    public PushkaraluAdapter(Activity activity, ArrayList<Pushkaralu> gowris) {
+    public PushkaraluAdapter(Activity activity, ArrayList<Pushkaralu> pushkaralus) {
         this.activity = activity;
-        this.gowris = gowris;
+        this.pushkaralus = pushkaralus;
     }
     @NonNull
     @Override
@@ -34,61 +36,54 @@ public class PushkaraluAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     }
 
 
+
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holderParent, int position) {
         final ExploreItemHolder holder = (ExploreItemHolder) holderParent;
-        final Pushkaralu gowri = gowris.get(position);
+        final Pushkaralu pushkaralu = pushkaralus.get(position);
 
+        Log.d("PushkaraluAdapter", "Binding item at position: " + position + " with title: " + pushkaralu.getTitle());
 
+        if (pushkaralu.getPushkaralu_variant() != null && !pushkaralu.getPushkaralu_variant().isEmpty()) {
+            PushkaraluVariant variant = pushkaralu.getPushkaralu_variant().get(0);
 
-        holder.wbsub_title.setVerticalScrollBarEnabled(true);
+            holder.wbsub_title.loadDataWithBaseURL("file:///android_asset/fonts/", "<html>\n" +
+                    "<head>\n" +
+                    "<link rel='stylesheet' type='text/css' href='file:///android_asset/fonts/ramabhadra.css'>" +
+                    "<style>\n" +
+                    "body {\n" +
+                    "    font-family: 'ramabhadra';\n" +
+                    "    text-align: center;\n" +
+                    "}\n" +
+                    "</style>" +
+                    "</head>" +
+                    "<body>\n" +
+                    variant.getSub_title() +
+                    "</body>\n" +
+                    "</html>", "text/html", "UTF-8", "");
 
-        holder.wbsub_title.loadDataWithBaseURL("file:///android_asset/fonts/", "<html>\n" +
-                "<head>\n" +
-                "<link rel='stylesheet' type='text/css' href='file:///android_asset/fonts/ramabhadra.css'>" +
-                "<style>\n" +
-                "body {\n" +
-                "    font-family: 'ramabhadra';\n" +
-                "    text-align: center;\n" + // Center-align the text horizontally
-                "}\n" +
-                "</style>" +
-                "</head>" +
-                "<body>\n" +
-                 gowri.getSub_title()+
-                "</body>\n" +
-                "</html>", "text/html", "UTF-8", "");
-
-        holder.wbsub_title.getSettings().setJavaScriptEnabled(true);
-        holder.wbsub_title.getSettings().setLoadWithOverviewMode(true);
-
- holder.wbsub_description.setVerticalScrollBarEnabled(true);
-
-        holder.wbsub_description.loadDataWithBaseURL("file:///android_asset/fonts/", "<html>\n" +
-                "<head>\n" +
-                "<link rel='stylesheet' type='text/css' href='file:///android_asset/fonts/ramabhadra.css'>" +
-                "<style>\n" +
-                "body {\n" +
-                "    font-family: 'ramabhadra';\n" +
-                "    text-align: center;\n" + // Center-align the text horizontally
-                "}\n" +
-                "</style>" +
-                "</head>" +
-                "<body>\n" +
-                 gowri.getSub_description()+
-                "</body>\n" +
-                "</html>", "text/html", "UTF-8", "");
-
-        holder.wbsub_description.getSettings().setJavaScriptEnabled(true);
-        holder.wbsub_description.getSettings().setLoadWithOverviewMode(true);
-
-
-
+            holder.wbsub_description.loadDataWithBaseURL("file:///android_asset/fonts/", "<html>\n" +
+                    "<head>\n" +
+                    "<link rel='stylesheet' type='text/css' href='file:///android_asset/fonts/ramabhadra.css'>" +
+                    "<style>\n" +
+                    "body {\n" +
+                    "    font-family: 'ramabhadra';\n" +
+                    "    text-align: center;\n" +
+                    "}\n" +
+                    "</style>" +
+                    "</head>" +
+                    "<body>\n" +
+                    variant.getSub_description() +
+                    "</body>\n" +
+                    "</html>", "text/html", "UTF-8", "");
+        }
     }
+
 
     @Override
     public int getItemCount()
     {
-        return gowris.size();
+        return pushkaralus.size();
     }
 
     static class ExploreItemHolder extends RecyclerView.ViewHolder {

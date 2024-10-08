@@ -2,6 +2,7 @@ package com.telugucalendar.telugupanchangamr.Fragments
 
 import android.app.Activity
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,12 +10,21 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.gson.Gson
 import com.telugucalendar.telugupanchangamr.Activites.HomeActivity
+import com.telugucalendar.telugupanchangamr.Adapters.BallisastramAdapter
+import com.telugucalendar.telugupanchangamr.Adapters.GrahaluAdapter
 import com.telugucalendar.telugupanchangamr.Adapters.PushkaraluAdapter
+import com.telugucalendar.telugupanchangamr.Model.Ballisastram
+import com.telugucalendar.telugupanchangamr.Model.Grahalu
 import com.telugucalendar.telugupanchangamr.Model.Pushkaralu
+import com.telugucalendar.telugupanchangamr.helper.ApiConfig
+import com.telugucalendar.telugupanchangamr.helper.Constant
+import com.telugucalendar.telugupanchangamr.helper.Constant.SUCCESS
 import com.telugucalendar.telugupanchangamr.helper.Session
 import com.telugupanchangam.telugucalender.R
 import com.telugupanchangam.telugucalender.databinding.FragmentPushkaraluBinding
+import org.json.JSONArray
 import org.json.JSONObject
 
 class PushkaraluFragment : Fragment() {
@@ -65,18 +75,42 @@ class PushkaraluFragment : Fragment() {
 
     private fun list() {
         val params = HashMap<String, String>()
-        com.telugucalendar.telugupanchangamr.helper.ApiConfig.RequestToVolley({ result, response ->
+        ApiConfig.RequestToVolley({ result, response ->
             if (result) {
                 try {
                     val jsonObject = JSONObject(response)
-                    if (jsonObject.getBoolean(com.telugucalendar.telugupanchangamr.helper.Constant.SUCCESS)) {
-                        val dataArray = jsonObject.getJSONArray("data")
+                    if (jsonObject.getBoolean(SUCCESS)) {
+                        Log.e("Shasti", response)
+                        val jsonArray: JSONArray = jsonObject.getJSONArray(Constant.DATA)
 
+                        val title = jsonArray.getJSONObject(0).getString("title")
+                        binding!!.tvTitle.setText(title)
+                        val description = jsonArray.getJSONObject(0).getString("description")
+                       // binding!!.tvDescription.setText(description)
 
+                        val jsonarray2 = jsonArray.getJSONObject(0)
+                        val files = jsonarray2.getJSONArray(Constant.PUSHKARALU_VARIANT)
+                        val g = Gson()
+                        val pushkaralu: ArrayList<Pushkaralu> = ArrayList<Pushkaralu>()
+                        for (i in 0 until files.length()) {
+                            val jsonObject1 = files.getJSONObject(i)
+                            if (jsonObject1 != null) {
+                                Log.d("Varine", jsonObject1.toString())
+                                val group: Pushkaralu =
+                                    g.fromJson(jsonObject1.toString(), Pushkaralu::class.java)
+                                pushkaralu.add(group)
+                            } else {
+                                break
+                            }
+                        }
+                        adapter = getActivity()?.let { PushkaraluAdapter(it, pushkaralu) }
+                        binding!!.recyclerView.setAdapter(adapter)
+                        //       tvTitle.setText(jsonArray.getJSONObject(0).getString("text1"))
                     } else {
+                        binding!!.recyclerView.setVisibility(View.GONE)
                         Toast.makeText(
                             activity,
-                            jsonObject.getString(com.telugucalendar.telugupanchangamr.helper.Constant.MESSAGE),
+                            jsonObject.getString(Constant.MESSAGE),
                             Toast.LENGTH_SHORT
                         ).show()
                     }
@@ -84,6 +118,6 @@ class PushkaraluFragment : Fragment() {
                     e.printStackTrace()
                 }
             }
-        }, activity, com.telugucalendar.telugupanchangamr.helper.Constant.PUSHKARALU_LIST, params, true)
+        }, activity, Constant.PUSHKARALU_LIST, params, true)
     }
 }

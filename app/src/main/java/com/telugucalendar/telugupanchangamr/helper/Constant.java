@@ -22,7 +22,7 @@ public class Constant {
     public static final String BHARGAVA_PANCHANGAM_LIST= BaseUrl + "bhargava_panchangam_list.php";
     public static final String HORA_CHAKRAM_LIST= BaseUrl + "hora_chakram_list.php";
     public static final String GOVINDA_NAMALU_LIST= BaseUrl + "govinda_namalu_list.php";
-    public static final String PUSHKARALU_LIST= BaseUrl + "pushkaralu_list.php";
+    public static final String PUSHKARALU_LIST = BaseUrl + "pushkaralu_list.php";
     public static final String ALIVELU_MANGA_LIST= BaseUrl + "alivelu_manga_list.php";
     public static final String VASTHU_TIPS_LIST= BaseUrl + "vasthu_tips_list.php";
 
@@ -64,6 +64,7 @@ public class Constant {
     public static final String SUBCATEGORY_ID = "subcategory_id";
     public static final String NAME = "name";
     public static final String GRAHANALU_TAB_VARIANT = "grahanalu_tab_variant";
+    public static final String PUSHKARALU_VARIANT = "pushkaralu_variant";
     public static final String NAVAGRAHALU_TAB_VARIANT = "navagrahalu_tab_variant";
     public static final String NAVARATHNALU_TAB_VARIANT = "navarathnalu_tab_variant";
     public static final String RUDHRAKSHA_TAB_VARIANT = "rudhraksha_tab_variant";

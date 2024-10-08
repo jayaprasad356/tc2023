@@ -1,48 +1,17 @@
-package com.telugucalendar.telugupanchangamr.Model;
+package com.telugucalendar.telugupanchangamr.Model
 
-public class Pushkaralu {
-    String id, pushkaralu_id, sub_title, sub_description;
 
-    // Default constructor
-    public Pushkaralu() {}
+data class Pushkaralu(
+    val id: String,              // Unique ID for the Pushkaralu
+    val title: String,           // Title of the Pushkaralu
+    val description: String,     // Description of the Pushkaralu
+    val pushkaralu_variant: List<PushkaraluVariant>  // List of Pushkaralu variants
+)
 
-    // Parameterized constructor
-    public Pushkaralu(String id, String pushkaralu_id, String sub_title, String sub_description) {
-        this.id = id;
-        this.pushkaralu_id = pushkaralu_id;
-        this.sub_title = sub_title;
-        this.sub_description = sub_description;
-    }
+data class PushkaraluVariant(
+    val id: String,              // Unique ID for the Pushkaralu variant
+    val pushkaralu_id: String,   // ID linking the variant to a specific Pushkaralu
+    val sub_title: String,       // Subtitle for the Pushkaralu variant
+    val sub_description: String  // Description for the Pushkaralu variant
+)
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getPushkaralu_id() {
-        return pushkaralu_id;
-    }
-
-    public void setPushkaralu_id(String pushkaralu_id) {
-        this.pushkaralu_id = pushkaralu_id;
-    }
-
-    public String getSub_title() {
-        return sub_title;
-    }
-
-    public void setSub_title(String sub_title) {
-        this.sub_title = sub_title;
-    }
-
-    public String getSub_description() {
-        return sub_description;
-    }
-
-    public void setSub_description(String sub_description) {
-        this.sub_description = sub_description;
-    }
-}
