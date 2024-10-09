@@ -59,9 +59,7 @@ class PushkaraluFragment : Fragment() {
             HomeActivity.fm?.beginTransaction()?.replace(R.id.Container, MainFragment())?.commit()
         }
 
-        // Initialize the list and adapter
-        pushkaraluList = ArrayList()
-        adapter = PushkaraluAdapter(requireActivity(), pushkaraluList!!)
+
 
         // Set up RecyclerView
         binding?.recyclerView?.layoutManager = LinearLayoutManager(activity)
@@ -80,13 +78,14 @@ class PushkaraluFragment : Fragment() {
                 try {
                     val jsonObject = JSONObject(response)
                     if (jsonObject.getBoolean(SUCCESS)) {
+                        binding!!.recyclerView.setVisibility(View.VISIBLE)
                         Log.e("Shasti", response)
                         val jsonArray: JSONArray = jsonObject.getJSONArray(Constant.DATA)
 
                         val title = jsonArray.getJSONObject(0).getString("title")
                         binding!!.tvTitle.setText(title)
                         val description = jsonArray.getJSONObject(0).getString("description")
-                       // binding!!.tvDescription.setText(description)
+                     binding!!.tvDescription.setText(description)
 
                         val jsonarray2 = jsonArray.getJSONObject(0)
                         val files = jsonarray2.getJSONArray(Constant.PUSHKARALU_VARIANT)

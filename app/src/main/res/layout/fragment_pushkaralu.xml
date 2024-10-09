@@ -30,7 +30,7 @@
             android:layout_toRightOf="@+id/ibBack"
             android:fontFamily="@font/sree"
             android:gravity="center"
-            android:text="నేటి పంచాంగం"
+            android:text="పుష్కరాలు"
             android:textColor="@color/white"
             android:textSize="@dimen/_20sdp" />
 
@@ -39,18 +39,28 @@
 
 
     <TextView
-        android:layout_gravity="center"
         android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/ramabhadra"
         android:text=""
+        android:gravity="center"
         android:textColor="@color/calHeaderT"
-        android:fontFamily="@font/lora_semibold"
         android:textSize="@dimen/_16sdp"
-        android:layout_marginTop="@dimen/_10sdp"
         />
 
 
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/mallanna"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_16sdp"
+        android:layout_gravity="center"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"

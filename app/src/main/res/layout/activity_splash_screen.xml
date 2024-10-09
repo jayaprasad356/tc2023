@@ -8,42 +8,28 @@
     tools:context=".Activites.SplashScreenActivity">
 
 
-    <TextView
-        android:layout_above="@+id/ivSplash"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/sree"
-        android:gravity="center"
-        android:text="వేద తెలుగు క్యాలెండర్"
-        android:textColor="@color/calHeaderT"
-        android:textSize="@dimen/_34sdp" />
+
 
     <ImageView
         android:layout_centerInParent="true"
         android:id="@+id/ivSplash"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/splash_img"
-        android:layout_gravity="center"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/splash_screen_new"
+        android:scaleType="fitXY"
+        />
 
 
 
     <ProgressBar
+        android:visibility="gone"
+        android:layout_centerInParent="true"
         android:id="@+id/ProgressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:progressTint="@color/white"
         android:progressBackgroundTint="@color/white"
-        android:layout_marginTop="250dp"/>
+        />
 
-    <TextView
-        android:id="@+id/tvInstruction"
-        android:visibility="gone"
-        android:layout_width="wrap_content"
-        android:textSize="@dimen/_12sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:text="Importing Data Please Wait..."
-        android:layout_gravity="center"
-        android:textColor="@color/white"
-        android:layout_height="wrap_content"/>
+
 </RelativeLayout>

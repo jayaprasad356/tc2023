@@ -27,7 +27,6 @@ class SplashScreenActivity : AppCompatActivity() {
         activity = this@SplashScreenActivity
         databaseHelper = com.telugucalendar.telugupanchangamr.helper.DatabaseHelper(activity)
         session = com.telugucalendar.telugupanchangamr.helper.Session(activity)
-        tvInstruction = findViewById(R.id.tvInstruction)
 
 //        if (ApiConfig.isConnected(activity)) {
 //            if(session.getData(Constant.FIREST_TIME).equals("true")){

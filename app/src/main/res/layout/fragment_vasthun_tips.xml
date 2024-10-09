@@ -30,7 +30,7 @@
             android:layout_toRightOf="@+id/ibBack"
             android:fontFamily="@font/sree"
             android:gravity="center"
-            android:text="నేటి పంచాంగం"
+            android:text="వాస్తు చిట్కాలు"
             android:textColor="@color/white"
             android:textSize="@dimen/_20sdp" />
 

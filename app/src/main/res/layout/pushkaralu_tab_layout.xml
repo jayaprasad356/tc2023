@@ -6,12 +6,12 @@
     android:layout_height="match_parent">
 
 
-    <WebView
+    <TextView
         android:id="@+id/wbsub_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <WebView
+    <TextView
         android:id="@+id/wbsub_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
